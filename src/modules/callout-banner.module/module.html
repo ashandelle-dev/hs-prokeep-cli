@@ -1,0 +1,105 @@
+<!-- module html  -->
+<div class="relative">
+<div class="absolute right-0 bottom-0 hidden lg:block">
+<div class="translate-x-1/3 translate-y-1/3">
+<img class="w-[90px] md:w-[128px]" src="{{get_asset_url('./../images/cta-dots-left.png')}}" alt="CTA Dots left">
+</div>
+</div>
+<div class="rounded-lg relative overflow-hidden ">
+  <div style="background-color: {{ module.qb_bg_color.color }};" class="w-full lg:w-3/4 relative box z-10 rounded-t-lg lg:rounded-lg">
+    <div class="w-full lg:w-10/12">
+  
+      <div class="p-6 lg:p-12 ">
+        <div class="mb-6">
+          <p style="color: {{ module.qb_text_color.color }}" class="text-[24px] md:text-[32px] leading-snug font-bold m-0">
+          {% if module.qb_header %}
+            {{ module.qb_header }}
+            {% else %}
+              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.“
+          {% endif %}
+          
+          </p>
+        </div>
+        <div class="w-full lg:w-9/12">
+          <p style="color: {{ module.qb_text_color.color }}">
+          {% if module.qb_paragraph %}
+            {{ module.qb_paragraph }}
+            {% else %}
+              Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+          {% endif %}
+          
+          </p>
+          {% set href = module.qb_button_link.url.href %}
+            {% if module.qb_button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            <a class="btn btn-primary inline-block" href="{{ href }}"
+              {% if module.qb_button_link.open_in_new_tab %}target="_blank"{% endif %}
+              {% if module.qb_button_link.rel %}rel="{{ module.qb_button_link.rel }}"{% endif %}
+              >
+              {{ module.qb_button_text }}
+            </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="lg:absolute h-full right-0 top-0 bottom-0 w-full lg:w-3/5 z-0 rounded-t-lg rounded-b-none lg:rounded-lg flex items-center lg:block">
+    <div style="background-color: {{ module.qb_bg_color.color }};" class="absolute w-full h-full inset-0 box-mobile"></div>
+    {% if module.qb_vimeo_id %}
+    <div class="absolute w-full lg:h-full  flex items-center justify-end cursor-pointer" data-modal-open="callout-modal" >
+      <div class=" w-full flex justify-center">
+        <svg class="w-[75px] lg:w-[150px] lg:translate-x-full"  viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="75" cy="75" r="75" fill="#FFFBF5" fill-opacity="0.9"/>
+          <path d="M104 74.3397C110.667 78.1887 110.667 87.8113 104 91.6603L59 117.641C52.3333 121.49 44 116.679 44 108.981L44 57.0192C44 49.3212 52.3333 44.51 59 48.359L104 74.3397Z" fill="#9CD4D6"/>
+          <path d="M108.25 67.6388C113.917 70.9104 113.917 79.0896 108.25 82.3612L63.25 108.342C57.5833 111.614 50.5 107.524 50.5 100.981L50.5 49.0192C50.5 42.4759 57.5833 38.3864 63.25 41.658L108.25 67.6388Z" stroke="#192B3F" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+    {% endif %}
+    
+    {% if module.qb_image.src %}
+      {% set sizeAttrs = 'width="{{ module.qb_image.width }}" height="{{ module.qb_image.height }}"' %}
+      {% if module.qb_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.qb_image.width }}" height="{{ module.qb_image.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.qb_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.qb_image.max_width }}" height="{{ module.qb_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.qb_image.loading != 'disabled' ? 'loading="{{ module.qb_image.loading }}"' : '' %}
+      <img class="h-full w-full object-cover" src="{{ module.qb_image.src }}" alt="{{ module.qb_image.alt }}" {{ loadingAttr }} >
+    {% endif %}
+  </div>
+  
+</div>
+</div>
+{% if module.qb_vimeo_id %}
+<div class="modal micromodal-slide" id="callout-modal" aria-hidden="true">
+	<div class="modal__overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50" tabindex="-1" data-modal-close="callout-modal">
+		<div class="modal__container relative container" role="dialog" aria-modal="true" aria-labelledby="callout-modal-title">
+			<div class="absolute -right-10 -top-10">
+				<button class="modal__close text-white text-lg" aria-label="Close modal" data-modal-close="callout-modal"></button>
+			</div>
+
+			<main>
+				<iframe class="w-full aspect-video" scrolling="no" frameborder="0" src="https://player.vimeo.com/video/{{module.qb_vimeo_id}}?playsinline=0" allow="autoplay" allowfullscreen="true"></iframe>
+			</main>
+
+		</div>
+	</div>
+</div>
+{% endif %}
+
+  <style>
+  .box-mobile {
+    clip-path: polygon(0 0, 100% 0, 0% 100%, 0 100%);
+  }
+
+  @media only screen and (min-width: 1024px)  {
+    .box-mobile {display: none;}
+    .box {
+      clip-path: polygon(0 0, 100% 0, 54% 100%, 0 100%);
+    }
+  
+  }
+  </style>
+ 

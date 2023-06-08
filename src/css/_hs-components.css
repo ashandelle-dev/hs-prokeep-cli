@@ -1,0 +1,55 @@
+.hs-video-widget {
+  @apply rounded-xl overflow-hidden;
+}
+
+.alt-dash-list {
+  @apply list-none;
+  li {
+    @apply relative pl-10 mb-2;
+  }
+
+ 
+  li::before {
+    content: "";
+    @apply rounded-full absolute left-0 top-[12px] bottom-0;
+    width: 20px;
+    height: 6px;
+    margin-inline-end: 1ch;
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+
+  &.blue {
+    li::before {
+      @apply bg-[#67ACBD]; 
+    }
+
+    li:nth-child(even)::before {
+      @apply bg-[#9CD4D6];
+    }
+  }
+
+  &.green {
+    li::before {
+      @apply bg-[#469C6C]; 
+    }
+
+    li:nth-child(even)::before {
+      @apply bg-[#84CFA4];
+    }
+  }
+
+  
+}
+
+.widget-type-form {
+  @apply bg-[#FFF4E3] rounded-xl;
+
+  .form-title {
+    @apply pt-6 m-0;
+  }
+
+  form {
+    @apply m-0;
+  }
+}

@@ -1,0 +1,28 @@
+<!-- module html  -->
+<div data-modal-open="vp-modal" class="cursor-pointer relative">
+  {% if module.vp_image.src %}
+	{% set sizeAttrs = 'width="{{ module.vp_image.width }}" height="{{ module.vp_image.height }}"' %}
+	{% if module.vp_image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.vp_image.width }}" height="{{ module.vp_image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.vp_image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.vp_image.max_width }}" height="{{ module.vp_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.vp_image.loading != 'disabled' ? 'loading="{{ module.vp_image.loading }}"' : '' %}
+	<img src="{{ module.vp_image.src }}" alt="{{ module.vp_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endif %}
+</div>
+<div class="modal micromodal-slide" id="vp-modal" aria-hidden="true">
+	<div class="modal__overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50" tabindex="-1" data-modal-close="vp-modal">
+		<div class="modal__container relative container" role="dialog" aria-modal="true" aria-labelledby="vp-modal-title">
+			<div class="absolute -right-10 -top-10">
+			
+				<button class="modal__close text-white text-lg" aria-label="Close modal" data-modal-close="vp-modal"></button>
+			</div>
+
+			<main >
+				<iframe class="w-full aspect-video" scrolling="no" allow="autoplay" frameborder="0" src="https://player.vimeo.com/video/{{ module.vp_vimeo_id }}?playsinline=0" allowfullscreen="true"></iframe>
+			</main>
+
+		</div>
+	</div>
+</div>

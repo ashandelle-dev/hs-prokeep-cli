@@ -1,0 +1,12 @@
+.solutions {
+  &-single {
+    h1 {
+      @apply leading-tight;
+    }
+    .hs {
+      &-form {
+        @apply bg-transparent m-0 p-0;
+      }
+    }
+  }
+}

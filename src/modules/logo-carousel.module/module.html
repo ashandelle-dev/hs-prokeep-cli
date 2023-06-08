@@ -1,0 +1,21 @@
+<!-- module html  -->
+
+
+  <div class="carousel-ticker flex items-center w-full">
+    {% for item in module.image_field %}
+    {% if item.src %}
+      {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+      {% if item.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif item.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+      <div class="slide-tick px-6 w-1/2 md:w-64 flex items-center">
+
+      <img class="mx-auto h-full" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+  </div>

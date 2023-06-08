@@ -1,0 +1,7 @@
+node_modules
+
+# HubSpot config file
+hubspot.config.yml
+dist
+fields.json
+theme.json

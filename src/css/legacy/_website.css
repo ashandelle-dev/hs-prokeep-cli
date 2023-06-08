@@ -1,0 +1,90 @@
+/* ******************************************************************************
+*********************************************************************************
+This file contains all the neccessary styles to control how your landing pages
+look if there is anything specific to your landing pages.
+*********************************************************************************
+****************************************************************************** */
+
+/*Osano styling */
+
+.osano-cm-dialog {
+  background: #fff;
+}
+
+.osano-cm-widget {
+  background: url(https://21470813.fs1.hubspotusercontent-na1.net/hubfs/21470813/cookie-01.svg) no-repeat center center / cover;
+}
+
+.osano-cm-widget:focus, .osano-cm-info-dialog-header__close:focus {
+  outline: 0;
+}
+
+.osano-cm-info-dialog-header__close:focus {
+  background-color: #fff;
+  stroke: #000;
+  border-color: transparent;
+}
+
+.osano-cm-info-dialog-header__close:focus:hover {
+  stroke: #000;
+}
+
+.osano-cm-widget svg {
+  display: none;
+}
+
+.osano-cm-info-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.osano-cm-info {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  box-shadow: none;
+  max-width: 60em;
+    height: 35em;
+  border-radius: 20px;
+}
+
+.osano-cm-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.osano-cm-info p:focus {
+  outline: 0;
+}
+
+.osano-cm-info p {
+  font-size: 16px;
+}
+
+p.osano-cm-header {
+  font-size: 32px;
+  color: #142d40;
+  font-weight: 700;
+  padding-left: 50px;
+}
+
+.osano-cm-info-views {
+  padding: 0 40px;
+}
+
+.osano-cm-drawer-toggle .osano-cm-label {
+  font-size: 24px;
+  color: #2f798f;
+  font-weight: 700;
+}
+
+.osano-cm-save {
+  width: auto;
+  margin: 0 auto;
+}
+
+.osano-cm-info-dialog--hidden .osano-cm-info--position_right {
+  transform: translate(145%);
+}

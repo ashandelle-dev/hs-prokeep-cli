@@ -1,0 +1,18 @@
+<!--
+ templateType: section
+ label: Light Teal Section Texture
+ isAvailableForNewContent: true
+ screenshotPath: ../images/light-teal-section.png
+-->
+<!-- Begin partial -->
+{% dnd_section
+    class="{{context.className || '!bg-[#86D1C3]'}}"
+    background_image={
+        'backgroundPosition': 'BOTTOM_CENTER',
+        'backgroundSize': 'contain',
+        'imageUrl': context.backgroundImage ||  get_asset_url('./../images/bg-texture-light-teal.png')
+    }
+%}
+
+{% end_dnd_section %}
+<!-- End partial -->

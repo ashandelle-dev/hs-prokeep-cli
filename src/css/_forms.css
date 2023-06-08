@@ -1,0 +1,49 @@
+/* .hs-form {
+  @apply bg-[#132c41] rounded-xl p-6;
+  .hs-form-field {
+    label {
+      span {
+        @apply text-white;
+        
+      }
+      .hs-form-required {
+          @apply text-red-500;
+        }
+    }
+  }
+
+} */
+.hs-form {
+  @apply rounded-xl p-6;
+  .hs-form-field {
+    @apply mb-8;
+    .input {
+     
+      input {
+        @apply bg-transparent border-0 border-b border-black rounded-none;
+      }
+    }
+    label {
+      /* @apply hidden; */
+      span {
+        @apply text-[14px];
+      }
+      .hs-form-required {
+          @apply text-red-500;
+        }
+    }
+  }
+  .hs-richtext {
+    &.hs-main-font-element {
+      @apply text-[#33475b];
+      span {
+        @apply text-[#33475b] !important;
+      }
+    }
+  }
+  .hs-button {
+    @apply w-full;
+  }
+
+}
+

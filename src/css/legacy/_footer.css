@@ -1,0 +1,133 @@
+/* ******************************************************************************
+*********************************************************************************
+This file contains all the neccessary styles to control how your
+footer looks when it comes to spacing and other general styles.
+*********************************************************************************
+****************************************************************************** */
+
+.footer {
+      position: relative;
+    z-index: 9;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer__container {
+      padding: 40px !important;
+      position: relative;
+}
+
+.footer__container::after {
+   content:'';
+  display: table;
+  clear: both;
+}
+
+.footer-logo {
+      display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 0 57px;
+}
+
+.footer-logo a {
+      display: flex;
+}
+
+.footer-logo a {
+  max-width: 192px;
+}
+
+.footer-btn {
+  float: right;
+  display: inline-block;
+      margin-bottom: 32px;
+}
+
+.footer-btn a {
+      text-decoration: none;
+    cursor: pointer;
+      display: inline-block;
+      border-radius: 5px;
+  border: 2px solid;
+  padding: 8px 24px;
+  -webkit-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
+}
+
+.copyright {
+      margin-top: 8px;
+    font-size: 16px;
+  line-height: 32px;
+}
+
+@media (max-width: 991px) {
+  
+  .footer__container {
+    padding: 24px 40px !important;
+}
+  
+}
+
+
+@media (max-width: 767px) {
+  
+  .footer__container {
+    padding: 24px !important;
+    overflow: hidden;
+}
+  
+  .footer-text span {
+    display: block;
+        line-height: 32px;
+  }
+  
+  .footer-contact span:nth-child(2),
+  .footer-contact span:nth-child(5),
+  .copyright span:nth-child(3) {
+    display: none;
+  }
+  
+  .copyright span.hs_cos_wrapper span>span {
+    display: inline;
+  }
+  
+  .footer-btn {
+        margin-top: 8px;
+}
+  
+  
+  
+}
+
+@media (max-width: 479px) {
+  
+  .footer-btn {
+    float: none;
+    margin-top: 0;
+}
+  
+  .footer-logo {
+    margin: 0 0 40px;
+}
+  
+}

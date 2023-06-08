@@ -1,0 +1,100 @@
+<!-- module html  -->
+{% set href = module.card_btn.link.url.href %}
+{% if module.card_btn.link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+
+
+{% if module.card_btn.style == "btn" %}
+{% set link_el = '<a href="{{ href }}"
+{% if module.card_btn.link.open_in_new_tab %}target="_blank"{% endif %}
+{% if module.card_btn.link.rel %}rel="{{ module.card_btn.link.rel }}"{% endif %} class="btn btn-primary">{{ module.card_btn.text }}</a>'
+ %}
+
+ {% endif %}
+
+ {% if module.card_btn.style == "link" %}
+
+ {% set link_el = '<div class="flex relative items-center group">
+  <a href="{{ href }}"
+{% if module.card_btn.link.open_in_new_tab %}target="_blank"{% endif %}
+{% if module.card_btn.link.rel %}rel="{{ module.card_btn.link.rel }}"{% endif %}
+   class="absolute w-full h-full inset-0 z-10"></a>
+
+  <div>
+    <p class="m-0 text-[18px] font-bold text-[#DA5039] group-hover:text-[#FF7E69]">{{ module.card_btn.text }}</p>
+  </div>
+  <div class="w-4 text-center">
+    <svg class="block mx-auto stroke-[#DA5039] group-hover:stroke-[#FF7E69]" width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 2L4.35294 4.5L2 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      
+  </div>
+ </div>'
+ %}
+
+ 
+ {% endif %}
+
+{% if module.card_style == "stacked" %}
+<div class="rounded-lg overflow-hidden shadow-lg relative">
+  <div class="h-[230px]">
+    {% if module.card_thumbnail.src %}
+    {% set sizeAttrs = 'width="{{ module.card_thumbnail.width }}" height="{{ module.card_thumbnail.height }}"' %}
+    {% if module.card_thumbnail.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.card_thumbnail.width }}" height="{{ module.card_thumbnail.height }}" style="max-width: 100%; height: auto;"' %}
+    {% elif module.card_thumbnail.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.card_thumbnail.max_width }}" height="{{ module.card_thumbnail.max_height }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+      {% set loadingAttr = module.card_thumbnail.loading != 'disabled' ? 'loading="{{ module.card_thumbnail.loading }}"' : '' %}
+    <img class="w-full h-full object-cover" src="{{ module.card_thumbnail.src }}" alt="{{ module.card_thumbnail.alt }}" {{ loadingAttr }}>
+    {% endif %}
+
+  </div>
+  <div style="background-color:{{ module.card_bg_color.color }}" class="p-6">
+    <div class="mb-3">
+      <p class="m-0 text-[24px] font-bold leading-snug">{{ module.card_title }}</p>
+    </div>
+    <div>
+      <p class="text-[18px]">
+        {{ module.card_paragraph }}
+      </p>
+    </div>
+    <div class="mb-10">
+      {{link_el}}
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% if module.card_style == "horizontal" %}
+<div class="lg:h-[230px] flex flex-wrap rounded-lg overflow-hidden shadow-lg">
+  <div class="h-[230px] lg:h-full w-full md:w-1/3">
+    {% if module.card_thumbnail.src %}
+    {% set sizeAttrs = 'width="{{ module.card_thumbnail.width }}" height="{{ module.card_thumbnail.height }}"' %}
+    {% if module.card_thumbnail.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.card_thumbnail.width }}" height="{{ module.card_thumbnail.height }}" style="max-width: 100%; height: auto;"' %}
+    {% elif module.card_thumbnail.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.card_thumbnail.max_width }}" height="{{ module.card_thumbnail.max_height }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+      {% set loadingAttr = module.card_thumbnail.loading != 'disabled' ? 'loading="{{ module.card_thumbnail.loading }}"' : '' %}
+    <img class="w-full h-full object-cover" src="{{ module.card_thumbnail.src }}" alt="{{ module.card_thumbnail.alt }}" {{ loadingAttr }}>
+    {% endif %}
+  </div>
+  <div style="background-color:{{ module.card_bg_color.color }}" class="p-6 w-full md:w-2/3">
+    <div class="mb-3">
+      <p class="m-0 text-[24px] font-bold leading-snug">{{ module.card_title }}</p>
+    </div>
+    <div class="">
+      <p class="text-[18px]">
+        {{ module.card_paragraph }}
+      </p>
+    </div>
+    <div class="mb-10">
+      {{link_el}}
+    </div>
+  </div>
+</div>
+
+{% endif %}

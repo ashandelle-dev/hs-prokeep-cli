@@ -1,0 +1,18 @@
+<!--
+ templateType: section
+ label: Yellow Section Texture
+ isAvailableForNewContent: true
+ screenshotPath: ../images/yellow-section.png
+-->
+<!-- Begin partial -->
+{% dnd_section
+    class="{{context.className || '!bg-[#FFF4E3]'}}"
+    background_image={
+        'backgroundPosition': 'BOTTOM_CENTER',
+        'backgroundSize': 'contain',
+        'imageUrl': context.backgroundImage ||  get_asset_url('./../images/bg-texture-yellow.png')
+    }
+%}
+
+{% end_dnd_section %}
+<!-- End partial -->

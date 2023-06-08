@@ -1,0 +1,15 @@
+@tailwind base;
+@layer base {
+    html {
+        @apply overflow-x-hidden;
+    }
+
+    ul {
+        @apply list-disc;
+    }
+    ol {
+        @apply list-decimal;
+    }
+}
+@tailwind components;
+@tailwind utilities;

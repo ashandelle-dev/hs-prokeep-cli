@@ -1,0 +1,30 @@
+{% set href = module.cta_section_link.url.href %}
+{% if module.cta_section_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+<!-- module html  -->
+<div class="rounded-xl bg-[#DA5039] p-12 relative group">
+  <a href="{{ href }}"
+  {% if module.cta_section_link.open_in_new_tab %}target="_blank"{% endif %}
+  {% if module.cta_section_link.rel %}rel="{{ module.cta_section_link.rel }}"{% endif %} class="absolute w-full h-full inset-0 z-10"></a>
+  <div class="absolute right-0 bottom-10 hidden lg:block">
+    <div class="translate-x-1/2">
+      <img class="w-[120px] md:w-[200px]" src="{{get_asset_url('./../images/cta-dots-right.png')}}" alt="CTA Dots right">
+  </div>
+  </div>
+  <div class="absolute left-0 top-10 hidden lg:block">
+    <div class="-translate-x-1/2">
+      <img class="w-[90px] md:w-[128px]" src="{{get_asset_url('./../images/cta-dots-left.png')}}" alt="CTA Dots left">
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <div class="lg:w-10/12">
+      <div class="text-center text-white">
+        <p class="text-[32px] md:text-[48px] font-bold leading-tight">
+        {{ module.cta_section_header }}
+        </p>
+        <p class="btn bg-transparent border border-white text-center text-white rounded hover:text-white inline-block group-hover:text-[#DA5039] group-hover:bg-white">{{ module.cta_section_btn_text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

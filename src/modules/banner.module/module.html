@@ -1,0 +1,45 @@
+<!-- module html  -->
+<div class="flex items-stretch flex-wrap rounded-xl overflow-hidden justify-center relative z-10">
+  <div class="w-full lg:w-3/5">
+    {% if module.banner_image.src %}
+    {% set sizeAttrs = 'width="{{ module.banner_image.width }}" height="{{ module.banner_image.height }}"' %}
+    {% if module.banner_image.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.banner_image.width }}" height="{{ module.banner_image.height }}" style="max-width: 100%; height: auto;"' %}
+    {% elif module.banner_image.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.banner_image.max_width }}" height="{{ module.banner_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+     {% set loadingAttr = module.banner_image.loading != 'disabled' ? 'loading="{{ module.banner_image.loading }}"' : '' %}
+    <img class="w-full h-full object-cover" src="{{ module.banner_image.src }}" alt="{{ module.banner_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+  {% endif %}
+  </div>
+  <div class="w-full lg:w-2/5 flex items-center justify-center py-12 px-12 relative" style="background-color: {{ module.banner_background_color.color }}">
+   
+    <div class="">
+      {% if module.banner_label %}
+      <div class="relative mb-6 lg:mb-0 lg:absolute lg:top-6 left-0 right-0 lg:px-12">
+        
+        <p>
+          {{ module.banner_label }}
+        </p>
+      </div>
+      {% endif %}
+      
+      <h2>{{ module.banner_title }}</h2>
+      <p>
+        {{ module.banner_subtitle }}
+      </p>
+      {% set href = module.banner_button.button_link.url.href %}
+        {% if module.banner_button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a class="btn btn-primary" href="{{ href }}"
+          {% if module.banner_button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.banner_button.button_link.rel %}rel="{{ module.banner_button.button_link.rel }}"{% endif %}
+        >
+        {{ module.banner_button.button_text }}
+      </a>
+    </div>
+  </div>
+</div>  
+
+

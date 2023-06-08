@@ -1,0 +1,14 @@
+.btn {
+    @apply px-5 py-3 font-medium border no-underline hover:no-underline rounded hover:scale-105;
+
+    &-primary {
+        @apply border-[#DA5039] bg-[#DA5039] text-white hover:text-[#DA5039] hover:bg-white;
+    }
+
+}
+
+.hs_cos_wrapper_widget {
+    .hs-button {
+        @apply hover:scale-105;
+    }
+}

@@ -1,0 +1,167 @@
+<!-- module html  -->
+
+{% set filter_table_context = module.fg_filter_table %}
+
+{% set grid_table_context = module.fg_grid_table %}
+
+{% set filter_table_name = hubdb_table(filter_table_context) %}
+
+{% if request.query_dict[filter_table_name.name] %}
+
+  {% set current_id = request.query_dict[filter_table_name.name] %}
+
+  {% set filter_query = "&" + filter_table_name.name + "__contains=" ~ request.query_dict[filter_table_name.name]  %}
+
+{% else %}
+
+  {% set current_id = 0 %}
+
+  {% set filter_query = "" %}
+
+{% endif %}
+
+{% set filter_table = hubdb_table_rows(filter_table_context)%}
+
+{% set grid_table = hubdb_table_rows(grid_table_context, filter_query) %}
+
+{% macro ct_label(ct_name, ct_color, is_active) %}
+<div class="flex h-[57px] items-center mb-3 rounded-lg " style="background-color: {% if is_active %} {{ct_color}} {% else %} #FFF4E3 {% endif %}">
+      <div class="flex items-center h-full">
+        <div class="h-full">
+          <div class="w-[15px] h-full rounded-full" style="background-color: {{ ct_color }}"></div>
+        </div>
+      
+        <div class="px-3">
+            <p class="m-0 font-bold leading-tight text-[16px]">{{ ct_name }}</p>
+        </div>
+      </div>
+    </div>
+{%- endmacro %}
+
+<div class="flex flex-wrap scroll-mt-[160px] -mx-6" id="filter-grid" >
+  <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+    <div class="">
+      <div>
+        <p class="font-bold">Filter by {{filter_table_name.label}}</p>
+      </div>
+      <a class="text-[#173A53] no-underline block hover:no-underline hover:text-[#173A53]]" href="{{request}}#filter-grid">
+<div class="flex h-[57px] items-center {% if current_id == 0 %} bg-[#57A7B9]  {% else %} bg-[#FFF4E3]{% endif %} mb-3 rounded-lg">
+          <div class="flex items-center h-full">
+            <div class="h-full">
+              <div class="w-[15px] h-full rounded-full " style="background-color: {{ ct_color }}"></div>
+            </div>
+          
+            <div class="px-3">
+                <p class="m-0 font-bold leading-tight text-[16px] {% if current_id == 0 %} text-white {% endif %}">All</p>
+            </div>
+          </div>
+          
+        </div>
+      </a>
+       
+      {% for row in filter_table %}
+        {% set is_active = row.hs_id == current_id %}
+
+        <a data-category="{{row.hs_id}}" class="text-[#173A53] no-underline block hover:no-underline " href="{{request}}?{{filter_table_name.name}}={{row.hs_id}}#filter-grid">
+          {{ct_label(row.name,row.color, is_active)}}
+        </a>
+      {% endfor %}
+
+    </div>
+    
+  </div>
+  <div class="w-full md:w-3/4 px-3">
+    <div class="flex flex-wrap justify-center md:justify-start items-stretch">
+      {% for row in grid_table %}
+        {# {{row}} #}
+        {% if row.resource_link %}
+          
+          {% set href="{{row.resource_link}}" %}
+
+        {% else %}
+          {% set href="{{ request.path }}/{{ row.hs_path }}" %}
+          
+        {% endif %}
+
+
+       <div class="w-full sm:w-1/2 lg:w-1/3 mb-6 px-3">
+        <div class="rounded-xl overflow-hidden h-full bg-white shadow-lg relative group">
+          <a class="absolute w-full h-full inset-0 z-10 cursor-pointer" {% if row[filter_table_name.name][0].name == "Videos" %}
+
+            data-modal-open="video-resource-modal-{{loop.index}}"
+
+            {% else %}
+            
+            href="{{href}}"
+            {% endif %}
+
+          ></a>
+          <div class="h-[185px]">
+            <img class="w-full h-full object-cover" src="{{row.thumbnail_graphic.url}}" alt="{{row.thumbnail_graphic.altText}}">
+            
+          </div>
+          <div class="p-6 ">
+            <div class="mb-12">
+                <p class="m-0 cursor-pointer text-[#173A53] no-underline font-bold block leading-snug text-[24px]">{{row.name}}</p>
+            </div>
+           
+            <div class="absolute bottom-0 w-full left-0 right-0">
+              <div class="pb-4 footer-{{row[filter_table_name.name][0].name|lower|replace(' ', '') }} px-6">
+                <div class="pt-2 border-t border-t-black group-hover:border-t-transparent">
+                
+                <div class="flex">
+                  <div>
+                    <div class="w-5 h-5 rounded-full border" style="background-color: {{ row[filter_table_name.name][0].color }}"></div>
+                  </div>
+                
+                  <div class="px-3">
+                      <p class="m-0 font-bold leading-tight text-[16px]">{{ row[filter_table_name.name][0].name }}</p>
+                  </div>
+               
+                </div>
+              </div>
+              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    {% endfor %}
+      
+
+    </div>
+  </div>
+
+</div>
+
+{% for row in grid_table %}
+  {% if row[filter_table_name.name][0].name == "Videos" %}
+
+  <div class="modal micromodal-slide" id="video-resource-modal-{{loop.index}}" aria-hidden="true">
+    <div class="modal__overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50" tabindex="-1" data-modal-close="video-resource-modal-{{loop.index}}">
+      <div class="modal__container relative container" role="dialog" aria-modal="true" aria-labelledby="video-resource-modal-container">
+        <div class="absolute -right-10 -top-10">
+          <button class="modal__close text-white text-lg" aria-label="Close modal" data-modal-close="video-resource-modal-{{loop.index}}"></button>
+        </div>
+
+        <main id="video-resource-modal-content">
+          <iframe id="video-resource-iframe-{{ loop.index }}" class="w-full aspect-video" scrolling="no" frameborder="0" src="{{row.resource_link}}" allowfullscreen="true" allow="autoplay"></iframe>
+        </main>
+
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+
+{% require_css %}
+<style>
+{% for row in filter_table %}
+  .group:hover .footer-{{row.name|lower|replace(' ', '') }} {
+    background-color: {{row.color}};
+  }
+{% endfor %}
+</style>
+{% end_require_css %}

@@ -1,0 +1,9 @@
+/* .swiper-wrapper {
+  align-items:stretch;
+}
+.swiper-wrapper .swiper-slide {
+  height: auto;
+} */
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #57a7b9;
+}

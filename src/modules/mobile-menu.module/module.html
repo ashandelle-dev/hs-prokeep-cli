@@ -1,0 +1,58 @@
+<!-- module html  -->
+{% macro defaultItemClasses() %}
+  {{
+  {
+    "class": "no-submenu menu-item"
+  }|xmlattr
+  }}
+ {% endmacro %}
+ {% macro childClasses() %}
+  {{
+  {
+    "class": "has-submenu menu-item"
+  }|xmlattr
+  }}
+ {% endmacro %}
+ {% macro activeNode() %}
+  {{
+  {"class": "menu-link active-item",
+  "aria-current": "page"}|xmlattr
+  }}
+ {% endmacro %}
+ {% macro activeBranch() %}
+  {{
+  {"class": "menu-link active-branch"}|xmlattr
+  }}
+ {% endmacro %}
+ {% macro linkTarget() %}
+ {{
+ {"target": "_blank"}|xmlattr
+ }}
+ {% endmacro %}
+ {% macro link(node) %}
+ <li {{ childClasses() if node.children else defaultItemClasses() }}>
+   <a href="{{ node.url if node.url else 'javascript:;' }}" class="menu-link" {{ activeBranch() if node.activeBranch }} {{ activeNode() if node.activeNode }} {{ linkTarget() if node.linkTarget }}>{{ node.label }}</a>
+   {% if node.children %}
+  <div class="child-trigger"><span class="w-icon-arrow-down"></span> </div>
+   {{ renderNavigation(node) }}
+   {% endif %}
+ </li>
+ {% endmacro %}
+ {% macro renderNavigation(menuTree) %}
+   {% set level = level + 1 %}
+   <ul class="submenu level-{{ level }}" aria-hidden="{{ level != 1 }}">
+     {% for node in menuTree.children %}
+       {{ link(node) }}
+     {% endfor %}
+   </ul>
+ {% endmacro %}
+ <nav aria-label="Main menu" class="navigation-primary">
+   {{ renderNavigation(menu(module.primary_menu_field)) }}
+   <div class="mobile-btn-wrapper">
+     <div class="header-btn">
+         <div id="hs_cos_wrapper_header_cta" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-cta" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_header_cta_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_cta" style="" data-hs-cos-general-type="widget" data-hs-cos-type="cta"><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-77946890-1c2c-48fb-a9f9-171d7d1cf6f8"><span class="hs-cta-node hs-cta-77946890-1c2c-48fb-a9f9-171d7d1cf6f8" id="hs-cta-77946890-1c2c-48fb-a9f9-171d7d1cf6f8" style="visibility: visible;" data-hs-drop="true"><a id="cta_button_8787210_b205400c-9d7a-4c98-b05d-df4ae8f4c598" class="cta_button " href="https://blog.prokeep.com/cs/c/?cta_guid=b205400c-9d7a-4c98-b05d-df4ae8f4c598&amp;signature=AAH58kFw-uej2e7bHhQwNKCEmyKqQ2bIfQ&amp;pageId=95247866158&amp;placement_guid=77946890-1c2c-48fb-a9f9-171d7d1cf6f8&amp;click=bac32e96-5260-42ba-bf0d-ca7fb1327357&amp;hsutk=b3890806c4ae38d355b4c8f472c3e9ca&amp;canon=https%3A%2F%2Fblog.prokeep.com%2Fprokeep-enlists-top-national-talent-press-release&amp;utm_referrer=https%3A%2F%2Fblog.prokeep.com%2F&amp;portal_id=8787210&amp;redirect_url=APefjpH8bMGiv5d3YHV9tUwHzzmc6tdWQSjTZvMSZ1h_z3ut3qZttqrR9QzOGB-BPj9hWcLePfH7D7qAliueR0rKqSI9TYdQMzm_W4RMgzen4l7ftHBi2hk48REYecnIzTSHCktCtyA6-OuxRwxuMJEn5uc_gOp_TyYOVdoUI7qB6BQJhjhq8AEDEiYfbq2GeO3C0MQdWm6tQeFjdRDE05eb-wEnLWje-7DBJni4euZ-CpU6zii41dIyNtlCJ3UkG1R2hjsjF_nT&amp;__hstc=85938822.b3890806c4ae38d355b4c8f472c3e9ca.1671040826272.1671054680428.1671056534033.3&amp;__hssc=85938822.11.1671056534033&amp;__hsfp=44109577&amp;contentType=blog-post" style="" cta_dest_link="https://www.prokeep.com/demo" title="Get a demo">Get a demo</a></span><script charset="utf-8" src="/hs/cta/cta/current.js"></script><script type="text/javascript"> hbspt.cta._relativeUrls=true;hbspt.cta.load(8787210, '77946890-1c2c-48fb-a9f9-171d7d1cf6f8', {"useNewLoader":"true","region":"na1"}); </script></span><!-- end HubSpot Call-to-Action Code --></span></div>
+       </div>
+   <div class="header-btn"><a href="https://www.prokeep.com/login" aria-current="page" class="nav-link login w-nav-link w--current w--nav-link-open"><img width="15" height="20" src="https://blog.prokeep.com/hubfs/Icons/login-icon-01.svg" loading="lazy" alt="loggin-icon" class="image-25"> Log In</a></div>
+   </div>
+   
+ </nav>

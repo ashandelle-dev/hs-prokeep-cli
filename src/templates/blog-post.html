@@ -1,0 +1,91 @@
+<!--
+templateType: blog_post
+isAvailableForNewContent: true
+label: Blog Post
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+
+  {% set socials = [
+    {
+      "title": "Twitter",
+      "share_link": ""
+    }
+  ]
+  
+  %}
+
+<div class="hero-back"></div>
+
+<div class="listing-content post-content -mt-[250px]">
+<div class="content-wrapper">
+  
+    <div class="flex items-center gap-x-12 mb-12">
+        <!-- Twitter Share -->
+        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
+          <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
+        </a>
+
+        <!-- Facebook Share -->
+        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
+          <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
+        </a>
+
+        <!-- LinkedIn Share -->
+        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
+          <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
+        </a>
+    </div>
+  
+  
+	{% if content.featured_image %}
+	<div class="post-featured-image">
+    <img src="{{content.featured_image}}">
+	</div>
+	{% endif %}
+	<div class="blog-post{% if not content.featured_image %} no-image{% endif %}">
+		<h1 class="blog-post__title">{{ content.name }}</h1>
+		<div class="blog-post__meta">
+      <div class="author-photo">
+      <img src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}">
+      </div>
+      <div class="w-embed">Written by {{ content.blog_post_author.display_name }} &nbsp;•&nbsp;&nbsp;</div>
+      <div class="w-embed">{{ content.publish_date_local_time.strftime('%b %d, %Y') }} &nbsp;•&nbsp;&nbsp;</div>
+      <div class="w-embed">Reading Time: <span id="readingTime">{% set initialPostWords = content.post_body|striptags|wordcount %}
+								{% set calculatedPostWords = (initialPostWords/100) * 100 %}
+								{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+								{% set number = finishedPostWords|round %}
+								{% if number < 1 %}
+								{% else %}
+								{{ finishedPostWords|round }} Minutes
+								{% endif %} </span></div>
+	
+		</div>
+		<div class="blog-post__body">
+			{{ content.post_body }}
+		</div>
+		{% if content.tag_list %}
+		<div class="blog-post__tags">
+      <h4>
+        See more:
+      </h4>
+      <ul>
+       {% for tag in content.tag_list %}
+        
+        {%if !(tag == 'Type - Whitepaper' || tag == 'Type - Video' || tag == 'Type - Infographic') %}
+			<li><a class="blog-post__tag-link {{ tag.name|replace(" ","-") }}" href="{{ blog_tag_url(group.id, tag.slug) }}"><div>{{ tag.name }}</div></a></li>{% if not loop.last %}{% endif %}
+        {%endif%}
+			{% endfor %}
+       </ul>
+		</div>
+		{% endif %} 
+      
+		
+		<div class="blog-comments">
+			{% module "blog_comments" path="@hubspot/blog_comments", label="Blog Comments" %}
+		</div>
+	</div>
+</div>
+</div>
+{% endblock body %}

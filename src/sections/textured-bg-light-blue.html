@@ -1,0 +1,18 @@
+<!--
+ templateType: section
+ label: Light Blue Section Texture
+ isAvailableForNewContent: true
+ screenshotPath: ../images/light-blue-section.png
+-->
+<!-- Begin partial -->
+{% dnd_section
+    class="{{context.className || '!bg-[#9CD4D6]'}}"
+    background_image={
+        'backgroundPosition': 'BOTTOM_CENTER',
+        'backgroundSize': 'contain',
+        'imageUrl': context.backgroundImage ||  get_asset_url('./../images/bg-texture-light-blue.png')
+    }
+%}
+
+{% end_dnd_section %}
+<!-- End partial -->

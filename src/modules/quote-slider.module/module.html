@@ -1,0 +1,96 @@
+<!-- module html  -->
+{{ require_css("https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css") }}
+{{ require_js("https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js", "head") }}
+
+
+<div class="flex flex-wrap items-stretch quote-swiper relative">
+
+  <div class="swiper-wrapper h-full">
+  {% for item in module.quote_slide %}
+    <div class=" mb-24 xl:mb-0 swiper-slide h-full">
+      <div style="background-color: {{ item.qs_bg.color }}" class="p-3 md:p-6 rounded-xl relative mb-4 shadow h-full">
+        <div class="flex flex-wrap">
+          <div class="w-full">
+            <div class="mb-3 ">
+            {% if item.qs_logo.src %}
+              {% set sizeAttrs = 'width="{{ item.qs_logo.width }}" height="{{ item.qs_logo.height }}"' %}
+              {% if item.qs_logo.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.qs_logo.width }}" height="{{ item.qs_logo.height }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.qs_logo.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.qs_logo.max_width }}" height="{{ item.qs_logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.qs_logo.loading != 'disabled' ? 'loading="{{ item.qs_logo.loading }}"' : '' %}
+              <img class="" src="{{ item.qs_logo.src }}" alt="{{ item.qs_logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+            </div>
+            <div>
+              <p class="mb-3 text-[18px] md:text-[24px] leading-normal italic  text-[#192B3F]">
+                {{ item.qs_quote }}
+                </p>
+            </div>
+            <div class="flex flex-wrap lg:flex-nowrap relative">
+              <div class="w-full sm:w-6/12 mb-6 sm:mb-0">
+                
+                <p class="font-bold m-0">
+                {{ item.qs_name }}
+                </p>
+                <p class="m-0">
+                {{ item.qs_title }}
+                </p>
+              </div>
+              {% if item.qs_vimeo_id %}
+                <!-- HTML to show when checked -->
+              <div class="relative h-[56px] items-center flex w-[200px] cursor-pointer mb-2" data-modal-open="quote-modal-{{loop.index}}">
+              
+                <div class="flex items-center justify-center w-[56px] h-full absolute left-0" >
+                  <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="28.0484" cy="28" rx="28.0484" ry="28" fill="#FFFBF5"/>
+                    <path d="M39.0185 26.4013C42.3561 28.325 42.3561 33.1417 39.0185 35.0653L24.3803 43.5021C21.047 45.4233 16.8835 43.0175 16.8835 39.1701L16.8835 22.2966C16.8835 18.4492 21.047 16.0434 24.3803 17.9646L39.0185 26.4013Z" fill="#9CD4D6"/>
+                    <path d="M39.9303 23.8676C42.6004 25.4065 42.6004 29.2598 39.9303 30.7988L25.2921 39.2356C22.6254 40.7725 19.2947 38.8478 19.2947 35.77L19.2947 18.8964C19.2947 15.8185 22.6254 13.8939 25.2921 15.4308L39.9303 23.8676Z" stroke="#192B3F" stroke-width="2"/>
+                    </svg>                
+                </div>
+                <div class="py-2 pl-6 pr-3  bg-[#FFFBF5]/90 rounded-full w-full">
+                  <p class="text-[14px] whitespace-nowrap font-extrabold m-0 text-right">PLAY TESTIMONIAL</p>
+                </div>
+              </div> 
+          
+            {% endif %}
+          </div>
+          </div>
+        
+        
+          <div class="absolute left-0 -bottom-[65px] lg:-bottom-[55px] z-0">
+            <svg width="69" height="85" viewBox="0 0 69 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5.00001C0 2.23858 2.23858 0 5 0H63.3888C67.5257 0 69.873 4.73743 67.3669 8.0289L35.2343 50.2319L8.90272 83.1115C5.94908 86.7996 0 84.7111 0 79.986V5.00001Z" fill="{{ item.qs_bg.color }}"/>
+              </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+  <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-bullets-dynamic"></div>
+
+</div>
+
+{% for item in module.quote_slide %}
+
+  {% if item.qs_vimeo_id %}
+<div class="modal micromodal-slide" id="quote-modal-{{loop.index}}" aria-hidden="true">
+	<div class="modal__overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50" tabindex="-1" data-modal-close="quote-modal-{{loop.index}}">
+		<div class="modal__container relative container" role="dialog" aria-modal="true" aria-labelledby="quote-modal-container">
+			<div class="absolute -right-10 -top-10">
+				<button class="modal__close text-white text-lg" aria-label="Close modal" data-modal-close="quote-modal-{{loop.index}}"></button>
+			</div>
+
+			<main id="quote-modal-content">
+			  <iframe id="quote-modal-iframe-{{ loop.index }}" class="w-full aspect-video" scrolling="no" frameborder="0" src="https://player.vimeo.com/video/{{item.qs_vimeo_id}}?playsinline=0" allowfullscreen="true" allow="autoplay"></iframe>
+			</main>
+
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{% endfor %}

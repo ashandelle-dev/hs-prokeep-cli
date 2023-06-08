@@ -1,0 +1,18 @@
+<!--
+ templateType: section
+ label: Dark Blue Section Texture Top
+ isAvailableForNewContent: true
+ screenshotPath: ../images/dark-blue-section-top.png
+-->
+<!-- Begin partial -->
+{% dnd_section
+    class="{{context.className || '!bg-[#2A7991]'}}"
+    background_image={
+        'backgroundPosition': 'TOP_CENTER',
+        'backgroundSize': 'contain',
+        'imageUrl': context.backgroundImage ||  get_asset_url('./../images/bg-texture-dark-blue-top.png')
+    }
+%}
+
+{% end_dnd_section %}
+<!-- End partial -->

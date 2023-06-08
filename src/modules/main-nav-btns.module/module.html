@@ -1,0 +1,51 @@
+<!-- module html  -->
+{% macro login_icon() %}
+<svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_121_6011)">
+    <path d="M16.0487 19.39H5.86875C5.36875 19.39 4.96875 18.98 4.96875 18.49V14.23C4.96875 13.9 5.23875 13.63 5.56875 13.63C5.89875 13.63 6.16875 13.9 6.16875 14.23V18.19H15.7488V1.2H6.16875V4.65C6.16875 4.98 5.89875 5.25 5.56875 5.25C5.23875 5.25 4.96875 4.98 4.96875 4.65V0.9C4.96875 0.4 5.37875 0 5.86875 0H16.0487C16.5487 0 16.9488 0.41 16.9488 0.9V18.49C16.9488 18.99 16.5387 19.39 16.0487 19.39Z" fill="#DA5039"/>
+    <path d="M13.18 9.24989L9.45 5.75989C9.21 5.52989 8.83 5.54989 8.6 5.78989C8.37 6.02989 8.39 6.40989 8.63 6.63989L11.25 9.08989H0.6C0.27 9.08989 0 9.35989 0 9.68989C0 10.0199 0.27 10.2899 0.6 10.2899H11.24L8.62 12.7399C8.38 12.9699 8.36 13.3499 8.59 13.5899C8.71 13.7199 8.87 13.7799 9.03 13.7799C9.18 13.7799 9.33 13.7299 9.44 13.6199L13.17 10.1299C13.17 10.1299 13.17 10.1299 13.18 10.1199C13.41 9.87989 13.39 9.49989 13.15 9.26989L13.18 9.24989Z" fill="#DA5039"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_121_6011">
+    <rect width="16.95" height="19.39" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>  
+{% endmacro %}
+
+<div class="flex flex-row items-center justify-between lg:justify-around flex-wrap lg:flex-nowrap -mx-2 lg:mx-0">
+  {% for btn in module.main_nav_buttons %}
+    {% set href = btn.link.url.href %}
+    {% if btn.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+  <div class="mb-2 lg:mb-0 w-6/12 px-2 lg:px-0 lg:w-auto ">
+    {% if btn.button_type != "login" %}
+    <a href="{{ href }}" class="border border-[#DA5039] hover:scale-105 transition-transform duration-200 px-6 py-2 whitespace-nowrap block rounded no-underline hover:no-underline text-center {% if btn.button_type == 'primary' %}
+    bg-[#DA5039] text-white hover:text-[#DA5039] hover:bg-white  
+    {% else %}
+    text-[#DA5039] bg-white hover:bg-[#DA5039] hover:text-white  
+    {% endif %}
+    ">{{ btn.title }}</a>
+
+    {% else %}
+    <div class="flex items-center relative group">
+      <a href="{{ href }}"
+        {% if item.link.open_in_new_tab %}target="_blank"
+        {% endif %}
+        {% if item.link.rel %}
+          rel="{{ item.link.rel }}"
+        {% endif %} 
+        class="w-full h-full inset-0 absolute"></a>
+      <div class="px-1">
+        {{login_icon()}}
+      </div>
+      <div>
+        <span class="text-[#DA5039] text-[18px] whitespace-nowrap group-hover:underline">{{ btn.title }}</span>
+      </div>
+    </div>
+    {% endif %}
+    
+  </div>
+  {% endfor %}
+</div>
