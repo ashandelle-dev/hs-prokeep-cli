@@ -1,0 +1,22 @@
+[
+  {
+   "type": "image",
+   "id": "1ace1904-7b6a-11db-76b1-311cf99044ac",
+   "default": {
+    "size_type": "auto",
+    "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/logos/hardi.png",
+    "alt": "hardi",
+    "loading": "lazy",
+    "width": 205,
+    "height": 69,
+    "max_width": 205,
+    "max_height": 69
+   },
+   "resizable": true,
+   "responsive": true,
+   "show_loading": false,
+   "label": "Image",
+   "name": "image_field",
+   "occurrence": {}
+  }
+ ]

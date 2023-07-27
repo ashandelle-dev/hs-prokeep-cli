@@ -1,0 +1,31 @@
+[
+  {
+   "default": {
+    "size_type": "auto",
+    "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Group%20221.png",
+    "alt": "Group 221",
+    "loading": "lazy",
+    "width": 760,
+    "height": 464,
+    "max_width": 760,
+    "max_height": 464
+   },
+   "display_width": null,
+   "id": "2b5012c0-eef9-c213-962a-df9b24e21939",
+   "label": "Image",
+   "locked": false,
+   "name": "vp_image",
+   "required": false,
+   "resizable": true,
+   "responsive": true,
+   "show_loading": false,
+   "type": "image"
+  },
+  {
+   "type": "text",
+   "id": "5895f9c9-46fc-c022-cb64-19a31c84d19d",
+   "validation_regex": "",
+   "label": "Vimeo ID",
+   "name": "vp_vimeo_id"
+  }
+ ]

@@ -1,0 +1,205 @@
+[
+  {
+   "type": "group",
+   "id": "1682630a-690b-a42d-d0a6-a3e570269c8f",
+   "label": "Menu Item",
+   "children": [
+    {
+     "type": "text",
+     "id": "101f72c8-5aff-073a-d7b0-98dab349484a",
+     "validation_regex": "",
+     "label": "Title",
+     "name": "title"
+    },
+    {
+     "type": "link",
+     "id": "9d50493d-598f-3a54-8d89-19f33d0a5764",
+     "default": {
+      "url": {
+       "content_id": null,
+       "type": "EXTERNAL",
+       "href": ""
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+     },
+     "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS",
+      "BLOG",
+      "CALL_TO_ACTION",
+      "PHONE_NUMBER",
+      "WHATSAPP_NUMBER"
+     ],
+     "label": "Link",
+     "name": "link"
+    },
+    {
+     "type": "group",
+     "id": "92940fe5-b70a-6ce6-3da6-09ecdf8fd284",
+     "label": "Dropdown",
+     "children": [
+      {
+       "type": "text",
+       "id": "6e2db515-b693-e6ec-8ef0-4b915224fc2e",
+       "validation_regex": "",
+       "label": "Title",
+       "name": "title"
+      },
+      {
+       "type": "text",
+       "id": "fbaffab2-d8b6-8b48-b5ec-7744e8cb8ff9",
+       "validation_regex": "",
+       "label": "Paragraph",
+       "name": "paragraph"
+      },
+      {
+       "type": "link",
+       "id": "ea685616-af67-4cf0-051d-655b3b4c0973",
+       "default": {
+        "url": {
+         "content_id": null,
+         "type": "EXTERNAL",
+         "href": ""
+        },
+        "open_in_new_tab": false,
+        "no_follow": false
+       },
+       "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG",
+        "CALL_TO_ACTION",
+        "PHONE_NUMBER",
+        "WHATSAPP_NUMBER"
+       ],
+       "label": "Link",
+       "name": "link"
+      },
+      {
+       "type": "group",
+       "id": "cf0213e1-332a-d769-7389-2d94bf43c812",
+       "label": "Children",
+       "children": [
+        {
+         "type": "text",
+         "id": "8c0c26ba-b69a-f8d8-f7d0-a34d3607ab8b",
+         "validation_regex": "",
+         "label": "Title",
+         "name": "title"
+        },
+        {
+         "type": "text",
+         "id": "66ba1a55-0d08-1af8-46d9-61d05148fc8c",
+         "validation_regex": "",
+         "label": "Text",
+         "name": "text"
+        },
+        {
+         "type": "link",
+         "id": "8ff44151-70c8-73cf-9b40-6c50b5bf0511",
+         "default": {
+          "url": {
+           "content_id": null,
+           "type": "EXTERNAL",
+           "href": ""
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+         },
+         "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG",
+          "CALL_TO_ACTION",
+          "PHONE_NUMBER",
+          "WHATSAPP_NUMBER"
+         ],
+         "label": "Link",
+         "name": "link"
+        }
+       ],
+       "name": "children",
+       "default": {
+        "link": {
+         "url": {
+          "content_id": null,
+          "type": "EXTERNAL",
+          "href": ""
+         },
+         "open_in_new_tab": false,
+         "no_follow": false
+        }
+       },
+       "occurrence": {}
+      }
+     ],
+     "name": "dropdown",
+     "default": {
+      "link": {
+       "url": {
+        "content_id": null,
+        "type": "EXTERNAL",
+        "href": ""
+       },
+       "open_in_new_tab": false,
+       "no_follow": false
+      },
+      "children": {
+       "link": {
+        "url": {
+         "content_id": null,
+         "type": "EXTERNAL",
+         "href": ""
+        },
+        "open_in_new_tab": false,
+        "no_follow": false
+       }
+      }
+     },
+     "occurrence": {}
+    }
+   ],
+   "name": "menu_item",
+   "default": {
+    "link": {
+     "url": {
+      "content_id": null,
+      "type": "EXTERNAL",
+      "href": ""
+     },
+     "open_in_new_tab": false,
+     "no_follow": false
+    },
+    "dropdown": {
+     "link": {
+      "url": {
+       "content_id": null,
+       "type": "EXTERNAL",
+       "href": ""
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+     },
+     "children": {
+      "link": {
+       "url": {
+        "content_id": null,
+        "type": "EXTERNAL",
+        "href": ""
+       },
+       "open_in_new_tab": false,
+       "no_follow": false
+      }
+     }
+    }
+   },
+   "occurrence": {}
+  }
+ ]

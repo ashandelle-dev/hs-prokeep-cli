@@ -1,0 +1,65 @@
+[
+  {
+   "type": "image",
+   "id": "2a86805c-fca5-61f4-9d99-74bc65f447f9",
+   "default": {
+    "size_type": "auto",
+    "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/texture-teal.png",
+    "alt": "texture-teal",
+    "loading": "lazy",
+    "width": 263,
+    "height": 477,
+    "max_width": 263,
+    "max_height": 477
+   },
+   "resizable": true,
+   "responsive": true,
+   "show_loading": false,
+   "label": "Texture Graphic",
+   "name": "tso_texture_graphic"
+  },
+  {
+   "type": "choice",
+   "id": "39b52964-f9be-7729-f5ea-be7c217b7515",
+   "display": "radio",
+   "choices": [
+    [
+     "left",
+     "Left"
+    ],
+    [
+     "center",
+     "Center"
+    ],
+    [
+     "right",
+     "Right"
+    ]
+   ],
+   "label": "Texture Position",
+   "name": "texture_position",
+   "default": "left"
+  },
+  {
+   "type": "number",
+   "id": "da5fc715-2618-1f73-a902-19d5a8529e06",
+   "display": "text",
+   "step": 1,
+   "label": "X axis",
+   "name": "x_axis",
+   "min": -100,
+   "max": 100,
+   "default": 0
+  },
+  {
+   "type": "number",
+   "id": "d79bb44c-1ce5-ad8f-23e6-aac2fea51e07",
+   "display": "text",
+   "step": 1,
+   "label": "Y Axis",
+   "name": "y_axis",
+   "min": -100,
+   "max": 100,
+   "default": -50
+  }
+ ]

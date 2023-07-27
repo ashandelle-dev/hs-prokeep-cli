@@ -1,0 +1,128 @@
+[
+  {
+   "allow_new_line": false,
+   "display_width": null,
+   "id": "e00f9add-5313-5ca1-53df-1d05da2866cb",
+   "label": "Header",
+   "locked": false,
+   "name": "qb_header",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "allow_new_line": false,
+   "display_width": null,
+   "id": "d0c8c5e8-136d-8f39-81d2-75bab001abde",
+   "label": "Paragraph",
+   "locked": false,
+   "name": "qb_paragraph",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "default": {
+    "url": {
+     "type": "EXTERNAL",
+     "href": "",
+     "content_id": null
+    },
+    "open_in_new_tab": false,
+    "no_follow": false
+   },
+   "display_width": null,
+   "id": "6178ce48-794b-8342-b0b9-4f7f13f05d76",
+   "label": "Button Link",
+   "locked": false,
+   "name": "qb_button_link",
+   "required": false,
+   "show_advanced_rel_options": false,
+   "supported_types": [
+    "EXTERNAL",
+    "CONTENT",
+    "FILE",
+    "EMAIL_ADDRESS",
+    "BLOG",
+    "CALL_TO_ACTION"
+   ],
+   "type": "link"
+  },
+  {
+   "allow_new_line": false,
+   "default": "Learn more",
+   "display_width": null,
+   "id": "4eacc7fd-a9c1-0b40-efe4-5168d424f57c",
+   "label": "Button Text",
+   "locked": false,
+   "name": "qb_button_text",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "default": {
+    "color": "#57a7b9",
+    "opacity": 100
+   },
+   "display_width": null,
+   "id": "bef0837c-c603-a78d-592a-bbec996a81dd",
+   "label": "Background Color",
+   "locked": false,
+   "name": "qb_bg_color",
+   "required": false,
+   "show_opacity": false,
+   "type": "color"
+  },
+  {
+   "default": {
+    "color": "#FFFFFF",
+    "opacity": 100
+   },
+   "display_width": null,
+   "id": "b82cda79-816e-13b8-698c-05167637ee0f",
+   "label": "Text Color",
+   "locked": false,
+   "name": "qb_text_color",
+   "required": false,
+   "show_opacity": false,
+   "type": "color"
+  },
+  {
+   "default": {
+    "size_type": "auto",
+    "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/pk-callout-image.jpg",
+    "alt": "pk-callout-image",
+    "loading": "lazy",
+    "width": 1534,
+    "height": 794,
+    "max_width": 1534,
+    "max_height": 794
+   },
+   "display_width": null,
+   "id": "61d897b0-04e4-c9ff-0e90-694092a408c7",
+   "label": "Image",
+   "locked": false,
+   "name": "qb_image",
+   "required": false,
+   "resizable": true,
+   "responsive": true,
+   "show_loading": false,
+   "type": "image"
+  },
+  {
+   "allow_new_line": false,
+   "display_width": null,
+   "id": "5abdeb83-ba22-1e6a-6647-b0ef3bed34cd",
+   "label": "Popup Vimeo ID",
+   "locked": false,
+   "name": "qb_vimeo_id",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  }
+ ]
