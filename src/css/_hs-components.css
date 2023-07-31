@@ -53,3 +53,30 @@
     @apply m-0;
   }
 }
+
+#hs-eu-cookie-confirmation {
+    top: auto;
+    bottom: 32px;
+    width: 100%;
+}
+
+#hs-eu-cookie-confirmation, #hs-eu-cookie-confirmation > * :focus, #hs-categories-container > * :focus {
+  outline: 0;
+}
+
+#hs-eu-cookie-confirmation-inner {
+  display: flex;
+}
+
+#hs-eu-policy-wording, #hs-eu-cookie-disclaimer, #hs-eu-cookie-confirmation-buttons-area {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+#hs-eu-policy-wording p {
+  margin-bottom: 0;
+}
+
+#hs-eu-cookie-confirmation-buttons-area {
+  margin-top: 0;
+}
