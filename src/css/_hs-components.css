@@ -54,18 +54,27 @@
   }
 }
 
+
 #hs-eu-cookie-confirmation {
-    top: auto;
-    bottom: 32px;
-    width: 100%;
+    width: 95% !important;
+
+    @media (max-width: 418px) {
+      width: 100% !important;
+    }
 }
 
 #hs-eu-cookie-confirmation, #hs-eu-cookie-confirmation > * :focus, #hs-categories-container > * :focus {
   outline: 0;
 }
 
+
 #hs-eu-cookie-confirmation-inner {
   display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
 }
 
 #hs-eu-policy-wording, #hs-eu-cookie-disclaimer, #hs-eu-cookie-confirmation-buttons-area {
