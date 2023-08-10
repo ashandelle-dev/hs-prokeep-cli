@@ -27,6 +27,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@hubspot/cms-cli": "^2.2.3",
     "@vimeo/player": "^2.18.0",
     "ajv": "^8.11.0",
     "flickity": "^3.0.0",
