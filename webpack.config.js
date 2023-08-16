@@ -27,12 +27,12 @@ module.exports = ({ account, autoupload }) => ({
     },
 
     plugins: [
-        new HubSpotAutoUploadPlugin({
-            account,
-            autoupload,
-            src: "dist",
-            dest: "pk-theme/cli-build",
-        }),
+        //new HubSpotAutoUploadPlugin({
+        //    account,
+        //    autoupload,
+        //    src: "dist",
+        //    dest: "pk-theme/cli-build",
+        //}),
         new CopyWebpackPlugin({
             patterns: [
                 { from: "src/css/main.css", to: "css" },
