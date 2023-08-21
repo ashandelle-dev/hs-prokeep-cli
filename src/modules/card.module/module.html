@@ -38,7 +38,7 @@
 
 {% if module.card_style == "stacked" %}
 <div class="rounded-lg overflow-hidden shadow-lg relative">
-  <div class="h-[230px]">
+  <div>
     {% if module.card_thumbnail.src %}
     {% set sizeAttrs = 'width="{{ module.card_thumbnail.width }}" height="{{ module.card_thumbnail.height }}"' %}
     {% if module.card_thumbnail.size_type == 'auto' %}
@@ -47,7 +47,7 @@
       {% set sizeAttrs = 'width="{{ module.card_thumbnail.max_width }}" height="{{ module.card_thumbnail.max_height }}" style="max-width: 100%; height: auto;"' %}
     {% endif %}
       {% set loadingAttr = module.card_thumbnail.loading != 'disabled' ? 'loading="{{ module.card_thumbnail.loading }}"' : '' %}
-    <img class="w-full h-full object-cover" src="{{ module.card_thumbnail.src }}" alt="{{ module.card_thumbnail.alt }}" {{ loadingAttr }}>
+    <img class="w-full object-cover" src="{{ module.card_thumbnail.src }}" alt="{{ module.card_thumbnail.alt }}" {{ loadingAttr }}>
     {% endif %}
 
   </div>

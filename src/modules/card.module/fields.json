@@ -99,7 +99,11 @@
       [
        "link",
        "Link"
-      ]
+      ],
+       [
+        "none",
+        "None"
+       ]
      ],
      "default": "btn",
      "display": "radio",
