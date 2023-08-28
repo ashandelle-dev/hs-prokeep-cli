@@ -6,6 +6,16 @@
   justify-content: space-between;
 }
 
+::-webkit-scrollbar-track {
+  height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hs-tabs__scroll {
+    overflow-x: scroll;
+  }
+}
+
 .hs-tabs__nudge {
   position: absolute;
   top: 0;

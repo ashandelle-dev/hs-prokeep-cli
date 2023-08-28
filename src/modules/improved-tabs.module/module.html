@@ -181,10 +181,18 @@
 
 {# Tabs module #}
 <section class="hs-tabs-wrapper">
-
+  
   {# Tab #}
   <div class="hs-tabs">
-    
+    <button class="hs-tabs__nudge hs-tabs__nudge--left" aria-label="{{ module.default_text.left_nudge_button_label }}">
+      {% icon "prev_icon"
+        extra_classes="hs-tabs-nudge-icon",
+        name="angle-left",
+        purpose="decorative",
+        style="SOLID",
+        unicode="f105"
+      %}
+    </button>
     <div class="hs-tabs__scroll" >
       <div class="hs-tabs__tab-wrapper" role="tablist" aria-label="{{ module.default_text.tabs_list_aria_label }}">
         {% for tab in module.tabs %}
@@ -201,7 +209,15 @@
         {% endfor %}
       </div>
     </div>
-    
+    <button class="hs-tabs__nudge hs-tabs__nudge--right" aria-label="{{ module.default_text.right_nudge_button_label }}">
+      {% icon "next_icon"
+        extra_classes="hs-tabs-nudge-icon",
+        name="angle-right",
+        purpose="decorative",
+        style="SOLID",
+        unicode="f105"
+      %}
+    </button>
   </div>
 
   {# Tab content #}

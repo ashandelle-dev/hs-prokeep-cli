@@ -252,7 +252,6 @@ const tabPanel = tabsContainer => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabsWrapper = document.querySelectorAll('.hs-tabs-wrapper');
-
   if (tabsWrapper) {
     tabsWrapper.forEach(panel => {
       tabPanel(panel);
