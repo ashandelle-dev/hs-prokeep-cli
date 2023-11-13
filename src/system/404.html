@@ -7,12 +7,14 @@
 
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="error-page" data-error="404">
-    <h1 class="error-page_heading">
-      Page not found.
-    </h1>
+<div class="content-wrapper flex flex-wrap items-center px-10 md:px-20">
+  <div class="w-full md:w-1/2">
+    <h2>404 — Page not found</h2>
+    <p>Keep on, keepin’ on... to a page that actually exists!</p>
     <a class="hs-button" href="/">Go Home</a>
+  </div>
+  <div class="w-full md:w-1/2" data-error="404">
+    <img src="https://www.prokeep.com/hubfs/404.svg">
   </div>
 </div>
 {% endblock body %}

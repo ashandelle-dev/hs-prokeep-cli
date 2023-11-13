@@ -6,14 +6,36 @@
   justify-content: space-between;
 }
 
-::-webkit-scrollbar-track {
-  height: 0;
-}
-
 @media screen and (max-width: 768px) {
   .hs-tabs__scroll {
     overflow-x: scroll;
   }
+}
+
+.hs-tabs__scroll::-webkit-scrollbar {
+    display: block;
+    height: 5px;
+}
+.hs-tabs__scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.hs-tabs__scroll::-webkit-scrollbar-thumb {
+    background-color: #2a7991;
+    border-right: none;
+    border-left: none;
+  width: 10px;
+    
+}
+
+.hs-tabs__scroll::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-left: 16px; 
+}
+
+.hs-tabs__scroll::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-right: 16px;
 }
 
 .hs-tabs__nudge {
@@ -22,7 +44,7 @@
   bottom: 0;
   display: none;
   box-sizing: border-box;
-  height: 80%;
+  height: 16px;
   width: 16px;
   align-items: center;
 }
@@ -45,13 +67,14 @@
   font-weight: inherit;
   letter-spacing: inherit;
   line-height: inherit;
+  outline: none;
   text-align: left;
   text-decoration: none;
   transition: none;
 
   margin: auto 0;
   padding: 0;
-  background: #fff;
+  background: transparent;
   /* stylelint-enable */
 }
 
@@ -63,9 +86,7 @@
 .hs-tabs__nudge--right:active,
 .hs-tabs__nudge--right:hover,
 .hs-tabs__nudge--right:focus {
-  right: 0;
-  border: 1px solid #ccc;
-  border-right: none;
+  right: -16px;
   justify-content: flex-end;
 }
 
@@ -74,22 +95,20 @@
 .hs-tabs__nudge--left:hover,
 .hs-tabs__nudge--left:focus {
   z-index: 1;
-  left: 0;
-  border: 1px solid #ccc;
-  border-left: none;
+  left: -16px;
   justify-content: flex-start;
 }
 
 .hs-tabs-nudge-icon {
   display: flex;
-  height: 100%;
-  width: 8px;
+  height: 16px;
+  width: 16px;
   align-items: center;
   fill: currentColor;
 }
 
 .hs-tabs-nudge-icon svg {
-  width: 8px;
+  width: 16px;
 }
 
 .hs-tabs__tab-wrapper {
@@ -149,6 +168,7 @@
 }
 
 .hs-tabs__tab[aria-selected='true'] {
+  border-bottom: 0 !important;
   border-bottom-color: #fff;
   background: #fff;
   font-weight: bold;
@@ -202,6 +222,10 @@
   padding: 2.8rem;
 }
 
+.hs-tabs__content__panel .hs-cta-embed {
+  height: auto !important;
+}
+
 .tab-cta-button {
   background: #DA5039;
   border: 1px solid rgb(218, 80, 57, 0);
@@ -228,7 +252,7 @@
 
   .hs-tabs__nudge {
     display: flex;
-    width: 48px;
+    width: 16px;
     justify-content: center;
   }
 
