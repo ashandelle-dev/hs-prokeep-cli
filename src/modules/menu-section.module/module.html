@@ -51,8 +51,8 @@
         rel="{{ item.link.rel }}"
       {% endif %} >{{ item.title }}</a>
 
-      {% if item.dropdown|length > 0 %}
-      <div class="lg:absolute lg:w-[250px] lg:group-hover/main:block lg:hidden rounded-xl lg:bg-[#F4B74E] lg:shadow-lg ">
+      {% if item.dropdown|length > 0 %} 
+      <div class="lg:absolute lg:min-w-[250px] lg:group-hover/main:block lg:hidden rounded-xl lg:bg-[#F4B74E] lg:shadow-lg ">
         
         {% for dropdown in item.dropdown %}
       
@@ -60,8 +60,8 @@
           {% if dropdown.link.url.type is equalto "EMAIL_ADDRESS" %}
             {% set dropdownHref = "mailto:" + dropdownHref %}
           {% endif %}
-        <div class="group/dropdown mb-6 lg:mb-0 lg:hover:bg-[#FFD387] bg-[#F4B74E] rounded-xl sub-menu">
-          <div class="py-3 lg:py-6 px-8 h-full relative cursor-pointer">
+        <div class="group/dropdown mb-3 lg:mb-0 lg:hover:bg-[#FFD387] rounded-xl sub-menu">
+          <div class="lg:py-6 px-8 h-full relative cursor-pointer">
         
             {{menu_bar("group-hover/dropdown:block")}}
           
@@ -78,7 +78,7 @@
                   {% set childhref = "mailto:" + childhref %}
                 {% endif %}
                 
-              <div class="py-3 px-8 h-full relative group/child cursor-pointer">
+              <div class="py-1 lg:py-3 px-8 h-full relative group/child cursor-pointer">
             
                 {{menu_bar("group-hover/child:block")}}
             
