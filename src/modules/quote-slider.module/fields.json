@@ -1,116 +1,112 @@
-[
-  {
-   "children": [
-    {
-     "default": {
-      "color": "#ff7e69",
-      "opacity": 100
-     },
-     "display_width": null,
-     "id": "d1819874-56d0-ab0f-9442-8872a9c0d5ea",
-     "label": "Background Color",
-     "locked": false,
-     "name": "qs_bg",
-     "required": false,
-     "show_opacity": false,
-     "type": "color"
-    },
-    {
-     "default": {
-      "size_type": "auto",
-      "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/logos/hardi.png",
-      "alt": "hardi",
-      "loading": "lazy",
-      "width": 205,
-      "height": 69,
-      "max_width": 205,
-      "max_height": 69
-     },
-     "display_width": null,
-     "id": "f73d55bb-6364-19f7-e354-0b960e820b12",
-     "label": "Logo",
-     "locked": false,
-     "name": "qs_logo",
-     "required": false,
-     "resizable": true,
-     "responsive": true,
-     "show_loading": false,
-     "type": "image"
-    },
-    {
-     "allow_new_line": false,
-     "display_width": null,
-     "id": "0d16ac26-793f-21c0-9610-04971f721117",
-     "label": "Quote",
-     "locked": false,
-     "name": "qs_quote",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    },
-    {
-     "allow_new_line": false,
-     "display_width": null,
-     "id": "d73f3e7a-9aa9-ffb5-4503-8d651f22bc3c",
-     "label": "Name",
-     "locked": false,
-     "name": "qs_name",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    },
-    {
-     "allow_new_line": false,
-     "display_width": null,
-     "id": "e9b9e42b-bff9-f09e-6887-6fc071ed1fd2",
-     "label": "Title",
-     "locked": false,
-     "name": "qs_title",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    },
-    {
-     "allow_new_line": false,
-     "display_width": null,
-     "id": "7ccafebc-0c83-7531-b22e-3a1258b67369",
-     "label": "Vimeo ID",
-     "locked": false,
-     "name": "qs_vimeo_id",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
+[ {
+  "id" : "b7dfb81b-bab7-d4d9-e88d-3d09cd1d458b",
+  "name" : "quote_slide",
+  "display_width" : null,
+  "label" : "Quote Slide",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "d1819874-56d0-ab0f-9442-8872a9c0d5ea",
+    "name" : "qs_bg",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "show_opacity" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#ff7e69",
+      "opacity" : 100
     }
-   ],
-   "default": {
-    "qs_bg": {
-     "color": "#ff7e69",
-     "opacity": 100
-    },
-    "qs_logo": {
-     "size_type": "auto",
-     "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/logos/hardi.png",
-     "alt": "hardi",
-     "loading": "lazy",
-     "width": 205,
-     "height": 69,
-     "max_width": 205,
-     "max_height": 69
+  }, {
+    "id" : "f73d55bb-6364-19f7-e354-0b960e820b12",
+    "name" : "qs_logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/logos/hardi.png",
+      "alt" : "hardi",
+      "loading" : "lazy",
+      "width" : 205,
+      "height" : 69,
+      "max_width" : 205,
+      "max_height" : 69
     }
-   },
-   "display_width": null,
-   "expanded": false,
-   "id": "b7dfb81b-bab7-d4d9-e88d-3d09cd1d458b",
-   "label": "Quote Slide",
-   "locked": false,
-   "name": "quote_slide",
-   "occurrence": {},
-   "required": false,
-   "tab": "CONTENT",
-   "type": "group"
+  }, {
+    "id" : "0d16ac26-793f-21c0-9610-04971f721117",
+    "name" : "qs_quote",
+    "display_width" : null,
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "d73f3e7a-9aa9-ffb5-4503-8d651f22bc3c",
+    "name" : "qs_name",
+    "display_width" : null,
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "e9b9e42b-bff9-f09e-6887-6fc071ed1fd2",
+    "name" : "qs_title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "7ccafebc-0c83-7531-b22e-3a1258b67369",
+    "name" : "qs_vimeo_id",
+    "display_width" : null,
+    "label" : "Vimeo ID",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "qs_bg" : {
+      "color" : "#ff7e69",
+      "opacity" : 100
+    },
+    "qs_logo" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/PK%20Theme/logos/hardi.png",
+      "alt" : "hardi",
+      "loading" : "lazy",
+      "width" : 205,
+      "height" : 69,
+      "max_width" : 205,
+      "max_height" : 69
+    }
   }
- ]
+} ]

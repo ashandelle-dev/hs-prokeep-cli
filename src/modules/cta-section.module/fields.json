@@ -1,41 +1,44 @@
-[
-  {
-   "type": "text",
-   "id": "4223c266-d8aa-aa80-09fd-9e5013d1c2c7",
-   "validation_regex": "",
-   "label": "Header",
-   "name": "cta_section_header",
-   "default": "Streamline operations and make bigger sales with Prokeep"
-  },
-  {
-   "type": "link",
-   "id": "d4ab65ab-2c0a-7f23-62c2-319da2c1b181",
-   "default": {
-    "url": {
-     "content_id": null,
-     "type": "EXTERNAL",
-     "href": ""
+[ {
+  "id" : "4223c266-d8aa-aa80-09fd-9e5013d1c2c7",
+  "name" : "cta_section_header",
+  "display_width" : null,
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Streamline operations and make bigger sales with Prokeep"
+}, {
+  "id" : "d4ab65ab-2c0a-7f23-62c2-319da2c1b181",
+  "name" : "cta_section_link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
     },
-    "open_in_new_tab": false,
-    "no_follow": false
-   },
-   "supported_types": [
-    "EXTERNAL",
-    "CONTENT",
-    "FILE",
-    "EMAIL_ADDRESS",
-    "BLOG",
-    "CALL_TO_ACTION"
-   ],
-   "label": "Link",
-   "name": "cta_section_link"
-  },
-  {
-   "type": "text",
-   "id": "8b21961b-6e44-dbc6-f855-a63f1cba837e",
-   "validation_regex": "",
-   "label": "Button Text",
-   "name": "cta_section_btn_text",
-   "default": "Get a Demo"
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
- ]
+}, {
+  "id" : "8b21961b-6e44-dbc6-f855-a63f1cba837e",
+  "name" : "cta_section_btn_text",
+  "display_width" : null,
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Get a Demo"
+} ]

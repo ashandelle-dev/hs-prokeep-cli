@@ -1,15 +1,8 @@
 {
-  "label": "Mobile App Video",
-  "css_assets": [],
-  "external_js": [],
-  "global": true,
-  "help_text": "",
-  "host_template_types": [
-    "PAGE"
-  ],
-  "js_assets": [],
-  "other_assets": [],
-  "smart_type": "NOT_SMART",
-  "tags": [],
-  "is_available_for_new_content": false
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 110521650977,
+  "label" : "Mobile App Video",
+  "is_available_for_new_content" : false
 }

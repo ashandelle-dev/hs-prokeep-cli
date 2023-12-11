@@ -1,16 +1,19 @@
-[
-  {
-   "type": "hubdbtable",
-   "id": "a67f90c5-b1e4-d311-e0b1-264f5dc398ee",
-   "label": "Filter Table",
-   "name": "fg_filter_table",
-   "default": 5948960
-  },
-  {
-   "type": "hubdbtable",
-   "id": "8836fab1-fd47-f87b-b81c-2903db118df3",
-   "label": "Grid table",
-   "name": "fg_grid_table",
-   "default": 5948983
-  }
- ]
+[ {
+  "id" : "a67f90c5-b1e4-d311-e0b1-264f5dc398ee",
+  "name" : "fg_filter_table",
+  "display_width" : null,
+  "label" : "Filter Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 5948960
+}, {
+  "id" : "8836fab1-fd47-f87b-b81c-2903db118df3",
+  "name" : "fg_grid_table",
+  "display_width" : null,
+  "label" : "Grid table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 5948983
+} ]

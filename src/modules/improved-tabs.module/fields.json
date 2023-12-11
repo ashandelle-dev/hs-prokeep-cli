@@ -37,13 +37,14 @@
     "preset" : null,
     "type" : "choice"
   }, {
-    "name": "reverse_mobile",
+    "id" : "tabs.reverse_mobile",
+    "name" : "reverse_mobile",
     "display_width" : null,
     "label" : "Reverse order on mobile",
     "required" : false,
     "locked" : false,
+    "display" : "toggle",
     "type" : "boolean",
-    "display":"toggle",
     "default" : false
   }, {
     "id" : "0393e495-5422-3baf-2d1b-8e7d8469b8cb",

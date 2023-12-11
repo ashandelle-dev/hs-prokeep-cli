@@ -1,136 +1,125 @@
-[
-  {
-   "default": {
-    "color": "#9CD4D6",
-    "opacity": 100
-   },
-   "display_width": null,
-   "id": "0ae76d57-e2bd-ed09-fb0b-22f5d268e2d7",
-   "label": "Background Color",
-   "locked": false,
-   "name": "banner_background_color",
-   "required": false,
-   "show_opacity": false,
-   "type": "color"
-  },
-  {
-   "type": "text",
-   "id": "a30b573a-55f6-cf3b-36a4-a267b39b7209",
-   "validation_regex": "",
-   "label": "Banner Label",
-   "name": "banner_label",
-   "default": ""
-  },
-  {
-   "allow_new_line": false,
-   "default": "Payments",
-   "display_width": null,
-   "id": "079f7c00-70d2-c915-bfa7-0e8366207549",
-   "label": "Banner Title",
-   "locked": false,
-   "name": "banner_title",
-   "required": false,
-   "show_emoji_picker": false,
-   "type": "text",
-   "validation_regex": ""
-  },
-  {
-   "allow_new_line": false,
-   "default": "Get paid faster by collecting order payments digitally through the same interface you’re already messaging your customer through.",
-   "display_width": null,
-   "id": "d7bf9aac-3f6f-0124-9a52-8caf38650e48",
-   "label": "Banner Subtitle",
-   "locked": false,
-   "name": "banner_subtitle",
-   "required": false,
-   "show_emoji_picker": false,
-   "type": "text",
-   "validation_regex": ""
-  },
-  {
-   "children": [
-    {
-     "default": {
-      "url": {
-       "type": "EXTERNAL",
-       "href": "https://www.prokeep.com/demo",
-       "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-     },
-     "display_width": null,
-     "id": "7bbc9b8c-e471-ef56-85ac-0f083bb181d1",
-     "label": "Button Link",
-     "locked": false,
-     "name": "button_link",
-     "required": false,
-     "show_advanced_rel_options": false,
-     "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS",
-      "BLOG"
-     ],
-     "type": "link"
-    },
-    {
-     "allow_new_line": false,
-     "default": "Get a Demo",
-     "display_width": null,
-     "id": "43626f18-3fba-e134-8e06-7e06030a8cc5",
-     "label": "Button Text",
-     "locked": false,
-     "name": "button_text",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    }
-   ],
-   "default": {
-    "button_link": {
-     "url": {
-      "type": "EXTERNAL",
-      "href": "https://www.prokeep.com/demo",
-      "content_id": null
-     },
-     "open_in_new_tab": false,
-     "no_follow": false
-    },
-    "button_text": "Get a Demo"
-   },
-   "display_width": null,
-   "expanded": false,
-   "id": "ef363c72-0ea5-f888-697a-8bd3a4d9fc8f",
-   "label": "Banner Button",
-   "locked": false,
-   "name": "banner_button",
-   "required": false,
-   "tab": "CONTENT",
-   "type": "group"
-  },
-  {
-   "default": {
-    "size_type": "auto",
-    "src": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/image-placeholder%204.png",
-    "alt": "image-placeholder 4",
-    "loading": "lazy",
-    "width": 1490,
-    "height": 882,
-    "max_width": 1490,
-    "max_height": 882
-   },
-   "display_width": null,
-   "id": "4ea1924c-3164-436e-2312-8112d2d60899",
-   "label": "Banner image",
-   "locked": false,
-   "name": "banner_image",
-   "required": false,
-   "resizable": true,
-   "responsive": true,
-   "show_loading": false,
-   "type": "image"
+[ {
+  "id" : "0ae76d57-e2bd-ed09-fb0b-22f5d268e2d7",
+  "name" : "banner_background_color",
+  "display_width" : null,
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "show_opacity" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#9CD4D6",
+    "opacity" : 100
   }
- ]
+}, {
+  "id" : "a30b573a-55f6-cf3b-36a4-a267b39b7209",
+  "name" : "banner_label",
+  "display_width" : null,
+  "label" : "Banner Label",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "079f7c00-70d2-c915-bfa7-0e8366207549",
+  "name" : "banner_title",
+  "display_width" : null,
+  "label" : "Banner Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Payments"
+}, {
+  "id" : "d7bf9aac-3f6f-0124-9a52-8caf38650e48",
+  "name" : "banner_subtitle",
+  "display_width" : null,
+  "label" : "Banner Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Get paid faster by collecting order payments digitally through the same interface you’re already messaging your customer through."
+}, {
+  "id" : "ef363c72-0ea5-f888-697a-8bd3a4d9fc8f",
+  "name" : "banner_button",
+  "display_width" : null,
+  "label" : "Banner Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7bbc9b8c-e471-ef56-85ac-0f083bb181d1",
+    "name" : "button_link",
+    "display_width" : null,
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.prokeep.com/demo",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "43626f18-3fba-e134-8e06-7e06030a8cc5",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Get a Demo"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.prokeep.com/demo",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "button_text" : "Get a Demo"
+  }
+}, {
+  "id" : "4ea1924c-3164-436e-2312-8112d2d60899",
+  "name" : "banner_image",
+  "display_width" : null,
+  "label" : "Banner image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/image-placeholder%204.png",
+    "alt" : "image-placeholder 4",
+    "loading" : "lazy",
+    "width" : 1490,
+    "height" : 882,
+    "max_width" : 1490,
+    "max_height" : 882
+  }
+} ]

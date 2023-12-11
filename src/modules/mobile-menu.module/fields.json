@@ -1,12 +1,10 @@
-[
-  {
-   "default": 47972456782,
-   "display_width": null,
-   "id": "primary_menu_field",
-   "label": "Primary menu field",
-   "locked": false,
-   "name": "primary_menu_field",
-   "required": false,
-   "type": "menu"
-  }
- ]
+[ {
+  "id" : "primary_menu_field",
+  "name" : "primary_menu_field",
+  "display_width" : null,
+  "label" : "Primary menu field",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu",
+  "default" : 47972456782
+} ]

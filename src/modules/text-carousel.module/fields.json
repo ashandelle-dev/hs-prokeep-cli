@@ -1,46 +1,46 @@
-[
-  {
-   "children": [
-    {
-     "allow_new_line": false,
-     "default": "Own it",
-     "display_width": null,
-     "id": "1a4e1822-0c7c-c765-86d4-c9af3d90317f",
-     "label": "Title",
-     "locked": false,
-     "name": "tc_title",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    },
-    {
-     "allow_new_line": false,
-     "default": "Persistence and personal growth drive the results - and the rewards! - that we all enjoy.",
-     "display_width": null,
-     "id": "d80986e3-6ef5-23c9-d935-d435ecc6056d",
-     "label": "Paragraph",
-     "locked": false,
-     "name": "tc_paragraph",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    }
-   ],
-   "default": {
-    "tc_title": "Own it",
-    "tc_paragraph": "Persistence and personal growth drive the results - and the rewards! - that we all enjoy."
-   },
-   "display_width": null,
-   "expanded": false,
-   "id": "539a4a09-1ba5-d60b-1f93-33839721a47c",
-   "label": "Slide",
-   "locked": false,
-   "name": "tc_slides",
-   "occurrence": {},
-   "required": false,
-   "tab": "CONTENT",
-   "type": "group"
+[ {
+  "id" : "539a4a09-1ba5-d60b-1f93-33839721a47c",
+  "name" : "tc_slides",
+  "display_width" : null,
+  "label" : "Slide",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1a4e1822-0c7c-c765-86d4-c9af3d90317f",
+    "name" : "tc_title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Own it"
+  }, {
+    "id" : "d80986e3-6ef5-23c9-d935-d435ecc6056d",
+    "name" : "tc_paragraph",
+    "display_width" : null,
+    "label" : "Paragraph",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Persistence and personal growth drive the results - and the rewards! - that we all enjoy."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "tc_title" : "Own it",
+    "tc_paragraph" : "Persistence and personal growth drive the results - and the rewards! - that we all enjoy."
   }
- ]
+} ]
