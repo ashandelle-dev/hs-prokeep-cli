@@ -70,7 +70,7 @@
           </div>
 
           {% if dropdown.children|length > 0 %}
-          <div class="lg:absolute p-3 bg-white top-0 left-0 lg:translate-x-[240px] lg:w-[300px] lg:shadow-lg lg:group-hover/dropdown:block lg:rounded-r-xl lg:rounded-b-xl hidden child-dropdown">
+          <div class="lg:absolute p-3 bg-white top-0 left-0 lg:translate-x-[170px] z-10 lg:w-[300px] lg:shadow-lg lg:group-hover/dropdown:block lg:rounded-r-xl lg:rounded-b-xl hidden child-dropdown">
               {% for child in dropdown.children %}
                 {% set childhref = child.link.url.href %}
                 
