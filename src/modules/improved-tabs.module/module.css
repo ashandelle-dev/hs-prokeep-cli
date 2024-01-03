@@ -13,29 +13,29 @@
 }
 
 .hs-tabs__scroll::-webkit-scrollbar {
-    display: block;
-    height: 5px;
+  display: block;
+  height: 5px;
 }
 .hs-tabs__scroll::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
-    
+
 .hs-tabs__scroll::-webkit-scrollbar-thumb {
-    background-color: #2a7991;
-    border-right: none;
-    border-left: none;
+  background-color: #2a7991;
+  border-right: none;
+  border-left: none;
   width: 10px;
-    
+
 }
 
 .hs-tabs__scroll::-webkit-scrollbar-track-piece:end {
-    background: transparent;
-    margin-left: 16px; 
+  background: transparent;
+  margin-left: 16px; 
 }
 
 .hs-tabs__scroll::-webkit-scrollbar-track-piece:start {
-    background: transparent;
-    margin-right: 16px;
+  background: transparent;
+  margin-right: 16px;
 }
 
 .hs-tabs__nudge {
@@ -107,8 +107,10 @@
   fill: currentColor;
 }
 
-.hs-tabs-nudge-icon svg {
-  width: 16px;
+.hs-tabs-nudge-icon svg,
+.prev-chev, 
+.next-chev{
+  width: 16px !important;
 }
 
 .hs-tabs__tab-wrapper {
@@ -206,8 +208,8 @@
 }
 
 .hs-tabs__tab:focus, .hs-tabs__content__panel:focus {
-      outline: none;
-    }
+  outline: none;
+}
 
 /* Tab content */
 
@@ -248,7 +250,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  
+
 
   .hs-tabs__nudge {
     display: flex;
@@ -273,4 +275,52 @@
   .hs-tabs__nudge--left:focus {
     justify-content: center;
   }
+}
+@media screen and (max-width:767px) {
+  .hs-tabs,
+  .hs-tabs__content {
+    display: none;
+  }
+  .mobile-tabs {
+    padding-bottom: 3rem;
+  }
+  .mobile-tabs .slick-slide{
+    text-align: center;
+    width: auto;
+  }
+  .mobile-tabs .slick-slide:not(.slick-active){
+    color: #999;
+  }
+  .mobile-tabs  .slick-arrow {
+    position: absolute !important;
+    z-index: 9999;
+    cursor: pointer;
+  }
+  .mobile-tabs  .prev-chev {
+    left: -10px;
+    top: 0;
+  }
+  .mobile-tabs  .next-chev {
+    right: -10px;
+    top: 0;
+  }
+  .mobile-tabs .slick-slide.slick-active{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .mobile-second-column {
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-second-column img{
+    max-width: 335px !important;
+    float: none !important;
+  }
+
+}
+@media screen and (min-width: 768px) {
+  #mobile-tabs {
+    display: none;
+  }
+
 }
