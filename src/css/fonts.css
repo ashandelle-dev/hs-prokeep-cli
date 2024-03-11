@@ -1,7 +1,7 @@
 
 /* Barlow Black */
 @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-Black.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Black.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Black.ttf') format('truetype');}
-/* Barlow BlackItalic */
+/* Barlow BlackItalic 
 @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-BlackItalic.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-BlackItalic.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-BlackItalic.ttf') format('truetype');}
 /* Barlow Bold */
 @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-Bold.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Bold.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Bold.ttf') format('truetype');}
@@ -35,3 +35,67 @@
 /* @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-Thin.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Thin.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Thin.ttf') format('truetype');} */
 /* Barlow ThinItalic */
 /* @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-ThinItalic.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-ThinItalic.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-ThinItalic.ttf') format('truetype');} */
+
+/* Merriweather Regular */
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Merriweather-Regular.ttf') format('truetype');
+}
+
+/* Merriweather Bold */
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Merriweather-Bold.ttf') format('truetype');
+}
+
+/* Lato Regular */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Lato-Regular.ttf') format('truetype');
+}
+
+/* Lato Bold */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Lato-Bold.ttf') format('truetype');
+}
+
+/* Barlow Regular */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+/* Barlow Bold */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Barlow-Bold.ttf') format('truetype');
+}
+
+/* Barlow Italic */
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 400;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Barlow-Italic.ttf') format('truetype');
+}
+
+/* Barlow Bold Italic */
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 700;
+    src: url('https://www.prokeep.com/hubfs/Fonts/Barlow-BoldItalic.ttf') format('truetype');
+}

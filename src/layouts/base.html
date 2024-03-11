@@ -12,12 +12,11 @@
     {{ require_css(get_asset_url("../css/styles.css")) }}
     {{ require_css(get_asset_url("../css/main.css")) }}
     {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+    {{ require_css(get_asset_url('../css/fonts.css')) }}
     {# where possible, improve page performance and speed by combining external http requests to reduce your
       overall number of calls -- here, you can use a single call to the gFonts api to get all the fonts you need
       https://developers.google.com/fonts/docs/getting_started
     #}
-    {{ require_css("https://fonts.googleapis.com/css?family=Merriweather:400,700|Lato:400,700&display=swap") }}
-    {{ require_css("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap") }}
     {# Include Theme Overrides #}
     {{ require_js(get_asset_url("../js/main.js")) }}
     {{ standard_header_includes }}
