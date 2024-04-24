@@ -1,0 +1,624 @@
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css"/>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+{% require_css %}
+<style>
+  .map-module-container {
+    position: relative;
+  }
+  #map {
+    width: 100%;
+  height: 80vh;
+}
+@media screen and (max-width: 768px) {
+  #map {
+    height: 60vh;
+  }
+}
+#controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the children horizontally */
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Ensure the container is above the map */
+}
+
+.mapboxgl-ctrl-geocoder {
+    flex-shrink: 0;
+    margin: 0 2px;
+    width: 50%;
+}
+
+#reset-button {
+    background-color: rgb(44, 124, 148); /* Match the background color of the submit button */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 8px 15px; /* Padding */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 2px;
+    flex-shrink: 0;
+    font-family: 'Barlow', sans-serif;
+}
+
+#reset-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow on hover */
+}
+
+
+
+/* Overlay style */
+  .hs-form {
+    background: #fff;
+  }
+.modal-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Added padding to create space around the modal content */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Modal box style */
+.modal-content {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 600px;
+    min-width: 280px;
+    overflow-y: auto; /* Enables vertical scrolling within the modal content */
+    max-height: 80vh; /* Sets the maximum height to 80% of the viewport height */
+    transition: transform 0.3s ease-out;
+    font-family: 'Barlow', sans-serif;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+  
+.modal-content .hs-form .hs-form-field {
+  margin-bottom: 5px;
+}
+
+.modal-content label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="tel"],
+.modal-content select,
+.modal-content button {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="email"]:focus,
+.modal-content input[type="tel"]:focus,
+.modal-content select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.modal-content .hs-submit {
+  margin-top: 20px;
+}
+
+/* When the modal is visible */
+.modal-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content.show {
+    transform: translateY(0);
+}
+
+/* Logo container style */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px; /* Adjust space between form groups */
+}
+
+.form-group {
+  flex: 1; /* Allows each form group to expand and fill the available space */
+}
+
+/* Styling for the popup container */
+.popup-container {
+    background-color: transparent; /* Transparent background */
+    box-shadow: none; /* No box shadow */
+    padding: 20px; /* Padding around the content */
+    max-width: 300px; /* Maximum width of the popup */
+}
+
+/* Styling for the popup title */
+.popup-title {
+    color: rgb(44, 124, 148); /* Title text color */
+    font-size: 20px; /* Title font size */
+    margin-bottom: 10px; /* Bottom margin */
+ font-family: 'Barlow', sans-serfif;
+}
+
+/* Styling for the popup description */
+.popup-description {
+    color: #666; /* Description text color */
+    font-size: 18px; /* Description font size */
+    font-family: 'Barlow', sans-serfif;
+    font-weight: bold;
+}
+
+/* CSS for the popup logo */
+.popup-logo {
+    display: block;
+    margin: 0 auto; /* Center the logo horizontally */
+    width: 100%; /* Make the logo span the width of the popup */
+    max-width: 200px; /* Set a maximum width for the logo if needed */
+    height: auto; /* Maintain aspect ratio */
+}
+  
+  .mapboxgl-popup-close-button {
+    top: 5px !important;
+    right: 5px !important;
+  }
+  
+  .mapboxgl-popup-close-button:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 600px) {
+    .mapboxgl-ctrl-geocoder {
+        width: 70%;
+    }
+    #controls-container {
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 500px; /* Slightly smaller max-width for tablets */
+    }
+  
+  .modal-content .hs-form {
+    padding: 1rem;
+  }
+  
+  .modal-content .form-columns-2, .modal-content .form-columns-3 {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8px;
+  }
+  
+  .modal-content .input {
+    margin-right: 0 !important;
+  }
+  
+  .modal-content .hs-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 10px 0;
+        width: 95%; /* Let the modal take up more screen width on smaller devices */
+        max-width: none; /* Removing max-width constraint for small devices */
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack form elements vertically on small screens */
+    }
+
+    .form-group {
+        /* If specific adjustments are needed for .form-group on smaller screens, add them here */
+    }
+
+    .modal-content input[type="text"],
+    .modal-content input[type="email"],
+    .modal-content input[type="phone"],
+    .modal-content select,
+    .modal-content button {
+        width: calc(100% - 24px); /* Adjusts width considering padding, or simply set to 100% if no extra space is needed */
+        margin: 5px 0; /* Adds some margin for vertical stacking */
+    }
+
+    .modal-overlay {
+        padding: 5px; /* Reduced padding on smaller screens for more space */
+    }
+}
+
+</style>
+{% end_require_css %}
+<div class="map-module-container">
+<!-- Popup Modal Overlay -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <div class="logo-container">
+            <img src="https://www.prokeep.com/hubfs/Logos/Prokeep%20Logo.png" alt="Prokeep Logo">
+        </div>
+        
+        <h2>{{ module.form_title }}</h2>
+        {% form
+	form_to_use="{{ module.map_form.form_id }}"
+	response_response_type="{{ module.map_form.response_type }}"
+	response_message="{{ module.map_form.message }}"
+	response_redirect_id="{{ module.map_form.redirect_id }}"
+	response_redirect_url="{{module.map_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.map_form.gotowebinar_webinar_key }}"
+%}
+        
+    </div>
+</div>
+
+<div id="map"></div>
+</div>
+{% require_js %}
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
+<script>
+let myGeoJSON;
+  
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('{{ module_asset_url("Prokeep%20Contractors%20MSA%20Map%20-%20Sales.geojson") }}')
+    .then(response => response.json())
+    .then(data => {
+        myGeoJSON = data;
+        console.log('GeoJSON loaded successfully');
+    })
+    .catch(error => console.error('Error loading GeoJSON:', error));
+    
+    const modalOverlay = document.getElementById('modalOverlay');
+    
+    // Initially display the modal overlay
+    showModal();
+   
+  window.addEventListener('message', event => {
+     if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+       var formCity = event.data.data[0].value;
+       var formState = event.data.data[1].value;
+       var formPostal = event.data.data[2].value;
+        
+         hideModal();
+       if(window.innerWidth < 767) {
+         var navHeight = document.querySelector('nav').offsetHeight;
+         var mapContainer = document.querySelector('#map');
+         mapContainer.scrollTo({
+           top: -navHeight,
+           behavior: "smooth",
+         });
+         enableMapInteractionsMobile();
+       } else {
+        enableMapInteractionsDesktop();
+       }
+       
+       // Geocode the city/state and navigate to the area
+        geocodeAndZoom(formCity, formState, formPostal);
+         
+     }
+  });
+    
+    
+    // Initialize the map in a non-interactive state
+    initMap();
+});
+
+function generatePopupContent(properties) {
+
+    const trimmedAddress = properties.Name.substring(0, properties.Name.length - 5);
+
+    let description = `<div class="popup-container">
+                            <img src="https://www.prokeep.com/hubfs/map/prokeep-long-logo.webp" alt="Prokeep Logo" class="popup-logo">
+                            <h4 class="popup-title">${trimmedAddress}</h4>`;
+    
+    // if (properties['Prokeep Locations']) { 
+    //     description += `<p>Prokeep Locations: ${properties['Prokeep Locations']}<br>`;
+    // }
+    
+    if (properties['contractor_count']) { 
+        description += `<p class="popup-description">Contractors Texting in Area: ${properties['contractor_count']}</p>`;
+    }
+    
+    // if (properties['Messages Exchanged']) {
+    //     description += `Messages Exchanged: ${properties['Messages Exchanged']}</p>`;
+    // }
+
+    description += `</div>`;
+    
+    return description;
+}
+
+function showModal() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    modalOverlay.style.display = 'flex'; // Make sure the modal is part of the layout
+    setTimeout(() => modalOverlay.style.opacity = 1, 10); // Start the opacity transition slightly after
+}
+
+function hideModal() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    modalOverlay.style.opacity = 0; // Start fading out
+    modalOverlay.addEventListener('transitionend', function handleTransitionEnd() {
+        modalOverlay.style.display = 'none'; // Fully hide the modal after the transition
+        modalOverlay.removeEventListener('transitionend', handleTransitionEnd); // Clean up the event listener
+    }, { once: true });
+}
+
+function initMap() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2JhY2hwayIsImEiOiJjbHQ1eHZqY2QwNHlsMmxzNmo4eGh0eGljIn0.QF4qv-luDA9jECbYRTshJA';
+    window.map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/gbachpk/cltdb5k8600or01rac2wbh0q3',
+        center: [-95.7129, 37.0902],
+        zoom: 3,
+        interactive: false
+    });
+  
+    map.on('load', function() {
+    setupControls();
+    
+    map.on('click', 'prokeep-contractors-msa-map-4djxdr', function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        
+        var properties = e.features[0].properties;
+        if (!properties) return;
+
+        var description = generatePopupContent(properties);
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+        });
+    });
+
+}
+function setupControls() {
+    const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        marker: false
+    });
+
+    // Listen for the 'result' event on the geocoder to handle search results
+    geocoder.on('result', function(e) {
+        // Reset the map view to the initial position before processing the search results
+        map.flyTo({
+            center: [-95.7129, 37.0902],
+            zoom: 3,
+            bearing: 0,
+            pitch: 0,
+            essential: true
+        });
+
+        // Allow a slight delay for the map to reset its view
+        setTimeout(function() {
+            // Extract the location's longitude and latitude from the search result
+            const longitude = e.result.geometry.coordinates[0];
+            const latitude = e.result.geometry.coordinates[1];
+
+            const fullSearch = e.result.place_name;
+            console.log("Full Search Query:", fullSearch);
+
+            // Extract the city from the search result context
+            const city = extractCityFromPlaceName(fullSearch);
+            console.log("City extracted from Geocoder Search:", city);
+
+            // Use the logic to find the nearest pin and adjust the map view accordingly
+            openNearestPinPopup(longitude, latitude, city);
+        }, 2000); // Delay time in milliseconds
+    });
+
+    function extractCityFromPlaceName(placeName) {
+        // Split the place name string by commas and spaces
+        const parts = placeName.split(/,\s*/);
+        return parts[0];
+    }
+
+    const controlsContainer = document.createElement('div');
+    controlsContainer.id = 'controls-container';
+    document.getElementById('map').appendChild(controlsContainer);
+    controlsContainer.appendChild(geocoder.onAdd(map));
+  
+
+    // Create and configure the 'Reset View' button
+    const resetButton = document.createElement('button');
+    resetButton.textContent = 'Reset View';
+    resetButton.id = 'reset-button';
+    resetButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+        map.flyTo({
+            center: [-95.7129, 37.0902],
+            zoom: 3,
+            bearing: 0,
+            pitch: 0,
+            essential: true
+        });
+    });
+
+    // Insert the reset button into the controls container
+    controlsContainer.insertBefore(resetButton, controlsContainer.firstChild);
+}
+
+function enableMapInteractionsDesktop() {
+    map.boxZoom.enable();
+    map.scrollZoom.enable();
+    map.dragRotate.enable();
+    map.dragPan.enable();
+    map.keyboard.enable();
+    map.doubleClickZoom.enable();
+    map.touchZoomRotate.enable();
+    map.setStyle('mapbox://styles/gbachpk/cltdb5k8600or01rac2wbh0q3');
+}
+  
+function enableMapInteractionsMobile() {
+    map.boxZoom.enable();
+    map.dragRotate.enable();
+    //map.dragPan.enable();
+    map.touchZoomRotate.enable();
+    map.setStyle('mapbox://styles/gbachpk/cltdb5k8600or01rac2wbh0q3');
+}
+
+
+// Function to geocode city/state and navigate to the area
+function geocodeAndZoom(city, state, postalCode) {
+    const accessToken = mapboxgl.accessToken;
+    const query = `${city}, ${state} ${postalCode}`;
+    const country = 'US'; // Defaulting to US
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?country=${country}&access_token=${accessToken}&limit=1`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.features.length > 0) {
+                const [longitude, latitude] = data.features[0].geometry.coordinates;
+                
+                openNearestPinPopup(longitude, latitude, city);
+            } else {
+                console.error('Location not found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching coordinates:', error);
+        });
+}
+
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    function toRad(x) {
+        return x * Math.PI / 180;
+    }
+
+    var R = 6371; // Earth’s mean radius in kilometers
+    var dLat = toRad(lat2 - lat1);
+    var dLon = toRad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+    return d; // returns the distance in kilometer
+}
+
+function findNearestFeature(longitude, latitude, geojsonData, city) {
+    let nearestFeatures = [];
+    let nearestDistances = [];
+    const numNearest = 3; // Number of nearest pins to consider
+    
+    geojsonData.features.forEach(feature => {
+        const [featureLon, featureLat] = feature.geometry.coordinates;
+        const distance = calculateDistance(latitude, longitude, featureLat, featureLon);
+
+        // Keep track of the nearest features and their distances
+        if (nearestFeatures.length < numNearest || distance < nearestDistances[nearestDistances.length - 1]) {
+            let indexToInsert = nearestDistances.findIndex(dist => distance < dist);
+            if (indexToInsert === -1) indexToInsert = nearestDistances.length;
+            nearestFeatures.splice(indexToInsert, 0, feature);
+            nearestDistances.splice(indexToInsert, 0, distance);
+            if (nearestFeatures.length > numNearest) {
+                nearestFeatures.pop();
+                nearestDistances.pop();
+            }
+        }
+    });
+
+    console.log("Nearest Features:", nearestFeatures); 
+    
+    // Check if any of the nearest features have the city name in their titles
+    const nearestFeatureWithCity = nearestFeatures.find(feature => {
+        return feature.properties.Name && feature.properties.Name.includes(city);
+    });
+    
+    return nearestFeatureWithCity || nearestFeatures[0]; // Return the nearest feature with the city name if found, otherwise return the nearest feature overall
+}
+
+
+function openNearestPinPopup(longitude, latitude, city) {
+    if (!myGeoJSON) {
+        console.log("GeoJSON data isn't loaded yet.");
+        return;
+    }
+    
+    const nearestFeature = findNearestFeature(longitude, latitude, myGeoJSON, city);
+    
+    if (nearestFeature) {
+        const nearestCoords = nearestFeature.geometry.coordinates;
+        
+        // Create bounds that will include both the searched location and the nearest pin
+        const bounds = new mapboxgl.LngLatBounds();
+        bounds.extend([longitude, latitude]); // Extend bounds to include the searched location
+        bounds.extend(nearestCoords); // Extend bounds to include the nearest pin
+
+        // Adjust the map view with an animation to include both points
+        map.fitBounds(bounds, {
+            padding: {top: 50, bottom:50, left: 50, right: 50},
+            maxZoom: 12, // Prevent the map from zooming in too far
+            duration: 1000 
+        });
+
+        // After adjusting the view, display the popup for the nearest feature
+        const description = generatePopupContent(nearestFeature.properties);
+        new mapboxgl.Popup()
+            .setLngLat(nearestCoords)
+            .setHTML(description)
+            .addTo(map);
+    } else {
+        console.log('No nearest feature found.');
+    }
+}
+  // Store scroll position before hiding the modal
+const scrollPosition = window.scrollY;
+
+
+// Enable map interactions after hiding the modal
+map.setInteractive(true);
+  
+</script>
+{% end_require_js %}

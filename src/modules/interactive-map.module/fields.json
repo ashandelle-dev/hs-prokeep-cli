@@ -1,0 +1,27 @@
+[ {
+  "id" : "cf087842-fd0c-45fb-489e-f1cd13ce57ed",
+  "name" : "form_title",
+  "display_width" : null,
+  "label" : "Form Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "3f257d08-eff4-81dc-6f61-eb71f3fe2898",
+  "name" : "map_form",
+  "display_width" : null,
+  "label" : "Map Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "03b1d62e-7fb8-4af6-b6ad-1010fb8cb26f",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

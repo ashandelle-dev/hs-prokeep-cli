@@ -1,0 +1,337 @@
+{
+  "default_text.label" : {
+    "message" : "Tekst domyślny",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.default" : {
+    "message" : "Przewiń zakładki w lewo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.label" : {
+    "message" : "Etykieta lewego przycisku zachęty",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.default" : {
+    "message" : "Przewiń zakładki w prawo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.label" : {
+    "message" : "Etykieta prawego przycisku zachęty",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.default" : {
+    "message" : "Lista zakładek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.label" : {
+    "message" : "Etykieta listy zakładek elementu aria",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.help_text" : {
+    "message" : "Ustawia zawartość każdej karty na tej samej wysokości",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.label" : {
+    "message" : "Stała wysokość tekstu",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Karta z zakładkami",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.color.label" : {
+    "message" : "Kolor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.label" : {
+    "message" : "Tło",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.border.label" : {
+    "message" : "Obramowanie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.label" : {
+    "message" : "Obramowanie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.label" : {
+    "message" : "Treść",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Style",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.border.label" : {
+    "message" : "Obramowanie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.label" : {
+    "message" : "Karta z zakładkami",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.color.label" : {
+    "message" : "Kolor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.label" : {
+    "message" : "Tło",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_bottom.label" : {
+    "message" : "Obramowanie dolne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_top_sides.label" : {
+    "message" : "Granica górna/boczne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.label" : {
+    "message" : "Aktywne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.font.label" : {
+    "message" : "Czcionka",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.color.label" : {
+    "message" : "Kolor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.label" : {
+    "message" : "Tło",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_bottom.label" : {
+    "message" : "Obramowanie dolne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_top_sides.label" : {
+    "message" : "Granica górna/boczne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.label" : {
+    "message" : "Ustawienie wskaźnika myszy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.font.label" : {
+    "message" : "Czcionka",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.color.label" : {
+    "message" : "Kolor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.label" : {
+    "message" : "Tło",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_bottom.label" : {
+    "message" : "Obramowanie dolne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_top_sides.label" : {
+    "message" : "Granica górna/boczne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.label" : {
+    "message" : "Nieaktywne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.font.label" : {
+    "message" : "Czcionka",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.label" : {
+    "message" : "Karty",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.spacing.label" : {
+    "message" : "Odstępy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.first_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.label" : {
+    "message" : "Karty",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.name" : {
+    "message" : "improved-tabs",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_label.default" : {
+    "message" : "Element karty",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_label.label" : {
+    "message" : "Etykieta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.label" : {
+    "message" : "Choice",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

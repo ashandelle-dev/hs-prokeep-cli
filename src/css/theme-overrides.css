@@ -748,4 +748,10 @@ stylesheets or you can add your own custom styles.
   .osano-cm-info-dialog--hidden .osano-cm-info--position_right {
     transform: translate(145%);
   }
+
+  @media screen and (max-width: 850px) {
+    .body-wrapper {
+      padding-top: 93px !important;
+    }
+  }
   

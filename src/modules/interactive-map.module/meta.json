@@ -1,0 +1,12 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 164661268052,
+  "other_assets" : [ {
+    "url" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/map/Prokeep%20Contractors%20MSA%20Map%20-%20Sales.geojson",
+    "autoload" : false,
+    "name" : "Prokeep%20Contractors%20MSA%20Map%20-%20Sales.geojson"
+  } ],
+  "is_available_for_new_content" : true
+}

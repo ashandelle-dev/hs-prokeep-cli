@@ -1,0 +1,337 @@
+{
+  "default_text.label" : {
+    "message" : "Testo predefinito",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.default" : {
+    "message" : "Scorri le scheda a sinistra",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.label" : {
+    "message" : "Etichetta pulsante spostamento a sinistra",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.default" : {
+    "message" : "Scorri tabelle a destra",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.label" : {
+    "message" : "Etichetta pulsante spostamento a destra",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.default" : {
+    "message" : "Elenco schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.label" : {
+    "message" : "Aria label elenco schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.help_text" : {
+    "message" : "Imposta ogni contenuto della scheda alla stessa altezza",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.label" : {
+    "message" : "Altezza testo fissa",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Scheda a schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.color.label" : {
+    "message" : "Colore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.label" : {
+    "message" : "Sfondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.border.label" : {
+    "message" : "Bordo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.label" : {
+    "message" : "Bordo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.label" : {
+    "message" : "Contenuti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Stili",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.border.label" : {
+    "message" : "Bordo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.label" : {
+    "message" : "Scheda a schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.color.label" : {
+    "message" : "Colore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.label" : {
+    "message" : "Sfondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_bottom.label" : {
+    "message" : "Bordo inferiore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_top_sides.label" : {
+    "message" : "Bordo superiore/laterale",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.label" : {
+    "message" : "Attiva",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.font.label" : {
+    "message" : "Carattere",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.label" : {
+    "message" : "Testo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.color.label" : {
+    "message" : "Colore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.label" : {
+    "message" : "Sfondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_bottom.label" : {
+    "message" : "Bordo inferiore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_top_sides.label" : {
+    "message" : "Bordo superiore/laterale",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.label" : {
+    "message" : "Passaggio del puntatore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.font.label" : {
+    "message" : "Carattere",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.label" : {
+    "message" : "Testo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.color.label" : {
+    "message" : "Colore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.label" : {
+    "message" : "Sfondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_bottom.label" : {
+    "message" : "Bordo inferiore",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_top_sides.label" : {
+    "message" : "Bordo superiore/laterale",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.label" : {
+    "message" : "Non attiva",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.font.label" : {
+    "message" : "Carattere",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.label" : {
+    "message" : "Testo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.label" : {
+    "message" : "Schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.spacing.label" : {
+    "message" : "Spaziatura",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.first_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.label" : {
+    "message" : "Schede",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.name" : {
+    "message" : "improved-tabs",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_label.default" : {
+    "message" : "Elemento scheda",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_label.label" : {
+    "message" : "Etichetta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.label" : {
+    "message" : "Choice",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

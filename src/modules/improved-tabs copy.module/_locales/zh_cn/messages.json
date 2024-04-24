@@ -1,0 +1,337 @@
+{
+  "default_text.label" : {
+    "message" : "默认文本",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.default" : {
+    "message" : "向左滚动选项卡",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.label" : {
+    "message" : "左移按钮标签",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.default" : {
+    "message" : "向右滚动选项卡",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.label" : {
+    "message" : "右移按钮标签",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.default" : {
+    "message" : "选项卡列表",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.label" : {
+    "message" : "选项卡列表 Aria Label",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.help_text" : {
+    "message" : "将每个选项卡的内容设置为相同的高度",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.label" : {
+    "message" : "固定文本高度",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "选项卡式卡片",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.color.label" : {
+    "message" : "颜色",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.label" : {
+    "message" : "背景",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.border.label" : {
+    "message" : "边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.label" : {
+    "message" : "边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.label" : {
+    "message" : "内容",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "样式",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.border.label" : {
+    "message" : "边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.label" : {
+    "message" : "选项卡式卡片",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.color.label" : {
+    "message" : "颜色",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.label" : {
+    "message" : "背景",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_bottom.label" : {
+    "message" : "下框线",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_top_sides.label" : {
+    "message" : "顶部/侧边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.label" : {
+    "message" : "活动",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.font.label" : {
+    "message" : "字体",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.label" : {
+    "message" : "文本",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.color.label" : {
+    "message" : "颜色",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.label" : {
+    "message" : "背景",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_bottom.label" : {
+    "message" : "下框线",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_top_sides.label" : {
+    "message" : "顶部/侧边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.label" : {
+    "message" : "悬停",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.font.label" : {
+    "message" : "字体",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.label" : {
+    "message" : "文本",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.color.label" : {
+    "message" : "颜色",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.label" : {
+    "message" : "背景",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_bottom.label" : {
+    "message" : "下框线",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_top_sides.label" : {
+    "message" : "顶部/侧边框",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.label" : {
+    "message" : "非活动",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.font.label" : {
+    "message" : "字体",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.label" : {
+    "message" : "文本",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.label" : {
+    "message" : "标签",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.spacing.label" : {
+    "message" : "间距",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.first_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.label" : {
+    "message" : "标签",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.name" : {
+    "message" : "improved-tabs",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_label.default" : {
+    "message" : "标签项",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_label.label" : {
+    "message" : "标签",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.label" : {
+    "message" : "Choice",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

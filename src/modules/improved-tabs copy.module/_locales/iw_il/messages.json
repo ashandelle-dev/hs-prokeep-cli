@@ -1,0 +1,337 @@
+{
+  "default_text.label" : {
+    "message" : "טקסט ברירת מחדל",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.default" : {
+    "message" : "גלול כרטיסיות לשמאל",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.label" : {
+    "message" : "תווית לחצן דחיפה שמאלה",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.default" : {
+    "message" : "גלול כרטיסיות לימין",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.label" : {
+    "message" : "תווית לחצן דחיפה ימינה",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.default" : {
+    "message" : "רשימת כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.label" : {
+    "message" : "תכונת aria label של רשימת כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.help_text" : {
+    "message" : "מגדיר כך שהתוכן של כל כרטיסיה יהיה בגובה זהה",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.label" : {
+    "message" : "גובה הטקסט הקבוע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "כרטיס עם לשוניות כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.color.label" : {
+    "message" : "צבע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.label" : {
+    "message" : "רקע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.border.label" : {
+    "message" : "גבול",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.label" : {
+    "message" : "גבול",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.label" : {
+    "message" : "תוכן",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "סגנונות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.border.label" : {
+    "message" : "גבול",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.label" : {
+    "message" : "כרטיס עם לשוניות כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.color.label" : {
+    "message" : "צבע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.label" : {
+    "message" : "רקע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_bottom.label" : {
+    "message" : "גבול תחתון",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_top_sides.label" : {
+    "message" : "גבול עליון/גבולות צדדיים",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.label" : {
+    "message" : "פעיל",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.font.label" : {
+    "message" : "גופן",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.label" : {
+    "message" : "טקסט",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.color.label" : {
+    "message" : "צבע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.label" : {
+    "message" : "רקע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_bottom.label" : {
+    "message" : "גבול תחתון",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_top_sides.label" : {
+    "message" : "גבול עליון/גבולות צדדיים",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.label" : {
+    "message" : "ריחוף",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.font.label" : {
+    "message" : "גופן",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.label" : {
+    "message" : "טקסט",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.color.label" : {
+    "message" : "צבע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.label" : {
+    "message" : "רקע",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_bottom.label" : {
+    "message" : "גבול תחתון",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_top_sides.label" : {
+    "message" : "גבול עליון/גבולות צדדיים",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.label" : {
+    "message" : "לא פעיל",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.font.label" : {
+    "message" : "גופן",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.label" : {
+    "message" : "טקסט",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.label" : {
+    "message" : "כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.spacing.label" : {
+    "message" : "מרווח",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.first_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.label" : {
+    "message" : "כרטיסיות",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.name" : {
+    "message" : "improved-tabs",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_label.default" : {
+    "message" : "פריט כרטיסיה",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_label.label" : {
+    "message" : "תווית",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.label" : {
+    "message" : "Choice",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

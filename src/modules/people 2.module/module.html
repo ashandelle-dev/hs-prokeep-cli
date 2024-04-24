@@ -1,0 +1,39 @@
+<!-- module html  -->
+{% set people_table = hubdb_table_rows(6041919,"&orderBy=grid_position") %}
+<!-- {{people_table}} -->
+<div class="flex flex-wrap">
+{% for row in people_table %}
+<div class="w-full md:w-1/2 xl:w-1/3 mb-32 px-8 ">
+      
+    <div class="rounded-lg bg-[#FFF4E3] h-full shadow-lg">
+      <div class="p-3 rounded-t-lg " style="background-color:{{row.color}}">
+        
+        <div class="flex justify-end">
+          <div class="w-3/5 md:w-2/3 relative">
+            <div class="absolute left-0 bottom-0 w-[160px] h-[160px] bg-slate-100 rounded-lg overflow-hidden -translate-x-full">
+              <img class="w-full h-full object-cover" src="{{row.headshot.url}}" alt="{{row.headshot.altText}}">
+            </div>
+            <div class="relative px-2">
+              <div>
+                <p class="text-[24px] font-bold m-0 leading-snug">
+                  {{row.name}}
+                </p>
+              </div>
+              <div>
+                <p class="text-[18px] m-0">
+                  {{row.title}}
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="py-3 px-6 ">
+        <p class="m-0">{{row.bio}}</p>
+      </div>
+    </div>
+    
+</div>
+{% endfor %}
+</div>

@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "master_language" : "en",
   "categories" : [ "design" ],
   "icon" : "../../../../mV0_d-web-default-modules_hubspot/img/icon/folder.svg",

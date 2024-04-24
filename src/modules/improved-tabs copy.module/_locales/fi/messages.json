@@ -1,0 +1,337 @@
+{
+  "default_text.label" : {
+    "message" : "Oletusteksti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.default" : {
+    "message" : "Selaa välilehtiä vasemmalle",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.left_nudge_button_label.label" : {
+    "message" : "Vasemmanpuoleisen tönäisypainikkeen nimike",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.default" : {
+    "message" : "Selaa välilehtiä oikealle",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.right_nudge_button_label.label" : {
+    "message" : "Oikeanpuoleisen tönäisypainikkeen nimike",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.default" : {
+    "message" : "Välilehtien luettelo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.tabs_list_aria_label.label" : {
+    "message" : "Välilehtien luettelon aria-nimike",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.help_text" : {
+    "message" : "Asettaa kunkin välilehden sisällön saman korkuiseksi",
+    "description" : "",
+    "placeholders" : null
+  },
+  "fixed_height.label" : {
+    "message" : "Kiinteä tekstin korkeus",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Välilehtikortti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.color.label" : {
+    "message" : "Väri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.background.label" : {
+    "message" : "Tausta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.border.label" : {
+    "message" : "Raja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.border.label" : {
+    "message" : "Raja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.label" : {
+    "message" : "Sisältö",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.content.spacing.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Tyylit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.border.label" : {
+    "message" : "Raja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.label" : {
+    "message" : "Välilehtikortti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabbed_card.spacing.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.color.label" : {
+    "message" : "Väri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.background.label" : {
+    "message" : "Tausta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_bottom.label" : {
+    "message" : "Alareuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.group_top_sides.label" : {
+    "message" : "Ylä-/sivureuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.label" : {
+    "message" : "Aktiivinen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.font.label" : {
+    "message" : "Fontti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.active.text.label" : {
+    "message" : "Teksti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.color.label" : {
+    "message" : "Väri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.background.label" : {
+    "message" : "Tausta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_bottom.label" : {
+    "message" : "Alareuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.group_top_sides.label" : {
+    "message" : "Ylä-/sivureuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.label" : {
+    "message" : "Osoita",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.font.label" : {
+    "message" : "Fontti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.hover.text.label" : {
+    "message" : "Teksti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.color.label" : {
+    "message" : "Väri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.background.label" : {
+    "message" : "Tausta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_bottom.label" : {
+    "message" : "Alareuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.group_top_sides.label" : {
+    "message" : "Ylä-/sivureuna",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.label" : {
+    "message" : "Ei-aktiivinen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.font.label" : {
+    "message" : "Fontti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.inactive.text.label" : {
+    "message" : "Teksti",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.label" : {
+    "message" : "Välilehdet",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.tabs.spacing.spacing.label" : {
+    "message" : "Välit",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.first_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.first_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.label" : {
+    "message" : "Välilehdet",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.name" : {
+    "message" : "improved-tabs",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.second_column_content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_label.default" : {
+    "message" : "Välilehtikohta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_label.label" : {
+    "message" : "Nimike",
+    "description" : "",
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.label" : {
+    "message" : "Choice",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tabs.tab_layout.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}
