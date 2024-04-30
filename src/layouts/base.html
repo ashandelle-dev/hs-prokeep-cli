@@ -37,5 +37,21 @@
       {% endblock footer%}
     </div>
     {{ standard_footer_includes }}
+    <script>
+      window.addEventListener('load', function(){
+        const links = document.querySelectorAll('a');
+        links.forEach((link) => {
+          //don't change mailto or tel links
+          if(link.href && link.href.indexOf('tel') == -1 && link.href.indexOf('mailto') == -1) {
+            
+             const url = new URL(link.href);
+            for (let [k,v] of new URLSearchParams(window.location.search).entries()){
+              url.searchParams.set(k,v)
+            }
+            link.href = url.toString();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
