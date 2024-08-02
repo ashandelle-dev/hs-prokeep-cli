@@ -1,9 +1,10 @@
 <!--
 templateType: blog_post
 isAvailableForNewContent: true
-label: Blog Post
+label: Blog Post 2 Col
 -->
 {% extends '../layouts/base.html' %}
+{% choice "layout" label='Layout', choices=[["layout-a","Layout A"],["layout-b","Layout B"]], multiple='False', display='radio',export_to_template_context=True %}
 
 {% block body %}
 
@@ -65,6 +66,11 @@ label: Blog Post
 		<div class="blog-post__body">
 			{{ content.post_body }}
 		</div>
+		{% if content.widgets.layout.body.value != "layout-b" %}
+		<div class="blog-post__column">
+			{% module "module_17218574073602" path="/pk-theme/cli-build/modules/callout-banner", label="callout-banner" %}
+		</div>
+		{% endif %}
 		{% if content.tag_list %}
 		<div class="blog-post__tags">
       <h4>
