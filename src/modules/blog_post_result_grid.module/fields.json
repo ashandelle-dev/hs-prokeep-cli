@@ -1,0 +1,66 @@
+[ {
+  "id" : "5eaf0772-5c65-fc35-5968-e01bbd81765a",
+  "name" : "results_grid_item",
+  "display_width" : null,
+  "label" : "Results Grid Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "2db98a6e-baa4-a42b-a89c-ae5f2a6fcf86",
+    "name" : "statistic",
+    "display_width" : null,
+    "label" : "statistic",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "b195850e-8571-c19b-26db-929372bba02a",
+    "name" : "statistic_description",
+    "display_width" : null,
+    "label" : "Statistic Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "e2f2cc56-d7e5-09d2-2823-8a560b3ddbfa",
+  "name" : "results_grid_background",
+  "display_width" : null,
+  "label" : "Results Grid Background",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#ffd387",
+    "opacity" : 100
+  }
+}, {
+  "id" : "61c73c93-d835-3f43-7cdb-c0bb04c7b0df",
+  "name" : "results_grid_text_color",
+  "display_width" : null,
+  "label" : "Results Grid Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#192b3f",
+    "opacity" : 100
+  }
+} ]

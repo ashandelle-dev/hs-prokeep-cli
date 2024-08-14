@@ -1,13 +1,82 @@
 <!--
 templateType: blog_post
 isAvailableForNewContent: true
-label: Blog Post 2 Col
+label: Customer Stories Template
 -->
 {% extends '../layouts/base.html' %}
-{% choice "layout" label='Layout', choices=[["layout-a","Layout A"],["layout-b","Layout B"]], multiple='False', display='radio',export_to_template_context=True %}
+{% image "customer_logo" label='Customer Logo', export_to_template_context=True %}
+{% rich_text "customer_intro" label='Customer Intro', export_to_template_context=True %}
+{% rich_text "key_highlights" label='Customer Key Highlights', export_to_template_context=True %}
 
 {% block body %}
+<style>
+	body {
+		background: #fff;
+		overflow: visible;
+	}
 
+	.blog-post__body h2, .blog-post__body h3, .blog-post__body h4 {
+		color: #192B3F;
+	}
+
+	.blog-post__meta {
+		border-top: 1px solid #2A7991;
+		border-bottom: 1px solid #2A7991;
+		margin-bottom: 16px;
+	}
+
+	@media screen and (max-width: 479px) {
+		.blog-post__meta {
+			flex-direction: row;
+		}
+	}
+
+	.blog-post__body h4 {
+		font-family: Barlow;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 24px;
+		padding-left: 24px;
+		position: relative;
+	}
+
+	.blog-post__body h4:before {
+		position: absolute;
+		top: 6px;
+		left: 0;
+		content: '';
+		display: block;
+		border-radius: 50%;
+		background: #FF7E69;
+		width: 12px;
+		height: 12px;
+	}
+
+	.customer-highlights ul {
+		list-style: none;
+		margin-top: 0;
+	}
+
+	.customer-highlights ul li {
+		line-height: 24px;
+		margin-bottom: 16px;
+		padding-left: 20px;
+		position: relative;
+	}
+
+	.customer-highlights ul li:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 10px;
+		width: 8px;
+		height: 100%;
+		background: #84CFA4;
+	}
+</style>
   {% set socials = [
     {
       "title": "Twitter",
@@ -16,82 +85,130 @@ label: Blog Post 2 Col
   ]
   
   %}
-
-<div class="hero-back"></div>
-
-<div class="listing-content post-content -mt-[250px]">
-<div class="content-wrapper">
-  
-    <div class="flex items-center gap-x-12 mb-12">
-        <!-- Twitter Share -->
-        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
-          <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
-        </a>
-
-        <!-- Facebook Share -->
-        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
-          <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
-        </a>
-
-        <!-- LinkedIn Share -->
-        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
-          <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
-        </a>
-    </div>
-  
-  
-	{% if content.featured_image %}
-	<div class="post-featured-image">
-    <img src="{{content.featured_image}}" alt="{% if content.featured_image.alt %}{{content.featured_image.alt}}{% else %}{{page_meta.name}} featured image{% endif %}">
-	</div>
-	{% endif %}
-	<div class="blog-post{% if not content.featured_image %} no-image{% endif %}">
-		<h1 class="blog-post__title">{{ content.name }}</h1>
-		<div class="blog-post__meta">
-      <div class="author-photo">
-      <img src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}">
-      </div>
-      <div class="w-embed">Written by {{ content.blog_post_author.display_name }} &nbsp;•&nbsp;&nbsp;</div>
-      <div class="w-embed">{{ content.publish_date_local_time.strftime('%b %d, %Y') }} &nbsp;•&nbsp;&nbsp;</div>
-      <div class="w-embed">Reading Time: <span id="readingTime">{% set initialPostWords = content.post_body|striptags|wordcount %}
+<div class="container py-20">
+	<div class="flex flex-col-reverse md:flex-row items-center gap-x-10">
+		<div class="w-full md:w-1/2">
+			<div class="uppercase font-bold">Customer Stories</div>
+			<h1 class="blog-post__title mb-4 md:mb-24">{{ content.name }}</h1>
+				<div class="blog-post__meta">
+			      <div class="author-photo">
+			      <img src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}">
+			      </div>
+			      <div class="flex-col">
+				      <div class="text-sm"><strong>Written by:</strong> {{ content.blog_post_author.display_name }}</div>
+				      <div class="text-sm"><strong>Date:</strong>{{ content.publish_date_local_time.strftime('%b %d, %Y') }}</div>
+				      <div class="text-sm"><strong>Reading Time:</strong> <span id="readingTime">{% set initialPostWords = content.post_body|striptags|wordcount %}
 								{% set calculatedPostWords = (initialPostWords/100) * 100 %}
 								{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
 								{% set number = finishedPostWords|round %}
 								{% if number < 1 %}
 								{% else %}
 								{{ finishedPostWords|round }} Minutes
-								{% endif %} </span></div>
-	
+								{% endif %} </span>
+							</div>
+						</div>
+				</div>
+				<div class="flex items-center gap-x-4 mb-12 border-b border-[#2A7991] pb-4">
+					Share:
+		        <!-- Twitter Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
+		        </a>
+
+		        <!-- Facebook Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
+		        </a>
+
+		        <!-- LinkedIn Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
+		        </a>
+		    </div>
 		</div>
-		<div class="blog-post__body">
-			{{ content.post_body }}
-		</div>
-		{% if content.widgets.layout.body.value != "layout-b" %}
-		<div class="blog-post__column">
-			{% module "module_17218574073602" path="/pk-theme/cli-build/modules/callout-banner", label="callout-banner" %}
-		</div>
-		{% endif %}
-		{% if content.tag_list %}
-		<div class="blog-post__tags">
-      <h4>
-        See more:
-      </h4>
-      <ul>
-       {% for tag in content.tag_list %}
-        
-        {%if !(tag == 'Type - Whitepaper' || tag == 'Type - Video' || tag == 'Type - Infographic') %}
-			<li><a class="blog-post__tag-link {{ tag.name|replace(" ","-") }}" href="{{ blog_tag_url(group.id, tag.slug) }}"><div>{{ tag.name }}</div></a></li>{% if not loop.last %}{% endif %}
-        {%endif%}
-			{% endfor %}
-       </ul>
-		</div>
-		{% endif %} 
-      
-		
-		<div class="blog-comments">
-			{% module "blog_comments" path="@hubspot/blog_comments", label="Blog Comments" %}
+
+		<div class="w-full md:w-1/2">
+			{% if content.featured_image %}
+			<div class="post-featured-image">
+		    <img src="{{content.featured_image}}" alt="{% if content.featured_image.alt %}{{content.featured_image.alt}}{% else %}{{page_meta.name}} featured image{% endif %}">
+			</div>
+			{% endif %}
 		</div>
 	</div>
+	<div class="flex flex-col md:flex-row gap-x-10">
+		<div class="blog-post__body w-full md:w-3/4">
+			{{ content.post_body }}
+			<div class="flex flex-col items-center bg-[#d4e4e9] p-10 rounded-xl mb-12">
+				<p class="text-center text-2xl font-bold">Learn more about Internal Messaging with Prokeep</p>
+				<a href="" class="bg-[#DA5039] border border-[#DA5039] rounded !text-white py-[5px] px-[18px] !no-underline">Learn More</a>
+			</div>
+			<div class="flex items-center gap-x-4 my-4 border-t border-[#2A7991] pt-4">
+				Share:
+		      <!-- Twitter Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
+		      </a>
+
+		      <!-- Facebook Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
+		      </a>
+
+		      <!-- LinkedIn Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
+		      </a>
+		  </div>
+		</div>
+		
+		<div class="blog-post__column w-full md:w-1/4 relative">
+			{% if content.widgets.customer_logo.body.src %}
+			<div class="customer-info">
+				<img src="{{content.widgets.customer_logo.body.src}}">
+				<div class="text-[18px] leading-5 mt-5">{{content.widgets.customer_intro.body.html}}</div>
+			</div>
+			{% endif %}
+			
+			<div class="sticky top-[160px]">
+				{% if content.widgets.key_highlights.body.html %}
+				<div class="customer-highlights">
+					<p class="text-2xl font-bold mb-3">Key Highlights</p>
+					{{content.widgets.key_highlights.body.html}}
+				</div>
+				{% endif %}
+				<div class="industry mb-12">
+					<p class="font-bold mb-0">Industry</p>
+					<p class="mb-0">Industry Name</p>
+				</div>
+				<div class="col-cta bg-[#DA5039] rounded-xl text-white p-10">
+					<p class="m-0 font-bold text-2xl mb-5">Talk to a Prokeep Expert to  Started</p>
+					<a href="" class="border-white border rounded !text-white py-[5px] px-[18px] !no-underline">Get a Demo</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </div>
-</div>
+<div class="flex items-center bg-[#FFF4E3] py-20">
+	<div class="container">
+		{% if content.tag_list %}
+		<div class="blog-post__tags">
+	    <h4>
+	      Read more Customer Stories
+	    </h4>
+	    <ul>
+	     {% for tag in content.tag_list %}
+	      
+	      {%if !(tag == 'Type - Whitepaper' || tag == 'Type - Video' || tag == 'Type - Infographic') %}
+			<li><a class="blog-post__tag-link {{ tag.name|replace(" ","-") }}" href="{{ blog_tag_url(group.id, tag.slug) }}"><div>{{ tag.name }}</div></a></li>{% if not loop.last %}{% endif %}
+	      {%endif%}
+			{% endfor %}
+	     </ul>
+		</div>
+		{% endif %} 
+	   </div> 
+		
+		
+	</div>
+
 {% endblock body %}

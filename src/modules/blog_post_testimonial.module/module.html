@@ -1,0 +1,15 @@
+<div class="testimonial rounded-xl p-12 mb-[60px]" style="background: {{module.testimonial_background_color.rgba}};">
+  <div style="color: {{module.testimonial_font_color.rgba}};">
+    {{module.testimonial_text}}
+  </div> 
+</div>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+    p {
+      margin-bottom: 0;
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

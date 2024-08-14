@@ -1,0 +1,33 @@
+[ {
+  "id" : "fe68691d-8d1d-6a55-756a-9bd031ba40ab",
+  "name" : "testimonial_text",
+  "display_width" : null,
+  "label" : "Testimonial Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "26afe389-61c4-a7ab-769c-2889d0dbebe0",
+  "name" : "testimonial_background_color",
+  "display_width" : null,
+  "label" : "Testimonial Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#abd3dd",
+    "opacity" : 100
+  }
+}, {
+  "id" : "e4b2d272-cfe9-5e18-082b-29b16b7474bd",
+  "name" : "testimonial_font_color",
+  "display_width" : null,
+  "label" : "Testimonial Font Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#192b3f",
+    "opacity" : 100
+  }
+} ]
