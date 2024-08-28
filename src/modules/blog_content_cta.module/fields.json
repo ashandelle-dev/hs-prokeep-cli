@@ -1,0 +1,46 @@
+[ {
+  "id" : "dd6da95c-872e-4d7a-59a5-2a932c0224fa",
+  "name" : "cta_background_color",
+  "display_width" : null,
+  "label" : "CTA Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#d4e4e9",
+    "opacity" : 100
+  }
+}, {
+  "id" : "78a38b5d-94de-7ece-fbcc-9e37d4fdf053",
+  "name" : "cta_title",
+  "display_width" : null,
+  "label" : "CTA Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "dcaefcd9-0f85-c3bf-8d0c-85f93f69d5ed",
+  "name" : "cta_button_text",
+  "display_width" : null,
+  "label" : "CTA Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "022eb15d-c2a5-a30e-c186-d389a5aa4279",
+  "name" : "cta_button_link",
+  "display_width" : null,
+  "label" : "CTA Button Link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]
