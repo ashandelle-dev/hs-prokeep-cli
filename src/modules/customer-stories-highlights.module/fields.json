@@ -1,0 +1,42 @@
+[ {
+  "id" : "023848c1-1353-15e5-8300-dbd549d19403",
+  "name" : "highlight",
+  "display_width" : null,
+  "label" : "Highlight",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "06152b8f-2558-5b4e-75b1-cbb6b608dfb0",
+    "name" : "highlight_stat",
+    "display_width" : null,
+    "label" : "Highlight Stat",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2da20f0e-afdc-350b-2326-2294a92d57ee",
+    "name" : "highlight_text",
+    "display_width" : null,
+    "label" : "Highlight Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

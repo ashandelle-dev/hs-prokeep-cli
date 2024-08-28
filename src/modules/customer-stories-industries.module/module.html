@@ -1,0 +1,8 @@
+{% for industry in module.industry %}
+<div class="flex">
+  <div class="w-5 h-5 rounded-full border" style="background-color: {{industry.industry_color.hex}}"></div>
+  <p class="mb-0 pl-3 leading-tight">
+    {{industry.industry_name}}
+  </p>
+</div>
+{% endfor %}

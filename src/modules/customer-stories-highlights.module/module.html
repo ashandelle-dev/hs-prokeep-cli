@@ -1,0 +1,38 @@
+<div class="customer-highlights mb-4">
+	<p class="text-2xl font-bold mb-3">Key Highlights</p>
+  <ul>
+    {% for highlight in module.highlight %}
+    <li><strong><span style="font-size: 30px;">{{highlight.highlight_stat}}</span><br></strong>{{highlight.highlight_text}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .customer-highlights ul {
+		list-style: none;
+		margin-top: 0;
+	}
+
+	.customer-highlights ul li {
+		line-height: 24px;
+		margin-bottom: 16px;
+		padding-left: 20px;
+		position: relative;
+	}
+
+	.customer-highlights ul li:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 10px;
+		width: 8px;
+		height: 100%;
+		background: #84CFA4;
+	}
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

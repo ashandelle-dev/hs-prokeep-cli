@@ -2,7 +2,7 @@
   <h2>Results</h2>
   <div class="grid gap-4 grid-cols-2 md:grid-cols-4">
     {% for grid_item in module.results_grid_item %}
-  	  <div class="rounded-xl py-5 px-4" style="background: {{module.results_grid_background.rgba}}; color: {{module.results_grid_text_color}};">
+  	  <div class="rounded-xl py-5 px-4" style="background: {{module.results_grid_background.rgba}}; color: {{module.results_grid_text_color.hex}};">
         <p class="font-bold text-2xl">{{grid_item.statistic}}</p>
         <p class="text-[18px] leading-5">{{grid_item.statistic_description}}</p>
       </div>

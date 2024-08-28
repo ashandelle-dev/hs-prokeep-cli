@@ -1,0 +1,42 @@
+[ {
+  "id" : "742613ec-cb11-5112-eacc-209af8e685ec",
+  "name" : "industry",
+  "display_width" : null,
+  "label" : "Industry",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c3c512fd-7401-e2da-beef-291f1ec200c7",
+    "name" : "industry_name",
+    "display_width" : null,
+    "label" : "Industry Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "baa24724-1e4a-1016-27bc-39c2be974aa4",
+    "name" : "industry_color",
+    "display_width" : null,
+    "label" : "Industry Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#57a7b9",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "industry_color" : {
+      "color" : "#57a7b9",
+      "opacity" : 100
+    }
+  }
+} ]
