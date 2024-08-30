@@ -1,0 +1,9 @@
+.blog-carousel .flickity-page-dots { bottom: -2rem; }
+.blog-carousel .flickity-page-dot.is-selected { background: #DA5039; }
+.blog-carousel .flickity-prev-next-button { display: none; }
+.blog-carousel .flickity-prev-next-button.previous { left: -4rem; }
+.blog-carousel .flickity-prev-next-button.next { right: -4rem; }
+
+@media (min-width: 1536px) {
+  .blog-carousel .flickity-prev-next-button { display: block; }  
+}

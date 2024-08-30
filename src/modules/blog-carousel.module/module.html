@@ -1,0 +1,83 @@
+{# Get Posts #}
+{# Create a variable to collect all posts #}
+{% set all_posts = [] %}
+
+{# Check if any tags were selected with the tags field #}
+{% if module.tags|length > 0 %}
+
+  {# Tags Selected #}
+  {# Create a variable to collect all tags #}
+  {% set blog_tags = [] %}
+
+  {# Append each tag to the blog_tags array #}
+  {% for item in module.tags %}
+    {% do blog_tags.append( item.slug ) %}
+  {% endfor %}
+
+  {# Loop through all posts selected in the blog field #}
+  {% for item in module.blogs %}
+
+    {# Get posts for each blog by tags #}
+    {% set posts = blog_recent_tag_posts(item, blog_tags, module.number_of_posts) %}           
+
+    {# Append each post to the all_posts array #}
+    {% for post in posts %}
+      {% do all_posts.append( post ) %}
+    {% endfor %}
+
+  {% endfor %}
+
+{% else %}
+
+  {# Tags Not Selected #}
+  {# Loop through all posts selected in the blog field #}
+  {% for item in module.blogs %}
+
+    {# Get posts for each blog #}
+    {% set posts = blog_recent_posts(item, module.number_of_posts) %}
+
+    {# Append each post to the all_posts array #}
+    {% for post in posts %}
+      {% do all_posts.append( post ) %}
+    {% endfor %}
+
+  {% endfor %}
+
+{% endif %}
+
+{# Blog Carousel #}
+<section class="blog-carousel pb-8">
+  <div data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": true, "wrapAround": true, "draggable": true }'>
+
+    {% for post in all_posts[:module.number_of_posts]|sort(true, false, 'publish_date') %}
+    <article class="w-full md:w-1/2 lg:w-1/3 p-4 flex min-h-full">
+      <div class="rounded-lg shadow-lg overflow-hidden bg-white flex flex-col">
+        
+        {# Image #}
+        {% if post.featured_image %}
+        <a class="aspect-[362/157]" href="{{ post.absolute_url }}" aria-label="{% if post.featured_image_alt_text %} Featured Image: {{ post.featured_image_alt_text }} - {% endif %}Read Full Post: {{ post.title }}">
+          <img class="w-full h-full object-cover" src="{{ resize_image_url(post.featured_image, 600) }}" loading="lazy" width="600" alt="{{ post.featured_image_alt_text }}">
+        </a>
+        {% endif %}
+        
+        {# Content #}
+        <div class="p-6 text-center grow">
+          {% if post.title %}
+          <h4><a class="text-inherit no-underline" href="{{ post.absolute_url }}">{{ post.title }}</a></h4>
+          {% endif %}
+          {% if post.post_summary %}
+          <div>{{ post.post_summary|striptags|truncatehtml(60, '...' , false) }}</div>
+          {% endif %}
+        </div>
+        
+        {# Button #}
+        <div class="p-6 text-center">
+          <a class="btn btn-primary-outline" href="{{ post.absolute_url }}">Read the guide</a>
+        </div>
+        
+      </div>
+    </article>
+    {% endfor %}    
+
+  </div>
+</section>

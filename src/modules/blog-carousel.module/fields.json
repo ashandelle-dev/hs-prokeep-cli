@@ -1,0 +1,48 @@
+[
+  {
+    "id" : "blogs",
+    "name" : "blogs",
+    "display_width" : null,
+    "label" : "Blog(s)",
+    "required" : true,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "type" : "blog",
+    "default" : [ "47938890582" ]
+  }, {
+    "id" : "tags",
+    "name" : "tags",
+    "display_width" : null,
+    "label" : "Tag(s)",
+    "inline_help_text" : "Optional",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "tag_value" : "ALL",
+    "type" : "tag"
+  }, {
+    "id" : "number_of_posts",
+    "name" : "number_of_posts",
+    "display_width" : null,
+    "label" : "Number of Posts to Display",
+    "required" : true,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : " posts",
+    "type" : "number",
+    "default" : 6
+  }
+]

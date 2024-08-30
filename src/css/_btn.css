@@ -5,6 +5,10 @@
         @apply border-[#DA5039] bg-[#DA5039] text-white hover:text-[#DA5039] hover:bg-white;
     }
 
+    &-primary-outline {
+        @apply border-[#DA5039] hover:bg-[#DA5039]/20;
+    }
+
 }
 
 .hs_cos_wrapper_widget {
