@@ -1,0 +1,123 @@
+[
+  {
+    "id" : "eyebrow_text",
+    "name" : "eyebrow_text",
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Built For Distributors"
+  },
+  {
+    "id" : "heading",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "enabled_features" : [ "block", "text_color", "bold", "italic", "underline", "link" ],
+    "type" : "richtext",
+    "default" : "<h1>Transform Customer Communication. <br><span style=\"color: #DA5039;\">Win More Business.</span></h1>"
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "id" : "styles.alignment",
+        "label": "Alignment",
+        "name": "alignment",
+        "type": "group",
+        "children": [
+          {
+            "id" : "styles.alignment.aligment",
+            "name": "alignment",
+            "label": "Alignment",
+            "required": false,
+            "type": "textalignment",
+            "default": {}
+          }
+        ]
+      },
+      {
+        "id" : "styles.eyebrow_text",
+        "label": "Eyebrow Text",
+        "name": "eyebrow_text",
+        "type": "group",
+        "children": [
+          {
+            "id" : "styles.eyebrow_text.text",
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "id" : "styles.eyebrow_text.text.color",
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "visibility": {
+                  "hidden_subfields": {
+                    "opacity": true
+                  }
+                }
+              },
+              {
+                "id" : "styles.eyebrow_text.text.has_underline",
+                "name" : "has_underline",
+                "label" : "Has Underline",
+                "required" : false,
+                "locked" : false,
+                "type" : "boolean",
+                "display":"checkbox",
+                "default" : true
+              }
+            ]
+          }          
+        ]
+      },
+      {
+        "id" : "styles.heading",
+        "label": "Heading",
+        "name": "heading",
+        "type": "group",
+        "children": [
+          {
+            "id" : "styles.heading.text",
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "id" : "styles.heading.text.color",
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "visibility": {
+                  "hidden_subfields": {
+                    "opacity": true
+                  }
+                }
+              },
+              {
+                "id" : "styles.heading.text.is_homepage",
+                "name" : "is_homepage",
+                "label" : "Is Homepage",
+                "required" : false,
+                "locked" : false,
+                "type" : "boolean",
+                "display":"checkbox",
+                "default" : false
+              }
+            ]
+          }          
+        ]
+      }
+    ]
+  }
+]

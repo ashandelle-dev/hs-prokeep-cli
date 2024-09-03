@@ -1,0 +1,55 @@
+{# Tabbed Sticky Scroller #}
+<div class="sticky-scroller">
+
+  {# Tabs #}
+  <div class="sticky-scroller__tabs">
+    {% for item in module.sections %}
+    <div class="sticky-scroller__tab{% if loop.first %} is-selected{% endif %}" id="stickyScrollerTab{{ loop.index }}">
+      {% if item.tab.icon.src %}
+        {% set loadingAttr = item.tab.icon.loading != 'disabled' ? 'loading="{{ item.tab.icon.loading|escape_attr }}"' : '' %}
+        <img src="{{ item.tab.icon.src|escape_url }}" alt="{{ item.tab.icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.tab.icon.width|escape_attr }}" height="{{ item.tab.icon.height|escape_attr }}">
+      {% endif %}
+      <span>{{ item.tab.title }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  {# Content Column #}
+  <div class="sticky-scroller__content">
+    {% set numberOfSections = module.sections|length %}
+    {% for item in module.sections %}
+    <div class="sticky-scroller__section" data-section-number="{{ loop.index }}" data-number-of-sections="{{ numberOfSections }}">
+      <div class="sticky-scroller__section-content">
+        <div class="sticky-scroller__image--mobile">
+          {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
+        </div>
+        <div>{{ item.eyebrow_text }}</div>
+        <div>{{ item.content }}</div>
+        <div>
+          {% for item2 in item.buttons %}
+            {% set href = item2.link.url.href %}
+            {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            <a class="btn {{ item2.style }}" href="{{ href|escape_url }}"{% if item2.link.open_in_new_tab %} target="_blank"{% endif %}{% if item2.link.rel %} rel="{{ item2.link.rel|escape_attr }}"{% endif %}>
+              {{ item2.text }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+   </div>
+
+  {# Images #}
+  <div class="sticky-scroller__images">
+    {% for item in module.sections %}
+    <div class="sticky-scroller__image{% if not loop.first %} is-hidden{% endif %}" id="stickyScrollerImage{{ loop.index }}">
+      {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+      <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
+    </div>
+    {% endfor %}
+  </div>
+
+<div>

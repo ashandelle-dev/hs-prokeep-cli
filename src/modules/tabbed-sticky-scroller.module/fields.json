@@ -1,0 +1,365 @@
+[ {
+  "id" : "sections",
+  "name" : "sections",
+  "display_width" : null,
+  "label" : "Sections",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "sections.eyebrow_text",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "sections.tab",
+    "name" : "tab",
+    "display_width" : null,
+    "label" : "Tab",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "sections.tab.icon",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      }
+    }, {
+      "id" : "sections.tab.title",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Business SMS"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "Business SMS"
+    }
+  }, {
+    "id" : "sections.eyebrow_text",
+    "name" : "eyebrow_text",
+    "display_width" : null,
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Business SMS"
+  }, {
+    "id" : "sections.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>"
+  }, {
+    "id" : "sections.buttons",
+    "name" : "buttons",
+    "display_width" : null,
+    "label" : "Buttons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "sections.buttons.text",
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "sections.buttons.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : true,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Learn more"
+    }, {
+      "id" : "sections.buttons.link",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : true,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "sections.buttons.style",
+      "name" : "style",
+      "display_width" : null,
+      "label" : "Style",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "primary", "Primary" ], [ "primary-outline", "Primary - Outline" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "primary"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "text" : "Learn more",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary"
+    } ]
+  }, {
+    "id" : "sections.image",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "tab" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "Business SMS"
+    },
+    "eyebrow_text" : "Business SMS",
+    "content" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>",
+    "buttons" : [ {
+      "text" : "Learn more about Business SMS",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ],
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  }, {
+    "tab" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "Centralized Inbox"
+    },
+    "eyebrow_text" : "Centralized Inbox",
+    "content" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>",
+    "buttons" : [ {
+      "text" : "Learn more about Centralized Inbox",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ],
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  }, {
+    "tab" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "CRM"
+    },
+    "eyebrow_text" : "CRM",
+    "content" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>",
+    "buttons" : [ {
+      "text" : "Learn more about CRM",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ],
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  }, {
+    "tab" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "SMS Marketing"
+    },
+    "eyebrow_text" : "SMS Marketing",
+    "content" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>",
+    "buttons" : [ {
+      "text" : "Learn more about SMS Marketing",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ],
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  }, {
+    "tab" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+        "alt" : "Streetview Icon",
+        "height" : 16,
+        "width" : 16,
+        "loading" : "lazy"
+      },
+      "title" : "Order Updates"
+    },
+    "eyebrow_text" : "Order Updates",
+    "content" : "<h2>Stop missing sales. <span style=\"color: #DA5039;\">Text</span> enable your business line.</h2>\n<p>Give your customers a better experience by text enabling your business line so they can communicate with your team at the same number they know, but with added speed and convenience.</p>",
+    "buttons" : [ {
+      "text" : "Learn more about Order Updates",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ],
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/product-screen-placeholder.png",
+      "alt" : "Product Screen Placeholder",
+      "height" : 536,
+      "width" : 599,
+      "loading" : "lazy"
+    }
+  } ]
+} ]
