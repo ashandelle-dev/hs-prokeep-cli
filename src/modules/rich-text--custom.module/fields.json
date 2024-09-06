@@ -1,0 +1,83 @@
+[ {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.alignment",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.alignment.block_alignment",
+      "name" : "block_alignment",
+      "label" : "Block Alignment",
+      "required" : false,
+      "locked" : false,
+      "multiple" : "false",
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "type" : "choice",
+      "default" : null
+    },
+    {
+      "id" : "styles.alignment.text_alignment",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text Alignment",
+      "required" : false,
+      "locked" : false,
+      "type" : "textalignment",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : { }
+  },
+  {
+    "id" : "styles.spacing",
+    "label": "Spacing",
+    "name": "spacing",
+    "type": "group",
+    "children": [
+      {
+        "id" : "styles.spacing.maximum_width",
+        "name" : "maximum_width",
+        "label" : "Maximum Width",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : 1,
+        "max" : 1280,
+        "step" : 1,
+        "type" : "number",
+        "prefix": "",
+        "suffix" : "px",
+        "default" : null
+      }
+    ]
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "alignment" : {},
+    "spacing" : {}
+  }
+}, {
+  "id" : "content",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h2>Something Powerful</h2><h3>Tell The Reader More</h3><p>The headline and subheader tells us what you're <a href=\"#\">offering</a>, and the form header closes the deal. Over here you can explain why your offer is so great it's worth filling out a form for.</p><p>Remember:</p><ul><li>Bullets are great</li><li>For spelling out <a href=\"#\">benefits</a> and</li><li>Turning visitors into leads.</li></ul>"
+} ]

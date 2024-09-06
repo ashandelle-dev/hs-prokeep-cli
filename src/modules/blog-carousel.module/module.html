@@ -46,7 +46,7 @@
 {% endif %}
 
 {# Blog Carousel #}
-<section class="blog-carousel pb-8">
+<section class="blog-carousel pb-12">
   <div data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": true, "wrapAround": true, "draggable": true }'>
 
     {% for post in all_posts[:module.number_of_posts]|sort(true, false, 'publish_date') %}
@@ -56,7 +56,7 @@
         {# Image #}
         {% if post.featured_image %}
         <a class="aspect-[362/157]" href="{{ post.absolute_url }}" aria-label="{% if post.featured_image_alt_text %} Featured Image: {{ post.featured_image_alt_text }} - {% endif %}Read Full Post: {{ post.title }}">
-          <img class="w-full h-full object-cover" src="{{ resize_image_url(post.featured_image, 600) }}" loading="lazy" width="600" alt="{{ post.featured_image_alt_text }}">
+          <img  src="{{ resize_image_url(post.featured_image, 600) }}" loading="lazy" width="600" alt="{{ post.featured_image_alt_text }}">
         </a>
         {% endif %}
         
@@ -71,7 +71,7 @@
         </div>
         
         {# Button #}
-        <div class="p-6 text-center">
+        <div class="flex flex-row items-center justify-center p-6">
           <a class="btn btn-primary-outline" href="{{ post.absolute_url }}">Read the guide</a>
         </div>
         

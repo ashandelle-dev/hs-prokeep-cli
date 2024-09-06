@@ -4,14 +4,11 @@
   "external_js": [],
   "global": false,
   "help_text": "",
-  "content_types": [
-    "PAGE",
-    "BLOG_POST",
-    "BLOG_LISTING"
-  ],
+  "content_types": [ "SITE_PAGE", "LANDING_PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "js_assets": [],
   "other_assets": [],
   "smart_type": "NOT_SMART",
   "tags": [],
-  "is_available_for_new_content": false
+  "is_available_for_new_content": true,
+  "inline_help_text" : "Use in a full width section with no padding or margins."
 }

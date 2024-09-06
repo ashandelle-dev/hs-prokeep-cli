@@ -1,10 +1,10 @@
 {
-  "label": "Blog Carousel",
+  "label": "Video Carousel",
   "css_assets": [],
   "external_js": [],
   "global": false,
   "help_text": "",
-  "content_types": [ "SITE_PAGE", "LANDING_PAGE" ],
+  "content_types": [ "SITE_PAGE", "LANDING_PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "js_assets": [],
   "other_assets": [],
   "smart_type": "NOT_SMART",

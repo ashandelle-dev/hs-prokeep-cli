@@ -143,7 +143,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "primary"
+      "default" : "primary-outline"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -160,7 +160,7 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       },
-      "style" : "primary"
+      "style" : "primary-outline"
     } ]
   }, {
     "id" : "sections.image",

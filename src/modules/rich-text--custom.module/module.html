@@ -1,0 +1,26 @@
+{# Module Styling #}
+{% require_css %}
+<style>
+  {% scope_css %}
+  
+  .rich-text {
+    {% if module.styles.alignment.block_alignment == "center" %}
+    margin-left: auto;
+    margin-right: auto;
+    {% elif module.styles.alignment.block_alignment == "right" %}
+    margin-left: auto;
+    {% endif %}
+    {% if module.styles.spacing.maximum_width %}
+    max-width: {{ module.styles.spacing.maximum_width ~ 'px' }};
+    {% endif %}
+    {{ module.styles.alignment.text_alignment.css }}
+  }
+  
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# Rich Text (Custom) #}
+<section class="rich-text">
+  {{ module.content }}
+</section>

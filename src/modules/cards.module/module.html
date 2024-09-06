@@ -1,0 +1,114 @@
+{# Module Styling #}
+{% require_css %}
+<style>
+  {% scope_css %}
+
+  {% if module.styles.background.color.color %}
+  .card {
+    background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+  }
+  {% endif %}
+
+  .card__header {
+    align-items: {{ module.styles.header.alignment }};
+  }
+
+  .card__content {
+    {{ module.styles.content.text.text_alignment.css }} 
+  }
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# Cards #}
+<section class="cards flex flex-row flex-wrap mx-[-1rem]">
+
+  {% for item in module.cards %}
+  <div class="card__wrapper flex p-4 {{ module.styles.layout.items_per_row }} {{ module.styles.layout.items_per_row_md }} {{ module.styles.layout.items_per_row_sm }}">
+    <div class="card flex flex-col{% if !module.styles.background.color.color %} bg-[#FCFDFE]{% endif %} rounded-[4px]">
+
+      {# Card Header - Number / Number with Subheading #}
+      {% if module.card_type == "number" %}
+      <div class="card__header flex flex-col{% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %} mt-8 mx-4 mb-2">
+        <div class="text-[3.55rem] leading-none font-bold text-[#2A7991]">{{ item.number }}</div>
+      </div>
+
+      {# Card Header - Number / Number with Subheading #}
+      {% elif module.card_type == "number_with_subheading" %}
+      <div class="card__header flex flex-col {% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %} mt-8 mx-4 mb-2">
+        <div class="text-[3.55rem] leading-none font-bold text-[#2A7991]">{{ item.number }}</div>
+        <div class="text-[1.33rem] leading-none text-[#2A7991]">{{ item.number_subheading }}</div>
+      </div>
+
+      {# Card Header - Steps #}
+      {% elif module.card_type == "steps" %}
+      <div class="card__header flex flex-col p-4">
+        <div class="relative h-[100px] w-[100px] flex items-center justify-center border-2 border-solid border-[#DA5039] rounded-[50%] text-[3.55rem] leading-none font-bold text-[#DA5039]">
+          <span>{{ loop.index }}</span>
+          {% if not loop.last %}
+          <svg class="absolute left-full top-1/5" fill=none height=16 viewBox="0 0 61 16"width=61 xmlns=http://www.w3.org/2000/svg><path d="M60.7071 8.70711C61.0976 8.31658 61.0976 7.68342 60.7071 7.29289L54.3431 0.928932C53.9526 0.538408 53.3195 0.538408 52.9289 0.928932C52.5384 1.31946 52.5384 1.95262 52.9289 2.34315L58.5858 8L52.9289 13.6569C52.5384 14.0474 52.5384 14.6805 52.9289 15.0711C53.3195 15.4616 53.9526 15.4616 54.3431 15.0711L60.7071 8.70711ZM0 9H60V7H0V9Z"fill=#DA5039 /></svg>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Card Header - Icon #}
+      {% elif module.card_type == "icon" %}
+      <div class="card__header flex flex-col {% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %} mt-8 mx-4 mb-2 [&_svg]:h-[56px] [&_svg]:fill-[#2A7991]">
+        {% if item.icon_type == "font_awesome" %}
+          {% icon
+            name="{{ item.font_awesome_icon.name }}"
+            style="{{ item.font_awesome_icon.type }}"
+            unicode="{{ item.font_awesome_icon.unicode }}"
+            icon_set="{{ item.font_awesome_icon.icon_set }}"
+          %}
+        {% elif (item.icon_type == "custom") and item.custom_icon.src %}
+          {% set loadingAttr = item.custom_icon.loading != 'disabled' ? 'loading="{{ item.custom_icon.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.custom_icon.src|escape_url }}" alt="{{ item.custom_icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.custom_icon.width|escape_attr }}" height="{{ item.custom_icon.height|escape_attr }}">
+        {% endif %}
+      </div>
+
+      {# Card Header - Circle Image #}
+      {% elif module.card_type == "circle_image" %}
+      <div class="card__header flex flex-col {% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %} mt-8 mx-4 mb-2">
+        {% if item.image.src %}
+        <div class="h-[64px] w-[64px] border-4 border-solid border-[#FFFBF5] rounded-[50%] overflow-hidden shadow">
+          {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+          <img class="w-full h-full object-cover" src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
+        </div>
+        {% endif %}
+      </div>
+
+      {# Card Header - Full Image #}
+      {% elif module.card_type == "full_image" %}
+      <div class="card__header w-full aspect-[362/157] mb-2">
+        {% if item.image.src %}
+          {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+          <img class="w-full h-full object-cover" src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
+        {% endif %}       
+      </div>
+      {% endif %}
+
+      {# Card Content #}
+      <div class="card__content grow p-4">{{ item.content }}</div>
+
+      {# Card Buttons #}
+      {% if item.buttons|length > 0 %}
+      <div class="flex flex-row items-center justify-center p-4 pb-8">
+        {% for item2 in item.buttons %}
+          {% set href = item2.link.url.href %}
+          {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="btn btn-{{ item2.style }}" href="{{ href|escape_url }}"{% if item2.link.open_in_new_tab %} target="_blank"{% endif %}{% if item2.link.rel %} rel="{{ item2.link.rel|escape_attr }}"{% endif %}>
+            {{ item2.text }}
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endfor %}
+
+</section>

@@ -1,0 +1,625 @@
+[ {
+  "id" : "card_type",
+  "name" : "card_type",
+  "display_width" : null,
+  "label" : "Card Type",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "number", "Number Only" ], [ "number_with_subheading", "Number with Subheading" ], [ "steps", "Steps" ], [ "icon", "Icon" ], [ "circle_image", "Circle Image" ], [ "full_image", "Full Image" ], [ "content_only", "Content Only" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "number_with_subheading"
+}, {
+  "id" : "cards",
+  "name" : "cards",
+  "display_width" : null,
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "cards.content",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "cards.number",
+    "name" : "number",
+    "display_width" : null,
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "OR",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number_with_subheading",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "9 hours"
+  }, {
+    "id" : "cards.number_subheading",
+    "name" : "number_subheading",
+    "display_width" : null,
+    "label" : "Number Subheading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "number_with_subheading",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Saved per day"
+  }, {
+    "id" : "cards.icon_type",
+    "name" : "icon_type",
+    "display_width" : null,
+    "label" : "Icon Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font_awesome", "Font Awesome" ], [ "custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "font_awesome"
+  }, {
+    "id" : "cards.font_awesome_icon",
+    "name" : "font_awesome_icon",
+    "display_width" : null,
+    "label" : "Font Awesome Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "AND",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "icon",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "cards.icon_type",
+          "controlling_value_regex": "font_awesome",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "default" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "cards.custom_icon",
+    "name" : "custom_icon",
+    "display_width" : null,
+    "label" : "Custom Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "AND",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "icon",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "cards.icon_type",
+          "controlling_value_regex": "custom",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "cards.image",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "OR",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "full_image",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "circle_image",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    }
+  }, {
+    "id" : "cards.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>"
+  }, {
+    "id" : "cards.buttons",
+    "name" : "buttons",
+    "display_width" : null,
+    "label" : "Buttons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "cards.buttons.text",
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "cards.buttons.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Click Here"
+    }, {
+      "id" : "cards.buttons.link",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "cards.buttons.style",
+      "name" : "style",
+      "display_width" : null,
+      "label" : "Style",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "primary", "Primary" ], [ "primary-outline", "Primary Outline" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "primary-outline"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "number" : "300%",
+    "number_subheading" : "Increase in sales",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  }, {
+    "number" : "600%",
+    "number_subheading" : "More proactive outreach",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  }, {
+    "number" : "9 hours",
+    "number_subheading" : "Saved per day",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.layout",
+    "name" : "layout",
+    "display_width" : null,
+    "label" : "Layout",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.layout.items_per_row",
+      "name" : "items_per_row",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col", "One" ], [ "card--two-col", "Two" ], [ "card--three-col", "Three" ], [ "card--four-col", "Four" ], [ "card--five-col", "Five" ], [ "card--six-col", "Six" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--three-col"
+    }, {
+      "id" : "styles.layout.items_per_row_md",
+      "name" : "items_per_row_md",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Medium Screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col-md", "One" ], [ "card--two-col-md", "Two" ], [ "card--three-col-md", "Three" ], [ "card--four-col-md", "Four" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--two-col-md"
+    }, {
+      "id" : "styles.layout.items_per_row_sm",
+      "name" : "items_per_row_sm",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Small Screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col-sm", "One" ], [ "card--two-col-sm", "Two" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--one-col-sm"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "items_per_row" : "card--three-col",
+      "items_per_row_md" : "card--two-col-md",
+      "items_per_row_sm" : "card--one-col-sm"
+    }
+  }, {
+    "id" : "styles.background",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.background.color",
+      "label": "Color",
+      "name": "color",
+      "type": "color"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "color" : {}
+    }
+  }, {
+    "id" : "styles.header",
+    "name" : "header",
+    "display_width" : null,
+    "label" : "Header",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.header.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "center"
+    }, {
+      "id" : "styles.header.show_separator",
+      "name" : "show_separator",
+      "label" : "Show Separator",
+      "required" : false,
+      "locked" : false,
+      "visibility_rules": "ADVANCED",
+      "advanced_visibility": {
+        "boolean_operator": "OR",
+        "criteria": [
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "number",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "number_with_subheading",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "icon",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "circle_image",
+            "operator": "EQUAL"
+          }
+        ]
+      },
+      "type" : "boolean",
+      "display" : "checkbox",
+      "default" : true
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  }, {
+    "id" : "styles.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.content.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.content.text.text_alignment",
+        "name" : "text_alignment",
+        "display_width" : null,
+        "label" : "Text Alignment",
+        "required" : false,
+        "locked" : false,
+        "type" : "textalignment",
+        "default" : {
+          "text_align": "CENTER"
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        } 
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "text" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "layout" : {
+      "items_per_row" : "card--three-col",
+      "items_per_row_md" : "card--two-col-md",
+      "items_per_row_sm" : "card--one-col-sm"
+    },
+    "content" : {
+      "text" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        }
+      }
+    },
+    "background" : {
+      "color" : {}
+    }
+  }
+} ]

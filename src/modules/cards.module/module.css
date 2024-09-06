@@ -1,0 +1,18 @@
+.card--one-col { width: 100%; }
+.card--two-col { width: 50%; }
+.card--three-col { width: 33.3333333333%; }
+.card--four-col { width: 25%; }
+.card--five-col { width: 20%; }
+.card--six-col { width: 16.6666666667%; }
+
+@media (max-width: 992px) {
+  .card--one-col-md { width: 100%; }
+  .card--two-col-md { width: 50%; }
+  .card--three-col-md { width: 33.3333333333%; }
+  .card--four-col-md { width: 25%; }
+}
+
+@media (max-width: 767px) {
+  .card--one-col-sm { width: 100%; }
+  .card--two-col-sm { width: 50%; }
+}
