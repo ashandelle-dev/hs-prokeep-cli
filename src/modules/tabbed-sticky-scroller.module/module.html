@@ -27,9 +27,9 @@
             {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
             <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
           </div>
-          <div class="inline-block uppercase font-bold text-[16px] text-[#2A7991] tracking-[.004em] mb-[10px]">{{ item.eyebrow_text }}</div>
+          <div class="inline-block uppercase font-bold text-[16px] text-[#2A7991] tracking-[.004em]">{{ item.eyebrow_text }}</div>
           <div class="border-b-[1px] border-solid border-[#EEE7E4] max-w-[450px]"></div>
-          <div>{{ item.content }}</div>
+          <div class="mt-[10px]">{{ item.content }}</div>
           {% if item.buttons|length > 0 %}
           <div>
             {% for item2 in item.buttons %}

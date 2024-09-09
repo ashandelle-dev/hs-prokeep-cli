@@ -89,3 +89,7 @@
 #hs-eu-cookie-confirmation-buttons-area {
   margin-top: 0;
 }
+
+.dnd-column {
+  border-radius: 4px;
+}

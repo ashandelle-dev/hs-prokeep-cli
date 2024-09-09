@@ -554,6 +554,58 @@
     "type" : "group",
     "default" : {}
   }, {
+    "id" : "styles.icon",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "styles.icon.fill",
+      "name" : "fill",
+      "label" : "Fill",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_value_regex" : null,
+        "operator" : null,
+        "access" : null,
+        "hidden_subfields" : {
+          "opacity" : true
+        }
+      },
+      "type" : "color",
+      "default" : {}
+      }, {
+      "id" : "styles.icon.size",
+      "name" : "size",
+      "label" : "Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 1,
+      "max" : null,
+      "step" : 1,
+      "type" : "number",
+      "prefix": "",
+      "suffix" : "px",
+      "default" : null
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  }, {
     "id" : "styles.content",
     "name" : "content",
     "display_width" : null,
@@ -600,6 +652,28 @@
         }
       }
     }
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.spacing.no_spacing",
+      "name" : "no_spacing",
+      "label" : "Remove Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "boolean",
+      "help_text" : "Sets the card to have no spacing, best used with a transparent background.",
+      "default" : false
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
   } ],
   "tab" : "STYLE",
   "expanded" : false,

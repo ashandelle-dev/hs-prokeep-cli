@@ -1,0 +1,41 @@
+{# Module Styling #}
+{% require_css %}
+<style>
+  {% scope_css %}
+  .buttons { justify-content: {{ module.styles.alignment.alignment }}; }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# Theme Buttons #}
+<section class="buttons flex flex-row items-center -mx-3">
+  
+  {% for item in module.buttons %}
+  <div class="button__wrapper p-3">
+    {% if item.type == "cta" %}
+      {% cta guid="{{ item.cta }}" %}
+    {% elif item.type == "button" %}
+      {% set href = item.link.url.href %}
+      {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a class="btn btn-{{ item.style }}"
+        {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %}
+          href="{{ href|escape_url }}"
+        {% endif %}
+        {% if item.link.open_in_new_tab %}
+          target="_blank"
+        {% endif %}
+        {% if item.link.rel %}
+          rel="{{ item.link.rel|escape_attr }}"
+        {% endif %}
+        >
+        {{ item.text }}
+      </a>
+    {% endif %}
+  </div>
+  {% endfor %}
+  
+</section>
