@@ -3,9 +3,9 @@
 
   {# Tabs #}
   <div class="hidden md:block bg-[#F2F5F7] sticky top-[103px] z-10 px-4">
-    <div class="flex flex-row justify-center my-0 mx-auto w-full max-w-[1224px]">
+    <div class="sticky-scroller__tabs flex flex-row justify-center my-0 mx-auto w-full max-w-[1224px]">
       {% for item in module.sections %}
-      <div class="sticky-scroller__tab border-b-4 border-solid border-transparent my-0 mx-[12px] py-[8px] px-[16px]{% if loop.first %} is-selected{% endif %}" id="stickyScrollerTab{{ loop.index }}">
+      <div class="sticky-scroller__tab border-b-4 border-solid border-transparent my-0 mx-[12px] py-[8px] px-[16px]{% if loop.first %} is-first{% endif %}" id="stickyScrollerTab{{ loop.index }}">
         {% if item.tab.icon.src %}
           {% set loadingAttr = item.tab.icon.loading != 'disabled' ? 'loading="{{ item.tab.icon.loading|escape_attr }}"' : '' %}
           <img src="{{ item.tab.icon.src|escape_url }}" alt="{{ item.tab.icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.tab.icon.width|escape_attr }}" height="{{ item.tab.icon.height|escape_attr }}">
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="flex flex-row flex-wrap my-0 mx-auto w-full max-w-[1224px] px-4">
+  <div class="flex flex-row flex-wrap my-0 mx-auto md:mb-[155px] w-full max-w-[1224px] px-4">
     {# Content Column #}
     <div class="w-full md:w-2/4 md:pr-[120px]">
       {% set numberOfSections = module.sections|length %}

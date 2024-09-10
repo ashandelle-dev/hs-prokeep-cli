@@ -2,6 +2,7 @@
 body { overflow-x: initial; }
 
 /* Sticky Scroller */
+.sticky-scroller__tabs:not(:has(.is-selected)) .sticky-scroller__tab:first-child, /* if no tab is selected, default to the first */
 .sticky-scroller__tab.is-selected {
   border-color: #DA5039;
 }
