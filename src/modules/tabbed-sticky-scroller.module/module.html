@@ -1,5 +1,26 @@
+{# Module Styling #}
+{% require_css %}
+<style>
+{% scope_css %}
+
+  {% if module.styles.background.color.color %}
+  .sticky-scroller {
+    background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+  }
+  {% endif %}
+    
+  {% if module.styles.eyebrow_text.text.color.color %}
+  .sticky-scroller__eyebrow-text {
+    color: {{ module.styles.eyebrow_text.text.color.color }};
+  }
+  {% endif %}
+
+{% end_scope_css %}
+</style>
+{% end_require_css %}
+
 {# Tabbed Sticky Scroller #}
-<div class="relative bg-[#FCFDFE]">
+<div class="sticky-scroller relative{% if !module.styles.background.color.color %} bg-[#FCFDFE]{% endif %}">
 
   {# Tabs #}
   <div class="hidden md:block bg-[#F2F5F7] sticky top-[103px] z-10 px-4">
@@ -27,7 +48,7 @@
             {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
             <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
           </div>
-          <div class="inline-block uppercase font-bold text-[16px] text-[#2A7991] tracking-[.004em]">{{ item.eyebrow_text }}</div>
+          <div class="sticky-scroller__eyebrow-text inline-block uppercase font-bold text-[16px]]{% if !module.styles.eyebrow_text.text.color.color %} text-[#2A7991]{% endif %} tracking-[.004em]">{{ item.eyebrow_text }}</div>
           <div class="border-b-[1px] border-solid border-[#EEE7E4] max-w-[450px]"></div>
           <div class="mt-[10px]">{{ item.content }}</div>
           {% if item.buttons|length > 0 %}

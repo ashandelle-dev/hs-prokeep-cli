@@ -362,4 +362,59 @@
       "loading" : "lazy"
     }
   } ]
+}, {
+  "label": "Styles",
+  "name": "styles",
+  "type": "group",
+  "tab": "STYLE",
+  "children": [
+    {
+      "id" : "styles.background",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.background.color",
+        "label": "Color",
+        "name": "color",
+        "type": "color"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "color" : {}
+      }
+    },
+    {
+      "id" : "styles.eyebrow_text",
+      "label": "Eyebrow Text",
+      "name": "eyebrow_text",
+      "type": "group",
+      "children": [
+        {
+          "id" : "styles.eyebrow_text.text",
+          "label": "Text",
+          "name": "text",
+          "type": "group",
+          "children": [
+            {
+              "id" : "styles.eyebrow_text.text.color",
+              "label": "Color",
+              "name": "color",
+              "type": "color",
+              "visibility": {
+                "hidden_subfields": {
+                  "opacity": true
+                }
+              }
+            }
+          ]
+        }          
+      ]
+    }
+  ]
 } ]

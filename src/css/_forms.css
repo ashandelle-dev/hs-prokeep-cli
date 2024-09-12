@@ -47,3 +47,44 @@
 
 }
 
+/* New form styling on demo page */
+
+.body-container--demo {
+  .hs-form {
+    @apply bg-[#192B3F] rounded-xl p-[40px];
+    .hs-form-field {
+      @apply mb-4;
+      .input {
+        input, select, textarea {
+          @apply bg-[#FCFDFE] border border-[#9CD4D6] rounded-sm p-[12px] placeholder-[#2A7991] tracking-[0.004em] min-h-[48px];
+        }
+      }
+      label {
+        span {
+          @apply text-[#FCFDFE] text-[14px] tracking-[0.004em];
+        }
+        .hs-form-required {
+          @apply text-red-500;
+        }
+      }
+      .hs-error-msgs {
+        li {
+          .hs-error-msg {
+            @apply text-red-500 text-[14px] tracking-[0.004em];
+          }
+        }
+      }
+    }
+    .hs-richtext {
+      &.hs-main-font-element {
+        @apply text-[#33475b];
+        span {
+          @apply text-[#33475b] !important;
+        }
+      }
+    }
+    .hs-button {
+      @apply w-auto;
+    }
+  }
+}

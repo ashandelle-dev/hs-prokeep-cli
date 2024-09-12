@@ -1,5 +1,5 @@
 {
-  "label": "Wave Separator",
+  "label": "Testimonials Carousel",
   "css_assets": [],
   "external_js": [],
   "global": false,
@@ -14,6 +14,5 @@
   "other_assets": [],
   "smart_type": "NOT_SMART",
   "tags": [],
-  "is_available_for_new_content": true,
-  "inline_help_text" : "Use in a full width section with no padding or margins."
+  "is_available_for_new_content": false
 }

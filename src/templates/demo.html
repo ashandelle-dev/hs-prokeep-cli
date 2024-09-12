@@ -1,0 +1,67 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Demo Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main Drag-and-Drop Area",
+  class="body-container body-container--demo"
+%}
+
+  {# Form Section #}
+  {% include_dnd_partial path="../sections/form-section.html" %}
+
+  {# END Form Section #}
+
+  {# Wave Separator Section #}
+  {% include_dnd_partial path="../sections/wave-separator.html" 
+    context={
+      "background_color": "#fcfdfe",
+      "fill_color": "#f2f5f7"
+    }
+  %}
+
+  {# Testimonials Section #}
+  {% dnd_section
+    background_color="rgba(242, 245, 247, 1)",
+    max_width=680,
+    padding={ 
+      "default": {
+        "top": 80,
+        "bottom": 40
+      }
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h2 style="text-align: center;">See what our customers are saying</h2>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+    background_color="rgba(242, 245, 247, 1)",
+    padding={ 
+      "default": {
+        "top": 0,
+        "bottom": 80
+      }
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/testimonials-carousel" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END Testimonials Section #}
+
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,7 +1,7 @@
 <!-- module html  -->
 
 
-  <div class="carousel-ticker flex items-center w-full">
+  <div class="carousel-ticker flex items-center w-full{% if module.styles.layout.items_per_row %} carousel-ticker--{{ module.styles.layout.items_per_row }}{% endif %}{% if module.styles.layout.items_per_row_md %} carousel-ticker--{{ module.styles.layout.items_per_row_md }}-md{% endif %}{% if module.styles.layout.items_per_row_sm %} carousel-ticker--{{ module.styles.layout.items_per_row_sm }}-sm{% endif %}">
     {% for item in module.image_field %}
     {% if item.src %}
       {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}

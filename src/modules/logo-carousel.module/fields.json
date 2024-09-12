@@ -25,4 +25,78 @@
     "max_width" : 205,
     "max_height" : 69
   }
-} ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.layout",
+    "name" : "layout",
+    "display_width" : null,
+    "label" : "Layout",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.layout.items_per_row",
+      "name" : "items_per_row",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "one-col", "One" ], [ "two-col", "Two" ], [ "three-col", "Three" ], [ "four-col", "Four" ], [ "five-col", "Five" ], [ "six-col", "Six" ], [ "seven-col", "Seven" ], [ "eight-col", "Eight" ], [ "nine-col", "nine" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : null
+    }, {
+      "id" : "styles.layout.items_per_row_md",
+      "name" : "items_per_row_md",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Medium Screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full", "One" ], [ "two-col-md", "Two" ], [ "three-col-md", "Three" ], [ "four-col-md", "Four" ], [ "five-col", "Five" ], [ "six-col", "Six" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : null
+    }, {
+      "id" : "styles.layout.items_per_row_sm",
+      "name" : "items_per_row_sm",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Small Screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full", "One" ], [ "two-col-sm", "Two" ], [ "three-col-md", "Three" ], [ "four-col-md", "Four" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : null
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  }
+  ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "layout" : {}
+  }
+}
+]

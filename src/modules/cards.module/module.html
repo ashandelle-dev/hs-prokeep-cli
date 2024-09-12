@@ -17,14 +17,20 @@
     {{ module.styles.content.text.text_alignment.css }} 
   }
 
-  .card__header--icon svg {
-    {% if module.styles.icon.fill.color %}
+  {% if module.styles.icon.fill.color %}
+  .card__header--icon svg,
+  .card__header--icon svg * { 
     fill: {{ module.styles.icon.fill.color }};
-    {% endif %}
-    {% if module.styles.icon.size %}
-    height: {{ module.styles.icon.size  ~ 'px' }};
-    {% endif %}
   }
+  {% endif %}
+
+  {% if module.styles.icon.size %}
+  .card__header--icon svg,
+  .card__header--icon img {
+    height: {{ module.styles.icon.size  ~ 'px' }};
+    width: auto;
+  }
+  {% endif %}
 
   {% end_scope_css %}
 </style>
@@ -35,19 +41,19 @@
 
   {% for item in module.cards %}
   <div class="card__wrapper flex p-4 {{ module.styles.layout.items_per_row }} {{ module.styles.layout.items_per_row_md }} {{ module.styles.layout.items_per_row_sm }}">
-    <div class="card flex flex-col{% if !module.styles.background.color.color %} bg-[#FCFDFE]{% endif %} rounded-[4px]">
+    <div class="card flex flex-col w-full{% if !module.styles.background.color.color %} bg-[#FCFDFE]{% endif %} rounded-[4px]">
 
       {# Card Header - Number / Number with Subheading #}
       {% if module.card_type == "number" %}
       <div class="card__header flex flex-col{% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %}{% if !module.styles.spacing.no_spacing %} mt-8 mx-4{% endif %} mb-2">
-        <div class="text-[3.55rem] leading-none font-bold text-[#2A7991]">{{ item.number }}</div>
+        <div class="{% if module.styles.number.large_text %}text-[3.55rem]{% else %}text-[2.22rem]{% endif %} leading-none font-bold text-[#2A7991] text-center">{{ item.number }}</div>
       </div>
 
       {# Card Header - Number / Number with Subheading #}
       {% elif module.card_type == "number_with_subheading" %}
       <div class="card__header flex flex-col {% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %}{% if !module.styles.spacing.no_spacing %} mt-8 mx-4{% endif %} mb-2">
-        <div class="text-[3.55rem] leading-none font-bold text-[#2A7991]">{{ item.number }}</div>
-        <div class="text-[1.33rem] leading-none text-[#2A7991]">{{ item.number_subheading }}</div>
+        <div class="{% if module.styles.number.large_text %}text-[3.55rem]{% else %}text-[2.22rem] mb-1{% endif %} leading-none font-bold text-[#2A7991] text-center">{{ item.number }}</div>
+        <div class="{% if module.styles.number.large_text %}text-[1.33rem] text-[#2A7991]{% else %}text-base text-[#192B3F]{% endif %} leading-none text-center">{{ item.number_subheading }}</div>
       </div>
 
       {# Card Header - Steps #}
@@ -74,6 +80,8 @@
         {% elif (item.icon_type == "custom") and item.custom_icon.src %}
           {% set loadingAttr = item.custom_icon.loading != 'disabled' ? 'loading="{{ item.custom_icon.loading|escape_attr }}"' : '' %}
           <img src="{{ item.custom_icon.src|escape_url }}" alt="{{ item.custom_icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.custom_icon.width|escape_attr }}" height="{{ item.custom_icon.height|escape_attr }}">
+        {% elif item.icon_type == "svg" %}
+          {{ item.svg }}
         {% endif %}
       </div>
 

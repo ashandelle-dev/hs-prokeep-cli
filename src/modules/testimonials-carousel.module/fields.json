@@ -1,0 +1,266 @@
+[ {
+  "id" : "testimonials",
+  "name" : "testimonials",
+  "display_width" : null,
+  "label" : "Testimonials",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "testimonials.content",
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "testimonials.logo",
+    "name" : "logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "testimonials.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>"
+  }, {
+    "id" : "testimonials.author",
+    "name" : "author",
+    "display_width" : null,
+    "label" : "Author",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "de5da006-aef9-8abe-b1df-4332385592fa",
+      "name" : "full_name",
+      "display_width" : null,
+      "label" : "Full Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "John Smith"
+    }, {
+      "id" : "testimonials.author.role",
+      "name" : "role",
+      "display_width" : null,
+      "label" : "Role",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Role"
+    }, {
+      "id" : "testimonials.author.company",
+      "name" : "company",
+      "display_width" : null,
+      "label" : "Company",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Company"
+    }, {
+      "id" : "testimonials.author.image",
+      "name" : "image",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : false,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo.png",
+      "width" : 96,
+      "height" : 24,
+      "alt" : "ProKeep Logo",
+      "loading" : "lazy"
+    },
+    "content" : "<p>“We transform your counter computers into mission control for fast and easy customer engagement so you can win more sales with less. Distributors using Prokeep are seeing.”</p>",
+    "author" : {
+      "full_name" : "John Smith",
+      "role" : "Role",
+      "company" : "Company",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Photography/Women.jpg",
+        "width" : 360,
+        "height" : 240,
+        "alt" : "Sample Image",
+        "loading" : "lazy"
+      }
+    }
+  } ]
+} ]

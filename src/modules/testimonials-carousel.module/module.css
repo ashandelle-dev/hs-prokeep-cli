@@ -1,0 +1,13 @@
+.testimonials-carousel blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+.testimonials-carousel .flickity-page-dots { bottom: -3rem; }
+.testimonials-carousel .flickity-page-dot.is-selected { background: #DA5039; }
+.testimonials-carousel .flickity-prev-next-button { display: none; }
+.testimonials-carousel .flickity-prev-next-button.previous { left: -4rem; }
+.testimonials-carousel .flickity-prev-next-button.next { right: -4rem; }
+
+@media (min-width: 1536px) {
+  .testimonials-carousel .flickity-prev-next-button { display: block; }  
+}

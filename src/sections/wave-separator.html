@@ -1,0 +1,41 @@
+<!--
+  templateType: section
+  label: Wave Section Separator
+  isAvailableForNewContent: true
+  screenshotPath: ../images/wave-separator.png
+  description: "Full width section with a Wave Separator module."
+-->
+{% dnd_section
+  full_width=true,
+  padding={
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  }
+%}
+  {% dnd_column
+    padding={
+      "right": 0,
+      "left": 0
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module path="../modules/wave-separator" 
+        styles={
+          "background": {
+            "color": {
+              "color": context.background_color or null
+            }
+          },
+          "fill": {
+            "color": {
+              "color": context.fill_color or "#192B3F"
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
