@@ -1,0 +1,25 @@
+/* Checlist (Bold) Styling */
+
+.list--checklist-bold ul,
+ul.checklist-bold {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 calc(24px + 0.75rem);
+}
+
+.list--checklist-bold ul li,
+ul.checklist-bold li {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.list--checklist-bold ul li:before,
+ul.checklist-bold li:before {
+  content: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12.5' r='11.25' stroke='%23DA5039' stroke-width='1.5'/%3E%3Cpath d='M7 13.2L9.85714 16L17 9' stroke='%23DA5039' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+  margin: 0.5rem 0.5rem 0.5rem calc((24px + 0.75rem) * (-1));
+  position: absolute;
+  top: 0;
+  transform: translateY(-0.25rem);
+}

@@ -738,6 +738,20 @@
       "type" : "boolean",
       "help_text" : "Sets the card to have no spacing, best used with a transparent background.",
       "default" : false
+    }, {
+      "id" : "styles.spacing.margin",
+      "name" : "margin",
+      "display_width" : null,
+      "label" : "Spacing Around Card",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "regular", "Regular" ], [ "less_margin", "Less Spacing" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "regular"
     } ],
     "tab" : "STYLE",
     "expanded" : false,

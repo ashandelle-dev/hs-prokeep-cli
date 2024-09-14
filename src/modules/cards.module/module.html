@@ -37,10 +37,10 @@
 {% end_require_css %}
 
 {# Cards #}
-<section class="cards flex flex-row flex-wrap -mx-4">
+<section class="cards flex flex-row flex-wrap {% if module.styles.spacing.margin == "regular" %}-mx-4{% elif module.styles.spacing.margin == "less_margin" %}-mx-2{% endif %}">
 
   {% for item in module.cards %}
-  <div class="card__wrapper flex p-4 {{ module.styles.layout.items_per_row }} {{ module.styles.layout.items_per_row_md }} {{ module.styles.layout.items_per_row_sm }}">
+  <div class="card__wrapper flex {% if module.styles.spacing.margin == "regular" %}p-4{% elif module.styles.spacing.margin == "less_margin" %}p-2{% endif %} {{ module.styles.layout.items_per_row }} {{ module.styles.layout.items_per_row_md }} {{ module.styles.layout.items_per_row_sm }}">
     <div class="card flex flex-col w-full{% if !module.styles.background.color.color %} bg-[#FCFDFE]{% endif %} rounded-[4px]">
 
       {# Card Header - Number / Number with Subheading #}
@@ -52,8 +52,8 @@
       {# Card Header - Number / Number with Subheading #}
       {% elif module.card_type == "number_with_subheading" %}
       <div class="card__header flex flex-col {% if module.styles.header.show_separator %} border-b-2 border-solid border-[#2A79911A] pb-6{% endif %}{% if !module.styles.spacing.no_spacing %} mt-8 mx-4{% endif %} mb-2">
-        <div class="{% if module.styles.number.large_text %}text-[3.55rem]{% else %}text-[2.22rem] mb-1{% endif %} leading-none font-bold text-[#2A7991] text-center">{{ item.number }}</div>
-        <div class="{% if module.styles.number.large_text %}text-[1.33rem] text-[#2A7991]{% else %}text-base text-[#192B3F]{% endif %} leading-none text-center">{{ item.number_subheading }}</div>
+        <div class="{% if module.styles.number.large_text %}text-[3.55rem]{% else %}text-[2.22rem] mb-1{% endif %} leading-none font-bold text-[#2A7991] text-center mb-1">{{ item.number }}</div>
+        <div class="{% if module.styles.number.large_text %}text-[1.33rem] text-[#2A7991]{% else %}text-base text-[#192B3F]{% endif %} leading-tight text-center">{{ item.number_subheading }}</div>
       </div>
 
       {# Card Header - Steps #}

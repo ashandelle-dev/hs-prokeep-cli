@@ -16,44 +16,33 @@
   full_width=true
 %}
   {% dnd_column %}
-    {% dnd_row %}
-      {% dnd_column
-        padding={
-          "mobile" : {
-            "left" : "24px",
-            "right" : "24px"
-          }
-        },
-        margin={
-          "default" : {
-            "bottom" : "16px"
+    {% dnd_row 
+      margin={
+        "default": {
+          "bottom": 40
+        }
+      }
+    %}
+      {% dnd_module
+        path="/pk-theme/cli-build/modules/section-heading",
+        eyebrow_text="Serving 8,000 distributors with over 1 billion text campaigns",
+        styles={
+          "alignment" : {
+            "alignment" : {
+              "text_align" : "CENTER"
+            }
+          },
+          "eyebrow_text" : {
+            "text" : {
+              "has_underline" : false
+            }
           }
         }
       %}
-        {% dnd_row %}
-          {% dnd_module
-            path="/pk-theme/cli-build/modules/section-heading",
-            offset=0,
-            width=12,
-            eyebrow_text="Serving 8,000 distributors with over 1 billion text campaigns",
-            styles={
-              "alignment" : {
-                "alignment" : {
-                  "text_align" : "CENTER"
-                }
-              },
-              "eyebrow_text" : {
-                "text" : {
-                  "has_underline" : false
-                }
-              }
-            }
-          %}
-            {% module_attribute "heading" %}
-            {% end_module_attribute %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
+        {% module_attribute "heading" %}
+
+        {% end_module_attribute %}
+      {% end_dnd_module %}
     {% end_dnd_row %}
     {% dnd_row %}
       {% dnd_module

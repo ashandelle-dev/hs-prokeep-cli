@@ -1,0 +1,52 @@
+{# Slide Cards #}
+<section>
+  <div class="flex flex-row flex-wrap -mx-4">
+    
+    {% for item in module.cards %}
+    <div class="flex w-full md:w-1/2 p-4">
+      <div class="slide-card__wrapper flex shadow-lg w-full">
+        <div class="slide-card w-full flex flex-row items-center relative py-[56px] px-[32px] bg-[#FCFDFE] rounded-[4px] overflow-hidden">
+          
+          {# Icon #}
+          <div class="flex flex-col [&_svg]:h-[56px] mr-[24px]">
+            {% if item.icon_type == "font_awesome" %}
+              {% icon
+                name="{{ item.font_awesome_icon.name }}"
+                style="{{ item.font_awesome_icon.type }}"
+                unicode="{{ item.font_awesome_icon.unicode }}"
+                icon_set="{{ item.font_awesome_icon.icon_set }}"
+              %}
+            {% elif (item.icon_type == "custom") and item.icon_custom.src %}
+              {% set loadingAttr = item.icon_custom.loading != 'disabled' ? 'loading="{{ item.icon_custom.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.icon_custom.src|escape_url }}" alt="{{ item.icon_custom.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.icon_custom.width|escape_attr }}" height="{{ item.icon_custom.height|escape_attr }}">
+            {% elif item.icon_type == "svg" %}
+              {{ item.svg_code }}
+            {% endif %}
+          </div>
+          
+          {# Content #}
+          <div>
+            <h3>{{ item.title }}</h3>
+          </div>
+
+          {# Overlay Content #}
+          <div class="slide-card__overlay flex flex-row items-center absolute w-full h-full top-0 left-0 bg-[#192B3F] p-[24px]">
+            {% if item.logo.src %}
+            <div class="w-1/5 shrink-0 mr-[24px]">
+              {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}">
+            </div>
+            {% endif %}
+            <div>
+              <div class="text-[#FCFDFE] [&>p]:mb-0 [&>p]:leading-[1.22em]">{{ item.content }}</div>
+              <div class="text-[#FCFDFE] text-[14px]">{{ item.subtitle }}</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}    
+  
+  </div>
+</section>

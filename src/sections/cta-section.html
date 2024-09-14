@@ -1,0 +1,76 @@
+<!--
+  templateType: section
+  label: CTA Section
+  isAvailableForNewContent: true
+  screenshotPath: ../images/cta-section.png
+  description: "Section with a Rich Text (Custom) and Buttons modules"
+-->
+{% dnd_section
+  background_color="rgba(252, 253, 254, 1)",
+  padding={
+    "default" : {
+      "bottom" : "60px",
+      "top" : "60px"
+    }
+  }
+%}
+  {% dnd_column
+    background_color="rgba(218, 80, 57, 1)",
+    padding={
+      "default" : {
+        "bottom" : "80px",
+        "left" : "18px",
+        "right" : "18px",
+        "top" : "80px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/pk-theme/cli-build/modules/rich-text--custom",
+        styles={
+          "alignment" : {
+            "block_alignment" : "center",
+            "text_alignment" : {
+              "text_align" : "CENTER"
+            }
+          },
+          "spacing" : {
+            "maximum_width" : 800
+          }
+        }
+      %}
+        {% module_attribute "content" %}
+          <h2><span style="color: #fcfdfe;">Join the thousands of distributors transforming customer engagement</span></h2>
+          <p><span style="color: #fcfdfe;">Leverage 1:1 communication with your customers via Prokeep to make relationships easy and selling even easier.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/pk-theme/cli-build/modules/buttons",
+        offset=0,
+        width=12,
+        buttons=[ {
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "style" : "primary-outline",
+          "text" : "Start Your Free Trial",
+          "type" : "button"
+        } ],
+        styles={
+          "alignment" : {
+            "alignment" : "center"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

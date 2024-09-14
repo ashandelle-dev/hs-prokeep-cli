@@ -21,6 +21,6 @@
 {% end_require_css %}
 
 {# Rich Text (Custom) #}
-<section class="rich-text">
+<section class="rich-text{% if module.styles.lists.type == "checklist-bold" %} list--checklist-bold{% endif %}">
   {{ module.content }}
 </section>

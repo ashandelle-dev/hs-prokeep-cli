@@ -1,0 +1,324 @@
+[ {
+  "id" : "b33d2ef1-459c-ab11-9407-00d444d30ab1",
+  "name" : "tabs",
+  "display_width" : null,
+  "label" : "Tabs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "cc3dc2b8-c473-08da-0bb3-8163ab6a2e63",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "cc3dc2b8-c473-08da-0bb3-8163ab6a2e63",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "1. Centralize your channels"
+  }, {
+    "id" : "e77af62c-56a7-4937-733a-714acbaeaa7a",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>See how mobile communication is changing the game for distribution and what you can do today to start winning more business and streamlining operations.</span><span></span></p>"
+  }, {
+    "id" : "5878d443-080a-7fa8-8f7d-4e7c72d5614b",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Adobe%20Vectors/mobile%20app.svg",
+      "alt" : "sample image",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 246
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "title" : "1. Centralize your channels",
+    "content" : "<p><span>See how mobile communication is changing the game for distribution and what you can do today to start winning more business and streamlining operations.</span><span></span></p>",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Adobe%20Vectors/mobile%20app.svg",
+      "alt" : "sample image",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 246
+    }
+  }, {
+    "title" : "2. Route messages to preferred contacts",
+    "content" : "<p><span>See how mobile communication is changing the game for distribution and what you can do today to start winning more business and streamlining operations.</span><span></span></p>",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Adobe%20Vectors/Internal%20Messaging.svg",
+      "alt" : "sample image",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 246
+    }
+  }, {
+    "title" : "3. Claim threads",
+    "content" : "<p><span>See how mobile communication is changing the game for distribution and what you can do today to start winning more business and streamlining operations.</span><span></span></p>",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Adobe%20Vectors/WebChat-Image.png",
+      "alt" : "sample image",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 246
+    }
+  }, {
+    "title" : "4. Place order with clarity",
+    "content" : "<p><span>See how mobile communication is changing the game for distribution and what you can do today to start winning more business and streamlining operations.</span><span></span></p>",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Adobe%20Vectors/Web%20Connect.svg",
+      "alt" : "sample image",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 246
+    }
+  } ]
+}, {
+  "id" : "b9ee3d22-dfc3-1776-e485-964574e4c364",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.background",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.background.color_active",
+      "name" : "color_active",
+      "display_width" : null,
+      "label" : "Color (Active)",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "text" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  }, {
+    "id" : "7449b75c-6198-9c7c-dd07-14dd6b659a62",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ed168710-13d8-b30e-7b66-3a02341b2b8b",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "e840e351-7d5e-3e53-05af-8f6cb6f5c8a4",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "text" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  }, {
+    "id" : "f15f984d-fca8-15bb-1f03-5a8b7ae9f14d",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f4146fd6-89f5-e11c-b5b8-8c1abd7b78dd",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "89ec4fe9-b8c8-8288-7432-50a690874931",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "text" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  }, {
+    "id" : "37bf53a1-ba08-5196-ec9d-76479236da03",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "5e11c8c8-23c6-66af-aae9-92419cae4031",
+      "name" : "fill",
+      "display_width" : null,
+      "label" : "Fill",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "c1511b02-86d6-beb9-7ca3-fccce0f844c5",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "fill" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : {
+      "text" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    },
+    "content" : {
+      "text" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    },
+    "icon" : {
+      "fill" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  }
+} ]

@@ -62,6 +62,31 @@
         "default" : null
       }
     ]
+  },
+  {
+    "id" : "styles.lists",
+    "name" : "lists",
+    "display_width" : null,
+    "label" : "Lists",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.lists.type",
+      "name" : "type",
+      "label" : "List Type",
+      "required" : false,
+      "locked" : false,
+      "multiple" : "false",
+      "display" : "select",
+      "choices" : [ [ "default", "Default" ], [ "checklist-bold", "Checklist (Bold Text)" ] ],
+      "type" : "choice",
+      "default" : null
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : { }
   } ],
   "tab" : "STYLE",
   "expanded" : false,
