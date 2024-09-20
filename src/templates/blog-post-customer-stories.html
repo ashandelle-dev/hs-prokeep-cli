@@ -8,7 +8,6 @@ label: Blog Post - Customer Stories support
 {% choice "layout" label='Layout', choices=[["layout-old","Current Layout"],["layout-new","2 column Layout"]], multiple='False', display='radio',export_to_template_context=True %}
 {% image "customer_logo" label='Customer Logo', export_to_template_context=True %}
 {% rich_text "customer_intro" label='Customer Intro', export_to_template_context=True %}
-{% rich_text "key_highlights" label='Customer Key Highlights', export_to_template_context=True %}
 {% image "hero_image" label='Hero Image', export_to_template_context=True %}
 
 {% block body %}

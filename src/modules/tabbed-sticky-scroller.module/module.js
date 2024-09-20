@@ -4,7 +4,7 @@ function createIntersectionObserver(
   opts = { 
     root: null, // viewport
     rootMargin: '0px', 
-    threshold: 0.5 // at 50% visible
+    threshold: 0.8 // at 50% visible
   }) {
     var previousY = new Map();
     var observer = new IntersectionObserver(function(entries, observer) {
@@ -47,4 +47,12 @@ var observer = createIntersectionObserver(function(entry){
     }
 });
   
-document.querySelectorAll('.sticky-scroller__section').forEach(function(el) { observer.observe(el); })
+document.querySelectorAll('.sticky-scroller__section').forEach(function(el) { observer.observe(el); });
+
+const sectionTabs = document.querySelectorAll('.sticky-scroller__tab');
+sectionTabs.forEach((sectionTab) => {
+  sectionTab.addEventListener('click', function(){
+    var scrollTargetID = sectionTab.dataset.target;
+    document.querySelector('[data-section-number="'+scrollTargetID+'"]').scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+});

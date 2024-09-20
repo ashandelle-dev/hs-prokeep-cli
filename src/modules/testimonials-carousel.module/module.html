@@ -20,15 +20,17 @@
       <div class="flex flex-row items-center pl-5">
 
         {% if item.author.image.src %}
-        <div class="h-[64px] w-[64px] border-4 border-solid border-[#FFFBF5] rounded-[50%] overflow-hidden shadow mr-4">
+        <div class="w-[64px] mr-4">
           {% set loadingAttr = item.author.image.loading != 'disabled' ? 'loading="{{ item.author.image.loading|escape_attr }}"' : '' %}
-          <img class="w-full h-full object-cover" src="{{ item.author.image.src|escape_url }}" alt="{{ item.author.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.author.image.width|escape_attr }}" height="{{ item.author.image.height|escape_attr }}">
+          <div class="h-[64px] w-[64px] border-4 border-solid border-[#FFFBF5] rounded-[50%] overflow-hidden shadow">
+            <img class="w-full h-full object-cover" src="{{ item.author.image.src|escape_url }}" alt="{{ item.author.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.author.image.width|escape_attr }}" height="{{ item.author.image.height|escape_attr }}">
+          </div>
         </div>
         {% endif %} 
 
         <div>
-          <h3 class="mb-0">{{ item.author.full_name }}</h3>
-          <h4 class="text-[#57A7B9] mb-0">{{ item.author.role }}, {{ item.author.company }}</h4>
+          <h3 class="mb-0 text-lg">{{ item.author.full_name }}</h3>
+          <h4 class="text-[#57A7B9] mb-0 text-base">{{ item.author.role }}, {{ item.author.company }}</h4>
         </div>
 
       </div>
