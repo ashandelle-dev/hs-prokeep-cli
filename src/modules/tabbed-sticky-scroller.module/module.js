@@ -4,7 +4,7 @@ function createIntersectionObserver(
   opts = { 
     root: null, // viewport
     rootMargin: '0px', 
-    threshold: 0.8 // at 50% visible
+    threshold: 0.5 // at 50% visible
   }) {
     var previousY = new Map();
     var observer = new IntersectionObserver(function(entries, observer) {
