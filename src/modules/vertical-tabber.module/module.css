@@ -9,3 +9,7 @@
 .vertical-tabber__tab-content > div > *:last-child {
   margin-bottom: 0;
 }
+
+.vertical-tabber__tab:has(button:focus) {
+  background-color: #2a7991;
+}
