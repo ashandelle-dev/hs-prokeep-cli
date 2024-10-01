@@ -26,20 +26,25 @@ var observer = createIntersectionObserver(function(entry){
     const sectionNumber = entry.target.dataset.sectionNumber;
     const sectionImage = document.getElementById('stickyScrollerImage' + sectionNumber);
     const sectionTab = document.getElementById('stickyScrollerTab' + sectionNumber);
+    const sectionLottie = document.getElementById('stickyScrollerLottie' + sectionNumber);
+    const sectionLottiePlayer = sectionLottie.getLottie();
     const numberOfSections = entry.target.dataset.numberOfSections;
     if (entry.isIntersecting) {
       sectionImage.classList.remove('is-hidden');
       sectionTab.classList.add('is-selected');
+      sectionLottiePlayer.goToAndPlay(0,false);
     }
     else {
       if ((sectionNumber === "1") && (entry.scrollDirectionY == 'up')) { 
         // scrolling up past first section
         sectionImage.classList.remove('is-hidden');
         sectionTab.classList.add('is-selected');
+        sectionLottiePlayer.goToAndPlay(0,false);
       } else if ((sectionNumber === numberOfSections) && (entry.scrollDirectionY == 'down')) { 
         // scrolling down past last section
         sectionImage.classList.remove('is-hidden');
         sectionTab.classList.add('is-selected');
+        sectionLottiePlayer.goToAndPlay(0,false);
       } else {
         sectionImage.classList.add('is-hidden');
         sectionTab.classList.remove('is-selected');
