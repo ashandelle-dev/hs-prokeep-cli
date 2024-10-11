@@ -29,10 +29,10 @@
   <div class="hidden md:block bg-[#F2F5F7] sticky top-[103px] z-10 px-4">
     <div class="sticky-scroller__tabs flex flex-row justify-center my-0 mx-auto w-full max-w-[1224px]">
       {% for item in module.sections %}
-      <div class="sticky-scroller__tab border-b-4 border-solid border-transparent my-0 mx-[12px] py-[8px] px-[16px] cursor-pointer{% if loop.first %} is-first{% endif %}" id="stickyScrollerTab{{ loop.index }}" data-target="{{ loop.index }}">
+      <div class="sticky-scroller__tab flex items-center border-b-4 border-solid border-transparent my-0 mx-[12px] py-[8px] px-[16px] cursor-pointer leading-tight{% if loop.first %} is-first{% endif %}" id="stickyScrollerTab{{ loop.index }}" data-target="{{ loop.index }}">
         {% if item.tab.icon.src %}
           {% set loadingAttr = item.tab.icon.loading != 'disabled' ? 'loading="{{ item.tab.icon.loading|escape_attr }}"' : '' %}
-          <img src="{{ item.tab.icon.src|escape_url }}" alt="{{ item.tab.icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.tab.icon.width|escape_attr }}" height="{{ item.tab.icon.height|escape_attr }}">
+          <img class="mr-[8px]" src="{{ item.tab.icon.src|escape_url }}" alt="{{ item.tab.icon.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.tab.icon.width|escape_attr }}" height="{{ item.tab.icon.height|escape_attr }}">
         {% endif %}
         <span>{{ item.tab.title }}</span>
       </div>
@@ -105,7 +105,7 @@
               {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
                 {% set href = "mailto:" + href %}
               {% endif %}
-              <a class="btn btn-{{ item2.style }}" href="{{ href|escape_url }}"{% if item2.link.open_in_new_tab %} target="_blank"{% endif %}{% if item2.link.rel %} rel="{{ item2.link.rel|escape_attr }}"{% endif %}>
+              <a class="btn btn-{{ item2.style }} inline-block text-center" href="{{ href|escape_url }}"{% if item2.link.open_in_new_tab %} target="_blank"{% endif %}{% if item2.link.rel %} rel="{{ item2.link.rel|escape_attr }}"{% endif %}>
                 {{ item2.text }}
               </a>
             {% endfor %}
