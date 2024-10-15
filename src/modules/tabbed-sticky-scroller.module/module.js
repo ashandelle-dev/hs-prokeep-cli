@@ -71,3 +71,11 @@ window.addEventListener("load", (event) => {
     });
   });
 });
+
+// Reduce LottieFile Size
+const players = document.querySelectorAll("lottie-player");
+players.forEach((player) => {
+  const svg = player.shadowRoot.querySelector("svg")
+  svg.setAttribute('preserveAspectRatio', 'none');
+  svg.removeAttribute('style');
+});
