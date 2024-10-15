@@ -8,10 +8,22 @@
       background-color: rgba({{ module.styles.background.color_active.color|convert_rgb }}, {{ module.styles.background.color_active.opacity / 100 }});
     }
     {% endif %}
+
+    {% if module.styles.border.color.color %}
+    .vertical-tabber__tab:not(.is-active) {
+      border-color: rgba({{ module.styles.border.color.color|convert_rgb }}, {{ module.styles.border.color.opacity / 100 }});
+    }
+    {% endif %}
     
     {% if module.styles.title.text.color.color %}
     .vertical-tabber__tab-toggle h3 {
       color: rgba({{ module.styles.title.text.color.color|convert_rgb }}, {{ module.styles.title.text.color.opacity / 100 }});
+    }
+    {% endif %}
+
+    {% if module.styles.title.text.color_active.color %}
+    .vertical-tabber__tab.is-active .vertical-tabber__tab-toggle h3 {
+      color: rgba({{ module.styles.title.text.color_active.color|convert_rgb }}, {{ module.styles.title.text.color_active.opacity / 100 }});
     }
     {% endif %}
 
@@ -22,10 +34,26 @@
     }
     {% endif %}
 
+    {% if module.styles.content.text.color_active.color %}
+    .vertical-tabber__tab.is-active .vertical-tabber__tab-content,
+    .vertical-tabber__tab.is-active .vertical-tabber__tab-content * {
+      color: rgba({{ module.styles.content.text.color_active.color|convert_rgb }}, {{ module.styles.content.text.color_active.opacity / 100 }});
+    }
+    {% endif %}
+
     {% if module.styles.icon.fill.color.color %}
-    .vertical-tabber__open-icon,
-    .vertical-tabber__open-icon {
+    .vertical-tabber__open-icon path,
+    .vertical-tabber__open-icon path {
       fill: rgba({{ module.styles.icon.fill.color.color|convert_rgb }}, {{ module.styles.icon.fill.color.opacity / 100 }});
+    }
+    {% endif %}
+
+    {% if module.styles.icon.fill.color_active.color %}
+    .vertical-tabber__tab.is-active .vertical-tabber__open-icon path,
+    .vertical-tabber__tab.is-active .vertical-tabber__open-icon path,
+    .vertical-tabber__close-icon,
+    .vertical-tabber__close-icon {
+      fill: rgba({{ module.styles.icon.fill.color_active.color|convert_rgb }}, {{ module.styles.icon.fill.color_active.opacity / 100 }});
     }
     {% endif %}
     

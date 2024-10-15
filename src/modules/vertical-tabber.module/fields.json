@@ -140,7 +140,39 @@
         }
       }
     }
-  }, {
+  },{
+    "id" : "styles.border",
+    "name" : "border",
+    "display_width" : null,
+    "label" : "Border",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.border.color",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "border" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
+    }
+  },  {
     "id" : "7449b75c-6198-9c7c-dd07-14dd6b659a62",
     "name" : "title",
     "display_width" : null,
@@ -159,6 +191,18 @@
         "name" : "color",
         "display_width" : null,
         "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }, {
+        "id" : "styles.title.color_active",
+        "name" : "color_active",
+        "display_width" : null,
+        "label" : "Color (Active)",
         "required" : false,
         "locked" : false,
         "type" : "color",
@@ -266,6 +310,18 @@
           "color" : null,
           "opacity" : null
         }
+      }, {
+        "id" : "styles.icon.fill.color_active",
+        "name" : "color_active",
+        "display_width" : null,
+        "label" : "Color (Active)",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
       } ],
       "tab" : "STYLE",
       "expanded" : false,
@@ -301,6 +357,10 @@
         "color" : {
           "color" : null,
           "opacity" : null
+        },
+        "color_active" : {
+          "color" : null,
+          "opacity" : null
         }
       }
     },
@@ -309,12 +369,20 @@
         "color" : {
           "color" : null,
           "opacity" : null
+        },
+        "color_active" : {
+          "color" : null,
+          "opacity" : null
         }
       }
     },
     "icon" : {
       "fill" : {
         "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "color_active" : {
           "color" : null,
           "opacity" : null
         }
