@@ -1,0 +1,783 @@
+[ {
+  "id" : "card_type",
+  "name" : "card_type",
+  "display_width" : null,
+  "label" : "Card Type",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "number", "Number Only" ], [ "number_with_subheading", "Number with Subheading" ], [ "steps", "Steps" ], [ "icon", "Icon" ], [ "circle_image", "Circle Image" ], [ "full_image", "Full Image" ], [ "content_only", "Content Only" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "number_with_subheading"
+}, {
+  "id" : "cards",
+  "name" : "cards",
+  "display_width" : null,
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "cards.content",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "cards.number",
+    "name" : "number",
+    "display_width" : null,
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "OR",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number_with_subheading",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "9 hours"
+  }, {
+    "id" : "cards.number_subheading",
+    "name" : "number_subheading",
+    "display_width" : null,
+    "label" : "Number Subheading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "number_with_subheading",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Saved per day"
+  }, {
+    "id" : "cards.icon_type",
+    "name" : "icon_type",
+    "display_width" : null,
+    "label" : "Icon Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font_awesome", "Font Awesome" ], [ "custom", "Custom Image File" ], [ "svg", "SVG Code" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "font_awesome"
+  }, {
+    "id" : "cards.font_awesome_icon",
+    "name" : "font_awesome_icon",
+    "display_width" : null,
+    "label" : "Font Awesome Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "AND",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "icon",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "cards.icon_type",
+          "controlling_value_regex": "font_awesome",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "default" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "cards.custom_icon",
+    "name" : "custom_icon",
+    "display_width" : null,
+    "label" : "Custom Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "AND",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "icon",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "cards.icon_type",
+          "controlling_value_regex": "custom",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    }
+  }, 
+  {
+    "id" : "cards.svg",
+    "name" : "svg",
+    "label" : "SVG Code",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "<svg fill=none height=16 viewBox=\"0 0 16 16\"width=16 xmlns=http://www.w3.org/2000/svg><path d=\"M8.37333 9.55337C8.14667 9.73337 8 10.02 8 10.3334V14H12.6667C13.4 14 14 13.4 14 12.6667V8.68004C13.3733 8.46004 12.7 8.33337 12 8.33337C10.6467 8.33337 9.38 8.80004 8.37333 9.55337Z\"fill=#192B3F /><path d=\"M12 7.33329C13.8409 7.33329 15.3333 5.84091 15.3333 3.99996C15.3333 2.15901 13.8409 0.666626 12 0.666626C10.159 0.666626 8.66666 2.15901 8.66666 3.99996C8.66666 5.84091 10.159 7.33329 12 7.33329Z\"fill=#192B3F /><path d=\"M7.66667 4C7.66667 3.28 7.84667 2.6 8.16 2H3.33333C2.6 2 2 2.6 2 3.33333V12.6667C2 13.0333 2.15333 13.3667 2.39333 13.6067L8.94 7.06C8.15333 6.28 7.66667 5.2 7.66667 4Z\"fill=#192B3F /></svg>",
+    "help_text": "To find a vector image's SVG code, save any vector image as an .svg file, then open that file with a text editor like Notepad and copy and paste the code into this field",
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "AND",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "icon",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "cards.icon_type",
+          "controlling_value_regex": "svg",
+          "operator": "EQUAL"
+        }
+      ]
+    }
+  },
+  {
+    "id" : "cards.image",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "OR",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "full_image",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "circle_image",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    }
+  }, {
+    "id" : "cards.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>"
+  }, {
+    "id" : "cards.buttons",
+    "name" : "buttons",
+    "display_width" : null,
+    "label" : "Buttons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "cards.buttons.text",
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "cards.buttons.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Click Here"
+    }, {
+      "id" : "cards.buttons.link",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "cards.buttons.style",
+      "name" : "style",
+      "display_width" : null,
+      "label" : "Style",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "primary", "Primary" ], [ "primary-outline", "Primary Outline" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "primary-outline"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "number" : "300%",
+    "number_subheading" : "Increase in sales",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  }, {
+    "number" : "600%",
+    "number_subheading" : "More proactive outreach",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  }, {
+    "number" : "9 hours",
+    "number_subheading" : "Saved per day",
+    "icon_type" : "font_awesome",
+    "font_awesome_icon" : {
+      "name" : "Circle Exclamation",
+      "unicode" : "f06a",
+      "type" : "SOLID"
+    },
+    "custom_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Icons/StreetviewOutlined.svg",
+      "alt" : "Streetview Icon",
+      "height" : 56,
+      "width" : 56,
+      "loading" : "lazy"
+    },
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://www.prokeep.com/hubfs/internal-messaging-thumbnail.jpg",
+      "alt" : "Internal Messaging",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 460
+    },
+    "content" : "<h3>Improve Communication</h3>\n<div>Give customers and easier way to reach you and deliver faster response times with a centralized messaging inbox.</div>",
+    "buttons" : [ {
+      "text" : "Click Here",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "/",
+          "type" : "EXTERNAL"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "style" : "primary-outline"
+    } ]
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.layout",
+    "name" : "layout",
+    "display_width" : null,
+    "label" : "Layout",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.layout.items_per_row",
+      "name" : "items_per_row",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col", "One" ], [ "card--two-col", "Two" ], [ "card--three-col", "Three" ], [ "card--four-col", "Four" ], [ "card--five-col", "Five" ], [ "card--six-col", "Six" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--three-col"
+    }, {
+      "id" : "styles.layout.items_per_row_md",
+      "name" : "items_per_row_md",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Medium Screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col-md", "One" ], [ "card--two-col-md", "Two" ], [ "card--three-col-md", "Three" ], [ "card--four-col-md", "Four" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--two-col-md"
+    }, {
+      "id" : "styles.layout.items_per_row_sm",
+      "name" : "items_per_row_sm",
+      "display_width" : null,
+      "label" : "Items Per Row",
+      "inline_help_text" : "Small Screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "card--one-col-sm", "One" ], [ "card--two-col-sm", "Two" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "card--one-col-sm"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "items_per_row" : "card--three-col",
+      "items_per_row_md" : "card--two-col-md",
+      "items_per_row_sm" : "card--one-col-sm"
+    }
+  }, {
+    "id" : "styles.background",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.background.color",
+      "label": "Color",
+      "name": "color",
+      "type": "color"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "color" : {}
+    }
+  }, {
+    "id" : "styles.header",
+    "name" : "header",
+    "display_width" : null,
+    "label" : "Header",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.header.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "center"
+    }, {
+      "id" : "styles.header.show_separator",
+      "name" : "show_separator",
+      "label" : "Show Separator",
+      "required" : false,
+      "locked" : false,
+      "visibility_rules": "ADVANCED",
+      "advanced_visibility": {
+        "boolean_operator": "OR",
+        "criteria": [
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "number",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "number_with_subheading",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "icon",
+            "operator": "EQUAL"
+          },
+          {
+            "controlling_field_path": "card_type",
+            "controlling_value_regex": "circle_image",
+            "operator": "EQUAL"
+          }
+        ]
+      },
+      "type" : "boolean",
+      "display" : "checkbox",
+      "default" : true
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  }, {
+    "id" : "styles.icon",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "styles.icon.fill",
+      "name" : "fill",
+      "label" : "Fill",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_value_regex" : null,
+        "operator" : null,
+        "access" : null,
+        "hidden_subfields" : {
+          "opacity" : true
+        }
+      },
+      "type" : "color",
+      "default" : {}
+      }, {
+      "id" : "styles.icon.size",
+      "name" : "size",
+      "label" : "Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 1,
+      "max" : null,
+      "step" : 1,
+      "type" : "number",
+      "prefix": "",
+      "suffix" : "px",
+      "default" : null
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  }, {
+    "id" : "styles.number",
+    "name" : "number",
+    "display_width" : null,
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "visibility_rules": "ADVANCED",
+    "advanced_visibility": {
+      "boolean_operator": "OR",
+      "criteria": [
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number",
+          "operator": "EQUAL"
+        },
+        {
+          "controlling_field_path": "card_type",
+          "controlling_value_regex": "number_with_subheading",
+          "operator": "EQUAL"
+        }
+      ]
+    },
+    "children" : [ {
+      "id" : "styles.number.large_text",
+      "name" : "large_text",
+      "label" : "Large Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "boolean",
+      "display":"checkbox",
+      "default" : true
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "large_text" : true
+    }
+  }, {
+    "id" : "styles.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.content.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.content.text.text_alignment",
+        "name" : "text_alignment",
+        "display_width" : null,
+        "label" : "Text Alignment",
+        "required" : false,
+        "locked" : false,
+        "type" : "textalignment",
+        "default" : {
+          "text_align": "CENTER"
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        } 
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "text" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        }
+      }
+    }
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.spacing.no_spacing",
+      "name" : "no_spacing",
+      "label" : "Remove Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "boolean",
+      "help_text" : "Sets the card to have no spacing, best used with a transparent background.",
+      "default" : false
+    }, {
+      "id" : "styles.spacing.margin",
+      "name" : "margin",
+      "display_width" : null,
+      "label" : "Spacing Around Card",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "regular", "Regular" ], [ "less_margin", "Less Spacing" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "regular"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {}
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "layout" : {
+      "items_per_row" : "card--three-col",
+      "items_per_row_md" : "card--two-col-md",
+      "items_per_row_sm" : "card--one-col-sm"
+    },
+    "content" : {
+      "text" : {
+        "text_alignment" : {
+          "text_align" : "CENTER"
+        }
+      }
+    },
+    "background" : {
+      "color" : {}
+    }
+  }
+} ]

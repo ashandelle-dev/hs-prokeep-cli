@@ -1,0 +1,59 @@
+
+[
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "id" : "styles.background",
+        "label": "Background",
+        "name": "background",
+        "type": "group",
+        "children": [
+          {
+            "id" : "styles.background.color",
+            "name" : "color",
+            "label" : "Color",
+            "required" : false,
+            "locked" : false,
+            "type" : "color",
+            "default" : {
+              "color" : null
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            }
+          }        
+        ]
+      },
+      {
+        "id" : "styles.fill",
+        "label": "Fill",
+        "name": "fill",
+        "type": "group",
+        "children": [
+          {
+            "id" : "styles.fill.color",
+            "name" : "color",
+            "label" : "Color",
+            "required" : false,
+            "locked" : false,
+            "type" : "color",
+            "default" : {
+              "color" : "#192B3F"
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            }
+          }        
+        ]
+      }
+    ]
+  }
+]

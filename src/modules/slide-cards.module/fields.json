@@ -1,0 +1,218 @@
+[ {
+  "id" : "100c7a8a-38ff-d689-2a9d-42a38fb6ce17",
+  "name" : "cards",
+  "display_width" : null,
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "ea210617-3384-ad04-8add-f6518278d97f",
+    "name" : "icon_type",
+    "display_width" : null,
+    "label" : "Icon Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "font_awesome", "Font Awesome" ], [ "custom", "Custom" ], [ "svg", "SVG Code" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default": "svg"
+  }, {
+    "id" : "50c1326c-3714-4365-854f-206f05a99814",
+    "name" : "icon_custom",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards.icon_type",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "1bf8a626-2388-b670-1644-f46d4cfce4fc",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards.icon_type",
+      "controlling_value_regex" : "font_awesome",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "default" : { }
+  }, {
+    "id" : "b0535ded-f73f-fb49-f614-e2191ca21ba1",
+    "name" : "svg_code",
+    "display_width" : null,
+    "label" : "SVG Code",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards.icon_type",
+      "controlling_value_regex" : "svg",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "<svg width=\"57\" height=\"56\" viewBox=\"0 0 57 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50.9733 25.06L47.8233 21.3734C47.24 20.6734 46.75 19.3667 46.75 18.4334V14.4667C46.75 11.9934 44.72 9.96335 42.2466 9.96335H38.28C37.3466 9.96335 36.0166 9.47335 35.3166 8.89002L31.63 5.74002C30.02 4.36335 27.3833 4.36335 25.7733 5.74002L22.04 8.89002C21.34 9.47335 20.0333 9.96335 19.1 9.96335H15.0633C12.59 9.96335 10.56 11.9934 10.56 14.4667V18.4334C10.56 19.3434 10.0933 20.65 9.50997 21.35L6.35997 25.06C5.00664 26.6934 5.00664 29.3067 6.35997 30.8934L9.50997 34.6034C10.0933 35.28 10.56 36.61 10.56 37.52V41.51C10.56 43.9834 12.59 46.0134 15.0633 46.0134H19.1233C20.0333 46.0134 21.3633 46.5034 22.0633 47.0867L25.75 50.2367C27.36 51.6134 29.9966 51.6134 31.6066 50.2367L35.2933 47.0867C35.9933 46.5034 37.3 46.0134 38.2333 46.0134H42.2C44.6733 46.0134 46.7033 43.9834 46.7033 41.51V37.5434C46.7033 36.61 47.1933 35.3034 47.7766 34.6034L50.9266 30.9167C52.35 29.33 52.35 26.6934 50.9733 25.06ZM26.9166 18.97C26.9166 18.0134 27.71 17.22 28.6666 17.22C29.6233 17.22 30.4166 18.0134 30.4166 18.97V30.24C30.4166 31.1967 29.6233 31.99 28.6666 31.99C27.71 31.99 26.9166 31.1967 26.9166 30.24V18.97ZM28.6666 39.3634C27.3833 39.3634 26.3333 38.3134 26.3333 37.03C26.3333 35.7467 27.36 34.6967 28.6666 34.6967C29.95 34.6967 31 35.7467 31 37.03C31 38.3134 29.9733 39.3634 28.6666 39.3634Z\" fill=\"#2A7991\"/></svg>"
+  }, {
+    "id" : "0365ce1d-a2bc-1f08-e6cf-c90a24f88023",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Long hold times & missed calls."
+  }, {
+    "id" : "2b478d0f-1df6-7d4b-401e-b07ff68cae23",
+    "name" : "logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "39e5a046-ced2-9c85-76c0-764aa5ed6b17",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>“Giving your customers the option to text, email, fax, or web chat your business creates less phone traffic while being able to service multiple customers at once so no one is left waiting.”</span><span></span></p>"
+  }, {
+    "id" : "7b9e1765-4f26-8dda-a298-3f1f18f1a3ae",
+    "name" : "subtitle",
+    "display_width" : null,
+    "label" : "Subtitle",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Englebert Humperdink | Senior Vice President"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "icon_custom" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "icon" : { },
+    "svg_code" : "<svg width=\"57\" height=\"56\" viewBox=\"0 0 57 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50.9733 25.06L47.8233 21.3734C47.24 20.6734 46.75 19.3667 46.75 18.4334V14.4667C46.75 11.9934 44.72 9.96335 42.2466 9.96335H38.28C37.3466 9.96335 36.0166 9.47335 35.3166 8.89002L31.63 5.74002C30.02 4.36335 27.3833 4.36335 25.7733 5.74002L22.04 8.89002C21.34 9.47335 20.0333 9.96335 19.1 9.96335H15.0633C12.59 9.96335 10.56 11.9934 10.56 14.4667V18.4334C10.56 19.3434 10.0933 20.65 9.50997 21.35L6.35997 25.06C5.00664 26.6934 5.00664 29.3067 6.35997 30.8934L9.50997 34.6034C10.0933 35.28 10.56 36.61 10.56 37.52V41.51C10.56 43.9834 12.59 46.0134 15.0633 46.0134H19.1233C20.0333 46.0134 21.3633 46.5034 22.0633 47.0867L25.75 50.2367C27.36 51.6134 29.9966 51.6134 31.6066 50.2367L35.2933 47.0867C35.9933 46.5034 37.3 46.0134 38.2333 46.0134H42.2C44.6733 46.0134 46.7033 43.9834 46.7033 41.51V37.5434C46.7033 36.61 47.1933 35.3034 47.7766 34.6034L50.9266 30.9167C52.35 29.33 52.35 26.6934 50.9733 25.06ZM26.9166 18.97C26.9166 18.0134 27.71 17.22 28.6666 17.22C29.6233 17.22 30.4166 18.0134 30.4166 18.97V30.24C30.4166 31.1967 29.6233 31.99 28.6666 31.99C27.71 31.99 26.9166 31.1967 26.9166 30.24V18.97ZM28.6666 39.3634C27.3833 39.3634 26.3333 38.3134 26.3333 37.03C26.3333 35.7467 27.36 34.6967 28.6666 34.6967C29.95 34.6967 31 35.7467 31 37.03C31 38.3134 29.9733 39.3634 28.6666 39.3634Z\" fill=\"#2A7991\"/></svg>",
+    "title" : "Long hold times & missed calls.",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "content" : "<p><span>“Giving your customers the option to text, email, fax, or web chat your business creates less phone traffic while being able to service multiple customers at once so no one is left waiting.”</span><span></span></p>",
+    "subtitle" : "Englebert Humperdink | Senior Vice President"
+  }, {
+    "icon_custom" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "icon" : { },
+    "svg_code" : "<svg width=\"57\" height=\"56\" viewBox=\"0 0 57 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50.9733 25.06L47.8233 21.3734C47.24 20.6734 46.75 19.3667 46.75 18.4334V14.4667C46.75 11.9934 44.72 9.96335 42.2466 9.96335H38.28C37.3466 9.96335 36.0166 9.47335 35.3166 8.89002L31.63 5.74002C30.02 4.36335 27.3833 4.36335 25.7733 5.74002L22.04 8.89002C21.34 9.47335 20.0333 9.96335 19.1 9.96335H15.0633C12.59 9.96335 10.56 11.9934 10.56 14.4667V18.4334C10.56 19.3434 10.0933 20.65 9.50997 21.35L6.35997 25.06C5.00664 26.6934 5.00664 29.3067 6.35997 30.8934L9.50997 34.6034C10.0933 35.28 10.56 36.61 10.56 37.52V41.51C10.56 43.9834 12.59 46.0134 15.0633 46.0134H19.1233C20.0333 46.0134 21.3633 46.5034 22.0633 47.0867L25.75 50.2367C27.36 51.6134 29.9966 51.6134 31.6066 50.2367L35.2933 47.0867C35.9933 46.5034 37.3 46.0134 38.2333 46.0134H42.2C44.6733 46.0134 46.7033 43.9834 46.7033 41.51V37.5434C46.7033 36.61 47.1933 35.3034 47.7766 34.6034L50.9266 30.9167C52.35 29.33 52.35 26.6934 50.9733 25.06ZM26.9166 18.97C26.9166 18.0134 27.71 17.22 28.6666 17.22C29.6233 17.22 30.4166 18.0134 30.4166 18.97V30.24C30.4166 31.1967 29.6233 31.99 28.6666 31.99C27.71 31.99 26.9166 31.1967 26.9166 30.24V18.97ZM28.6666 39.3634C27.3833 39.3634 26.3333 38.3134 26.3333 37.03C26.3333 35.7467 27.36 34.6967 28.6666 34.6967C29.95 34.6967 31 35.7467 31 37.03C31 38.3134 29.9733 39.3634 28.6666 39.3634Z\" fill=\"#2A7991\"/></svg>",
+    "title" : "Long hold times & missed calls.",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "content" : "<p><span>“Giving your customers the option to text, email, fax, or web chat your business creates less phone traffic while being able to service multiple customers at once so no one is left waiting.”</span><span></span></p>",
+    "subtitle" : "Englebert Humperdink | Senior Vice President"
+  }, {
+    "icon_custom" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "icon" : { },
+    "svg_code" : "<svg width=\"57\" height=\"56\" viewBox=\"0 0 57 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50.9733 25.06L47.8233 21.3734C47.24 20.6734 46.75 19.3667 46.75 18.4334V14.4667C46.75 11.9934 44.72 9.96335 42.2466 9.96335H38.28C37.3466 9.96335 36.0166 9.47335 35.3166 8.89002L31.63 5.74002C30.02 4.36335 27.3833 4.36335 25.7733 5.74002L22.04 8.89002C21.34 9.47335 20.0333 9.96335 19.1 9.96335H15.0633C12.59 9.96335 10.56 11.9934 10.56 14.4667V18.4334C10.56 19.3434 10.0933 20.65 9.50997 21.35L6.35997 25.06C5.00664 26.6934 5.00664 29.3067 6.35997 30.8934L9.50997 34.6034C10.0933 35.28 10.56 36.61 10.56 37.52V41.51C10.56 43.9834 12.59 46.0134 15.0633 46.0134H19.1233C20.0333 46.0134 21.3633 46.5034 22.0633 47.0867L25.75 50.2367C27.36 51.6134 29.9966 51.6134 31.6066 50.2367L35.2933 47.0867C35.9933 46.5034 37.3 46.0134 38.2333 46.0134H42.2C44.6733 46.0134 46.7033 43.9834 46.7033 41.51V37.5434C46.7033 36.61 47.1933 35.3034 47.7766 34.6034L50.9266 30.9167C52.35 29.33 52.35 26.6934 50.9733 25.06ZM26.9166 18.97C26.9166 18.0134 27.71 17.22 28.6666 17.22C29.6233 17.22 30.4166 18.0134 30.4166 18.97V30.24C30.4166 31.1967 29.6233 31.99 28.6666 31.99C27.71 31.99 26.9166 31.1967 26.9166 30.24V18.97ZM28.6666 39.3634C27.3833 39.3634 26.3333 38.3134 26.3333 37.03C26.3333 35.7467 27.36 34.6967 28.6666 34.6967C29.95 34.6967 31 35.7467 31 37.03C31 38.3134 29.9733 39.3634 28.6666 39.3634Z\" fill=\"#2A7991\"/></svg>",
+    "title" : "Long hold times & missed calls.",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "content" : "<p><span>“Giving your customers the option to text, email, fax, or web chat your business creates less phone traffic while being able to service multiple customers at once so no one is left waiting.”</span><span></span></p>",
+    "subtitle" : "Englebert Humperdink | Senior Vice President"
+  }, {
+    "icon_custom" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "icon" : { },
+    "title" : "Long hold times & missed calls.",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "content" : "<p><span>“Giving your customers the option to text, email, fax, or web chat your business creates less phone traffic while being able to service multiple customers at once so no one is left waiting.”</span><span></span></p>",
+    "subtitle" : "Englebert Humperdink | Senior Vice President"
+  } ]
+} ]

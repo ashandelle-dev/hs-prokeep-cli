@@ -1,0 +1,172 @@
+<!--
+  templateType: section
+  label: Client Logos
+  isAvailableForNewContent: true
+  screenshotPath: ../images/client-logos.png
+  description: "Full width section with a Section Heading and Logo Carousel modules."
+-->
+{% dnd_section
+  background_color="rgba(252, 253, 254, 1)",
+  padding={
+    "default" : {
+      "bottom" : "24px",
+      "top" : "20px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column %}
+    {% dnd_row 
+      margin={
+        "default": {
+          "bottom": 40
+        }
+      }
+    %}
+      {% dnd_module
+        path="/pk-theme/cli-build/modules/section-heading",
+        eyebrow_text="Serving 8,000 distributors with over 1 billion text campaigns",
+        styles={
+          "alignment" : {
+            "alignment" : {
+              "text_align" : "CENTER"
+            }
+          },
+          "eyebrow_text" : {
+            "text" : {
+              "has_underline" : false
+            }
+          }
+        }
+      %}
+        {% module_attribute "heading" %}
+
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/pk-theme/cli-build/modules/logo-carousel",
+        image_field=[ {
+          "alt" : "CES-Logo",
+          "height" : 173,
+          "loading" : "lazy",
+          "max_height" : 173,
+          "max_width" : 240,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/CES-Logo.png",
+          "width" : 240
+        }, {
+          "alt" : "winsupply-ogp-twitter",
+          "height" : 265,
+          "loading" : "lazy",
+          "max_height" : 265,
+          "max_width" : 1049,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/winsupply-ogp-twitter.png",
+          "width" : 1049
+        }, {
+          "alt" : "POOLCORP-LOGO",
+          "height" : 190,
+          "loading" : "lazy",
+          "max_height" : 190,
+          "max_width" : 1547,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/POOLCORP-LOGO.png",
+          "width" : 1547
+        }, {
+          "alt" : "SOUTHERNCARLSON-LOGO",
+          "height" : 190,
+          "loading" : "lazy",
+          "max_height" : 190,
+          "max_width" : 900,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/SOUTHERNCARLSON-LOGO.png",
+          "width" : 900
+        }, {
+          "alt" : "FERGUSON-LOGO",
+          "height" : 337,
+          "loading" : "lazy",
+          "max_height" : 263.28125,
+          "max_width" : 2000,
+          "size_type" : "auto_custom_max",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/FERGUSON-LOGO.png",
+          "width" : 2560
+        }, {
+          "alt" : "SOUTHERN-PIPE-LOGO",
+          "height" : 174,
+          "loading" : "lazy",
+          "max_height" : 174,
+          "max_width" : 608,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/SOUTHERN-PIPE-LOGO.png",
+          "width" : 608
+        }, {
+          "alt" : "johnstonesupplylogo-(1)",
+          "height" : 174,
+          "loading" : "lazy",
+          "max_height" : 174,
+          "max_width" : 928,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/johnstonesupplylogo-(1).png",
+          "width" : 928
+        }, {
+          "alt" : "IDEAL-SUPPLY-LOGO-1",
+          "height" : 190,
+          "loading" : "lazy",
+          "max_height" : 190,
+          "max_width" : 895,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Customer%20Logos/IDEAL-SUPPLY-LOGO-1.png",
+          "width" : 895
+        }, {
+          "alt" : "US-ELECTRICAL-SERVICE-LOGO",
+          "height" : 174,
+          "loading" : "lazy",
+          "max_height" : 174,
+          "max_width" : 610,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/US-ELECTRICAL-SERVICE-LOGO.png",
+          "width" : 610
+        }, {
+          "alt" : "Wolseley-Canada-Logo-2",
+          "height" : 131,
+          "loading" : "lazy",
+          "max_height" : 131,
+          "max_width" : 724,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Customer%20Logos/Wolseley-Canada-Logo-2.png",
+          "width" : 724
+        }, {
+          "alt" : "aireco",
+          "height" : 112,
+          "loading" : "lazy",
+          "max_height" : 112,
+          "max_width" : 449,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Customer%20Logos/aireco.png",
+          "width" : 449
+        }, {
+          "alt" : "tec_logo",
+          "height" : 183,
+          "loading" : "lazy",
+          "max_height" : 183,
+          "max_width" : 288,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Customer%20Logos/tec_logo.png",
+          "width" : 288
+        }, {
+          "alt" : "cloudpoolsupply",
+          "height" : 128,
+          "loading" : "lazy",
+          "max_height" : 128,
+          "max_width" : 448,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/cloudpoolsupply.png",
+          "width" : 448
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

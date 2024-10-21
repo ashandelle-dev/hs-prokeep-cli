@@ -1,0 +1,43 @@
+<section class="testimonials-carousel pb-12">
+  <div data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": true, "wrapAround": true, "draggable": true, "imagesLoaded": true }'>
+
+    {% for item in module.testimonials %}
+    <div class="w-full md:w-1/2 lg:w-1/3 p-4 flex min-h-full">
+      <div class="rounded-lg shadow-lg overflow-hidden bg-white flex flex-col p-[24px]">
+
+      {# Logo #}
+      {% if item.logo.src %}
+      <div class="pl-5">
+        {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+        <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}">
+      </div>
+      {% endif %}
+
+      {# Quote #}
+      <blockquote class="pl-5 my-8 border-l-2 border-solid border-[#FF7E69]">{{ item.content }}</blockquote>
+
+      {# Author #}
+      <div class="flex flex-row items-center pl-5">
+
+        {% if item.author.image.src %}
+        <div class="w-[64px] mr-4">
+          {% set loadingAttr = item.author.image.loading != 'disabled' ? 'loading="{{ item.author.image.loading|escape_attr }}"' : '' %}
+          <div class="h-[64px] w-[64px] border-4 border-solid border-[#FFFBF5] rounded-[50%] overflow-hidden shadow">
+            <img class="w-full h-full object-cover" src="{{ item.author.image.src|escape_url }}" alt="{{ item.author.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.author.image.width|escape_attr }}" height="{{ item.author.image.height|escape_attr }}">
+          </div>
+        </div>
+        {% endif %} 
+
+        <div>
+          <h3 class="mb-0 text-lg">{{ item.author.full_name }}</h3>
+          <h4 class="text-[#57A7B9] mb-0 text-base">{{ item.author.role }}, {{ item.author.company }}</h4>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>

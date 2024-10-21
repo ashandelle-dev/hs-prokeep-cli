@@ -54,6 +54,19 @@
   }
 }
 
+.body-container--demo {
+  .widget-type-form {
+    @apply bg-[#192B3F] rounded-xl;
+  
+    .form-title {
+      @apply p-[40px] pb-0 m-0 -mb-3 text-[#FCFDFE];
+    }
+  
+    form {
+      @apply m-0;
+    }
+  }
+}
 
 #hs-eu-cookie-confirmation {
     width: 95% !important;
@@ -88,4 +101,14 @@
 
 #hs-eu-cookie-confirmation-buttons-area {
   margin-top: 0;
+}
+
+.dnd-column {
+  border-radius: 12px;
+}
+
+/* Demo Template (New Styling) */
+
+.body-container--demo {
+  @apply bg-[#FCFDFE]; 
 }

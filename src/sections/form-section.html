@@ -1,0 +1,253 @@
+<!--
+  templateType: section
+  label: Content and Form
+  isAvailableForNewContent: true
+  screenshotPath: ../images/form-section.png
+  description: "Two column section with Section Heading and Rich Text modules on the left and Form and Client Logos modules on the right"
+-->
+{% dnd_section
+  background_color="#FCFDFE",
+  class="form-section",
+  vertical_alignment="MIDDLE",
+  background_image={
+    "backgroundPosition": "BOTTOM_RIGHT",
+    "backgroundSize": "contain",
+    "imageUrl": "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Backgrounds/demo-template--hero-bg.svg"
+  },
+  padding={
+    "default": {
+      "top": 80,
+      "bottom": 0
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=6,
+    padding={
+      "default": {
+        "bottom": 0,
+        "right": 64
+      },
+      "mobile": {
+        "bottom": 40,
+        "right": 0
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <h1>Power sales with a multi-tool <span style="color: #da5039;">built for your counter.</span></h1>
+          <h3>Supercharged inbound/outbound engine</h3>
+          <br>
+          <p>Prokeep is a powerful customer engagement platform built to revolutionize how distributors communicate with customers and teams, ensuring seamless, efficient, and proactive service so you can win more with less.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module path="../modules/cards",
+        cards=[ 
+          {
+            "number" : "300%",
+            "number_subheading" : "Increase in sales",
+            "content" : "",
+            "buttons" : [ ]
+          }, 
+          {
+            "number" : "9 Hours",
+            "number_subheading" : "Saved per day",
+            "content" : "",
+            "buttons" : [ ]
+          }, 
+          {
+            "number" : "100x-500x",
+            "number_subheading" : "Increase in efficiency",
+            "content" : "",
+            "buttons" : [ ]
+          }, 
+          {
+            "number" : "600%",
+            "number_subheading" : "More proactive order status updates",
+            "content" : "",
+            "buttons" : [ ]
+          }
+        ],
+        styles={
+          "background" : {
+            "color" : {
+              "color" : "#F2F5F7",
+              "opacity" : 100
+            }
+          },
+          "number": {
+            "large_text": false
+          },
+          "header" : {
+            "show_separator" : false
+          },
+          "layout" : {
+            "items_per_row" : "card--two-col"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+    offset=6,
+    width=6,
+    background_color="#192B3F"
+  %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/form",
+        title="Sign up for your free trial",
+        form={
+          "form_id" : "cda649cd-6021-4bff-86d7-881f1c2f0500",
+          "form_type" : "HUBSPOT",
+          "redirect_url" : "https://info.prokeep.com/thank-you",
+          "response_type" : "redirect"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row 
+      padding={
+        "default": {
+          "right": 40,
+          "left": 40
+        }
+      }
+    %}
+      {% dnd_module path="../modules/section-heading",
+        eyebrow_text="Serving 8,000 distributors with over 1 billion text campaigns",
+        styles={
+          "alignment" : {
+            "block_alignment" : "center",
+            "alignment" : {
+              "text_align" : "CENTER"
+            }
+          },
+          "spacing" : {
+            "maximum_width" : 303
+          },
+          "eyebrow_text" : {
+            "text" : {
+              "color": {
+                "color": "#FCFDFE"
+              },
+              "has_underline" : false
+            }
+          }
+        }
+      %}
+        {% module_attribute "heading" %}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row 
+      padding={
+        "default": {
+          "top": 40,
+          "right": 40,
+          "bottom": 40,
+          "left": 40
+        }
+      }
+    %}
+      {% dnd_module
+        path="../modules/logo-carousel",
+        image_field=[ {
+          "alt" : "Aireco Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 97,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/aireco-logo--light-grey.png",
+          "width" : 97
+        }, {
+          "alt" : "IdealSupply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 113,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/idealsupply-logo--light-grey.png",
+          "width" : 113
+        }, {
+          "alt" : "Johnston Supply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 128,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/johnston-supply-logo--light-grey.png",
+          "width" : 128
+        }, {
+          "alt" : "Aireco Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 97,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/aireco-logo--light-grey.png",
+          "width" : 97
+        }, {
+          "alt" : "IdealSupply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 113,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/idealsupply-logo--light-grey.png",
+          "width" : 113
+        }, {
+          "alt" : "Johnston Supply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 128,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/johnston-supply-logo--light-grey.png",
+          "width" : 128
+        }, {
+          "alt" : "Aireco Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 97,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/aireco-logo--light-grey.png",
+          "width" : 97
+        }, {
+          "alt" : "IdealSupply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 113,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/idealsupply-logo--light-grey.png",
+          "width" : 113
+        }, {
+          "alt" : "Johnston Supply Logo",
+          "height" : 24,
+          "loading" : "lazy",
+          "max_height" : 24,
+          "max_width" : 128,
+          "size_type" : "auto",
+          "src" : "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/johnston-supply-logo--light-grey.png",
+          "width" : 128
+        } ],
+        styles={
+          "layout": {
+            "items_per_row": "four-col",
+            "items_per_row_md": "four-col-md",
+            "items_per_row_sm": "two-col-sm"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

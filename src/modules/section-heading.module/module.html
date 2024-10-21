@@ -1,0 +1,75 @@
+{# Module Styling #}
+{% require_css %}
+<style>
+  {% scope_css %}
+
+  .section-heading {
+    {% if module.styles.alignment.block_alignment == "center" %}
+    margin-left: auto;
+    margin-right: auto;
+    {% elif module.styles.alignment.block_alignment == "right" %}
+    margin-left: auto;
+    {% endif %}
+    {% if module.styles.spacing.maximum_width %}
+    max-width: {{ module.styles.spacing.maximum_width ~ 'px' }};
+    {% endif %}
+    {{ module.styles.alignment.alignment.css }}
+  }
+
+  {% if module.styles.eyebrow_text.text.color.color %}
+  .section-heading__eyebrow-text {
+    color: {{ module.styles.eyebrow_text.text.color.color }};
+  }
+  {% endif %}
+
+  {% if (module.styles.alignment.alignment.text_align == "CENTER") or (module.styles.alignment.block_alignment == "center") %}
+  .section-header__eyebrow-underline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  {% endif %}
+
+  {% if module.styles.heading.text.color.color %}
+  .section-heading__heading,
+  .section-heading__heading h1, 
+  .section-heading__heading h2,
+  .section-heading__heading h3,
+  .section-heading__heading h4,
+  .section-heading__heading h5,
+  .section-heading__heading h6,
+  .section-heading__heading p,
+  .section-heading__heading div {
+    color: {{ module.styles.heading.text.color.color }};
+  }
+  {% endif %}
+
+  {% if module.styles.heading.text.is_homepage %}
+  .section-heading__heading h1, 
+  .section-heading__heading h2,
+  .section-heading__heading h3,
+  .section-heading__heading h4,
+  .section-heading__heading h5,
+  .section-heading__heading h6 {
+    font-weight: 500;
+  }
+  {% endif %}
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# Section Heading #}
+<div class="section-heading">
+  {% if module.eyebrow_text %}
+  {# Eyebrow Text #}
+  <div class="section-heading__eyebrow-text inline-block uppercase font-bold text-[16px]{% if !module.styles.eyebrow_text.text.color.color %} text-[#2A7991]{% endif %} tracking-[.004em]">{{ module.eyebrow_text }}</div>
+  {% if module.styles.eyebrow_text.text.has_underline %}
+  {# Eyebrow Text - Underline #}
+  <div class="section-header__eyebrow-underline border-b-[1px] border-solid border-[#EEE7E4] max-w-[450px]"></div>
+  {% endif %}
+  {% endif %}
+  {% if module.heading %}
+  {# Heading #}
+  <div class="section-heading__heading mt-[10px]">{{ module.heading }}</div>
+  {% endif %}
+</div>

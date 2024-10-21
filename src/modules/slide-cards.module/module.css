@@ -1,0 +1,27 @@
+.slide-card {
+  clip-path: polygon(calc(100% - 2rem) 0, 100% 2rem, 100% 100%, 0 100%, 0 0);
+}
+
+.slide-card:after {
+  background-color: #192B3F;
+  box-shadow: 0px 4px 4px 0px #0000001A;
+  content: '';
+  height: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rem;
+}
+
+.slide-card__overlay {
+  left: 100%;
+  opacity: 0;
+  transition: left 0.3s;
+  visibility: hidden;
+}
+
+.slide-card:hover .slide-card__overlay {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}

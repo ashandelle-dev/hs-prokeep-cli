@@ -1,0 +1,18 @@
+.video-carousel iframe {
+  border-radius: 0.75rem;
+}
+
+.video-carousel .flickity-page-dots { bottom: -2rem; }
+.video-carousel .flickity-page-dot.is-selected { background: #DA5039; }
+
+.video-carousel .flickity-prev-next-button {
+  top: calc((44px + 1rem) * (-1));
+  transform: none;
+}
+
+.video-carousel .flickity-prev-next-button.previous { left: calc(100% - (88px + 1rem)); }
+.video-carousel .flickity-prev-next-button.next { right: 0;}
+
+@media (min-width: 1536px) {
+  .video-carousel .flickity-prev-next-button { display: block; }  
+}

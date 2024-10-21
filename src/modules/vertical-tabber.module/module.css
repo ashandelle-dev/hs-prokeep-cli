@@ -1,0 +1,15 @@
+.vertical-tabber__tab-toggle[aria-expanded="false"] .vertical-tabber__close-icon {
+  display: none;
+}
+
+.vertical-tabber__tab-toggle[aria-expanded="true"] .vertical-tabber__open-icon {
+  display: none;
+}
+
+.vertical-tabber__tab-content > div > *:last-child {
+  margin-bottom: 0;
+}
+
+.vertical-tabber__tab:has(button:focus) {
+  background-color: #2a7991;
+}

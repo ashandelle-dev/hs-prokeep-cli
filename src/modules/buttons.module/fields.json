@@ -1,0 +1,179 @@
+[ {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.alignment",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.alignment.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-between", "Space Between" ], [ "space-around", "Space Around" ], [ "space-evenly", "Space Evenly" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "flex-start"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "alignment" : "flex-start"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "alignment" : {
+      "alignment" : "flex-start"
+    }
+  }
+}, {
+  "id" : "buttons",
+  "name" : "buttons",
+  "display_width" : null,
+  "label" : "Buttons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "buttons.type",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "buttons.type",
+    "name" : "type",
+    "display_width" : null,
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "button", "Custom Button" ], [ "cta", "Call-to-Action (CTA)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "button"
+  }, {
+    "id" : "buttons.text",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.type",
+      "controlling_value_regex" : "button",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Click Here"
+  }, {
+    "id" : "buttons.link",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.type",
+      "controlling_value_regex" : "button",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "/",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "buttons.cta",
+    "name" : "cta",
+    "display_width" : null,
+    "label" : "Call-to-Action (CTA)",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.type",
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta"
+  }, {
+    "id" : "buttons.style",
+    "name" : "style",
+    "display_width" : null,
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.type",
+      "controlling_value_regex" : "button",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "primary", "Primary" ], [ "primary-outline", "Primary - Outline" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "primary"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "type" : "button",
+    "text" : "Click Here",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "/",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "style" : "primary"
+  } ]
+} ]
