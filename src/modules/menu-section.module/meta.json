@@ -1,5 +1,5 @@
 {
-  "global" : false,
+  "global" : true,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
   "host_template_types" : [ "PAGE" ],
   "module_id" : 99094693144,

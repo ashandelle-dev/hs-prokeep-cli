@@ -2,9 +2,9 @@
   templateType: global_partial
   label: Main Header
 -->
-<nav class="bg-white fixed top-0 left-0 right-0 w-full z-50 shadow">
-  <div class="container relative px-7">
-    <div class="flex items-center py-6">
+<nav class="bg-white fixed top-0 w-full z-50 shadow-md">
+  <div class="container px-7">
+    <div class="flex items-center py-6 lg:py-0">
       <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6">
         <div class="w-full">
           {% module "header_logo" path="@hubspot/logo", link="https://www.prokeep.com/" label="Header logo", img={src= "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo-2.png", width= 798, override_inherited_src=false, alt="Prokeep Logo" } %}
@@ -23,11 +23,12 @@
             </div>
           </div>
         </div>
-        <div class="w-full lg:flex items-center absolute right-0 bg-white top-[100px] px-6 lg:static lg:bg-transparent translate-x-full lg:translate-x-0 main-nav-menu pb-32 lg:pb-0 overflow-y-scroll lg:overflow-visible h-screen lg:h-full" id="main-nav-menu">
+        <div class="w-full lg:flex items-center absolute lg:static right-0 bg-white top-[85px] lg:top-[100px] px-0 lg:px-6 lg:bg-transparent main-nav-menu pb-32 lg:pb-0 overflow-x-hidden lg:overflow-visible h-screen lg:h-full" id="main-nav-menu">
           <div class="w-full lg:w-3/5">
-            {% module "main_menu" path="./../modules/menu-section", label="Main Menu"  %}
+            {% module "column_menu" path="./../modules/column-nav", label="Main Menu"  %}
+            
           </div>
-          <div class="w-full lg:w-2/5">
+          <div class="w-full lg:w-2/5 px-6 lg:px-0">
           {% module "main_menu_btns" path="./../modules/main-nav-btns", label="Main Menu Buttons"  %}
           </div>
         </div>

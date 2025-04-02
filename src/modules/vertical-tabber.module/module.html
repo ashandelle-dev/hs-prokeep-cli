@@ -4,8 +4,16 @@
     {% scope_css %}
 
     {% if module.styles.background.color_active.color %}
-    .vertical-tabber__tab.is-active {
-      background-color: rgba({{ module.styles.background.color_active.color|convert_rgb }}, {{ module.styles.background.color_active.opacity / 100 }});
+    .vertical-tabber__tab.is-active .vertical-tabber__tab-toggle, .vertical-tabber__tab.is-active .vertical-tabber__tab-content div:first-child {
+        background-color: rgba({{ module.styles.background.color_active.color|convert_rgb }}, {{ module.styles.background.color_active.opacity / 100 }});
+      }
+    @media screen and (min-width: 991px) {
+      .vertical-tabber__tab.is-active {
+        background-color: rgba({{ module.styles.background.color_active.color|convert_rgb }}, {{ module.styles.background.color_active.opacity / 100 }});
+      }
+      .vertical-tabber__tab.is-active .vertical-tabber__tab-toggle, .vertical-tabber__tab.is-active .vertical-tabber__tab-content div:first-child {
+        background-color: transparent;
+      }
     }
     {% endif %}
 
@@ -56,6 +64,12 @@
       fill: rgba({{ module.styles.icon.fill.color_active.color|convert_rgb }}, {{ module.styles.icon.fill.color_active.opacity / 100 }});
     }
     {% endif %}
+
+    {% if module.styles.image_background.image_background_color.color %}
+      .vertical-tabber__image-container, .tab-image {
+        background-color: rgba({{ module.styles.image_background.image_background_color.color|convert_rgb }}, {{ module.styles.image_background.image_background_color.opacity / 100 }});
+      }
+    {% endif %}
     
     {% end_scope_css %}
   </style>
@@ -63,17 +77,17 @@
 
 {# Vertical Tabber #}
 <section>
-  <div class="flex flex-row items-center flex-wrap">
+  <div class="flex">
     
     {# Left Column - Tabs #}
-    <div class="w-full md:w-1/2 md:pr-8">
+    <div class="w-full md:w-1/2 md:pr-8 flex flex-col">
       <div>
 
         <ul class="list-none m-0 p-0">
           {% for item in module.tabs %}
-          <li class="vertical-tabber__tab px-[24px] py-[8px] [&.is-active]:p-[24px] border-b-[1px] border-[#F2F5F7] [&.is-active]:border-[transparent] rounded-0 [&.is-active]:rounded-[4px]{% if loop.first %} is-active{% endif %}">
+          <li class="vertical-tabber__tab md:px-[24px] md:py-[8px] [&.is-active]:md:p-[24px] border-b-[1px] border-[#F2F5F7] [&.is-active]:border-[transparent] rounded-0 [&.is-active]:rounded-[4px]{% if loop.first %} is-active{% endif %}">
             {# Tab #}
-            <button class="vertical-tabber__tab-toggle focus:outline-none w-full flex flex-row justify-between text-left mb-2" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="verticalTabberPanel-{{ name }}--{{ loop.index }}" id="verticalTabberTitle-{{ name }}--{{ loop.index }}" data-image-id="verticalTabberImage-{{ name }}--{{ loop.index }}">
+            <button class="pt-[24px] px-[24px] md:px-0 md:pt-0 vertical-tabber__tab-toggle focus:outline-none w-full flex flex-row justify-between text-left md:mb-2" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="verticalTabberPanel-{{ name }}--{{ loop.index }}" id="verticalTabberTitle-{{ name }}--{{ loop.index }}" data-image-id="verticalTabberImage-{{ name }}--{{ loop.index }}">
               <h3 class="mb-0">{{ item.title }}</h3>
               <div>
                 {# Open Icon #}
@@ -88,8 +102,8 @@
             </button>
             {# Tab Content #}
             <div class="vertical-tabber__tab-content" id="verticalTabberPanel-{{ name }}--{{ loop.index }}" aria-labelledby="verticalTabberTitle-{{ name }}--{{ loop.index }}"{% if !loop.first %} hidden{% endif %}>
-              <div>{{ item.content }}</div>
-              <div class="mt-4 md:hidden"> 
+              <div class="px-[24px] pb-[24px] md:px-0 md:pb-0">{{ item.content }}</div>
+              <div class="tab-image rounded-[4px] mt-4 md:hidden"> 
                 {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
                 <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
               </div> 
@@ -102,19 +116,15 @@
     </div>
 
     {# Right Column - Images #}    
-    <div class="hidden md:block w-full md:w-1/2">
-      <div class="w-full flex items-center justify-center">
-
-        {% for item in module.tabs %}
-        <div class="vertical-tabber__image{% if !loop.first %} hidden{% endif %}" id="verticalTabberImage-{{ name }}--{{ loop.index }}">
+    <div class="hidden md:flex w-full flex-col md:w-1/2 rounded-[4px] vertical-tabber__image-container">
+       {% for item in module.tabs %}
+        <div class="vertical-tabber__image flex flex-1 items-center justify-center{% if !loop.first %} hidden{% endif %}" id="verticalTabberImage-{{ name }}--{{ loop.index }}">
           <div>
             {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
             <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}">
           </div>
         </div>
         {% endfor %}
-
-      </div>           
     </div>
     
   </div>

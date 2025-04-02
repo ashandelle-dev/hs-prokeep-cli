@@ -7,13 +7,13 @@ label: Blog Listing
 {% set blog_tags = blog_tags("default", 250) %}
 {% macro ct_label(ct_name, ct_color, is_active) %}
 {% set tag_class = ct_name|replace(" ","-") %}
-<div class="flex h-[57px] items-center mb-3 rounded-lg {% if is_active %} category-{{tag_class}} {% else %} bg-[#FFF4E3] {% endif %}">
+<div class="flex md:h-[57px] items-center mb-3 rounded-lg {% if is_active %} category-{{tag_class}} {% else %} bg-transparent md:bg-[#FFF4E3] {% endif %}">
       <div class="flex items-center h-full">
-        <div class="h-full">
-          <div class="w-[15px] h-full rounded-full {% if !is_active %} category-{{tag_class}} {% endif %}"></div>
+        <div class="h-full{%if is_active%} hidden md:block{%endif%}">
+          <div class="w-[15px] h-[15px] md:h-full rounded-full {% if !is_active %} category-{{tag_class}} {% endif %}"></div>
         </div>
       
-        <div class="px-3">
+        <div class="{%if is_active%}px-3{%else%}px-1 md:px-3{%endif%}">
             <p class="m-0 font-bold leading-tight text-[16px]">{{ ct_name }}</p>
         </div>
       </div>
@@ -131,11 +131,11 @@ label: Blog Listing
           
           <p class="font-bold m-0">Filter by Topic:</p>
         </div>
-        <a class="text-[#173A53] no-underline block hover:no-underline hover:text-[#173A53]]" href="{{ group.absolute_url }}#blog-grid">
-          <div class="flex h-[57px] items-center {% if !tag %} bg-[#57A7B9]  {% else %} bg-[#FFF4E3]{% endif %} mb-3 rounded-lg">
+        <a class="text-[#173A53] no-underline inline-block md:block hover:no-underline hover:text-[#173A53]] mr-1 md:mr-0" href="{{ group.absolute_url }}#blog-grid">
+          <div class="flex md:h-[57px] items-center {% if !tag %} bg-[#57A7B9]  {% else %} bg-[#FFF4E3]{% endif %} mb-3 rounded-lg">
             <div class="flex items-center h-full">
-              <div class="h-full">
-                <div class="w-[15px] h-full rounded-full " style="background-color: {{ ct_color }}"></div>
+              <div class="h-full hidden md:block">
+                <div class="w-[15px] h-[15px] md:h-full rounded-full " style="background-color: {{ ct_color }}"></div>
               </div>
             
               <div class="px-3">
@@ -148,7 +148,7 @@ label: Blog Listing
         {% for item in blog_tags %}
           {% set is_active = item|replace(" ","-")|lower == current_tag %}
           {% if (item != 'Featured') && (item != 'Type - Whitepaper') && (item != 'Type - Video') && (item != 'Type - Infographic') %}
-            <a class="text-[#173A53] no-underline block hover:no-underline " href="{{ blog_tag_url(group.id, item.slug) }}#blog-grid">
+            <a class="text-[#173A53] no-underline inline-block md:block hover:no-underline mr-1 md:mr-0" href="{{ blog_tag_url(group.id, item.slug) }}#blog-grid">
               {{ct_label(item,"#36b2e7", is_active)}}
             </a>
           {% endif %}

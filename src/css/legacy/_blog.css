@@ -293,6 +293,33 @@ Also for the post meta infromation like tags, author and published date
   background: #57a7b9;
 }
 
+.category-Conversation-Hub {
+  background: #469C6C;
+}
+.category-Relationship-Manager {
+  background: #FFD387;
+}
+
+.category-Outbound-Engine {
+  background: #86D1C3;
+}
+
+.category-Partnerships {
+  background: #F4B74E;
+}
+
+.category-Product-Updates {
+  background: #84CFA4;
+}
+
+.category-Integration {
+  background: #469C6C;
+}
+
+.category-Press {
+  background: #DA5039; 
+}
+
 .blog-card:hover .category-wrapper.category-wrapper-Distributor-Spotlight {
   background: #84cfa4;
 }

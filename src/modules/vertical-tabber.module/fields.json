@@ -120,27 +120,25 @@
       "name" : "color_active",
       "display_width" : null,
       "label" : "Color (Active)",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "default" : {
-          "color" : null,
-          "opacity" : null
-        }
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
     } ],
     "tab" : "STYLE",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "text" : {
-        "color" : {
-          "color" : null,
-          "opacity" : null
-        }
+      "color_active" : {
+        "color" : null,
+        "opacity" : null
       }
     }
-  },{
+  }, {
     "id" : "styles.border",
     "name" : "border",
     "display_width" : null,
@@ -152,27 +150,25 @@
       "name" : "color",
       "display_width" : null,
       "label" : "Color",
-        "required" : false,
-        "locked" : false,
-        "type" : "color",
-        "default" : {
-          "color" : null,
-          "opacity" : null
-        }
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
     } ],
     "tab" : "STYLE",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "border" : {
-        "color" : {
-          "color" : null,
-          "opacity" : null
-        }
+      "color" : {
+        "color" : null,
+        "opacity" : null
       }
     }
-  },  {
+  }, {
     "id" : "7449b75c-6198-9c7c-dd07-14dd6b659a62",
     "name" : "title",
     "display_width" : null,
@@ -219,6 +215,10 @@
         "color" : {
           "color" : null,
           "opacity" : null
+        },
+        "color_active" : {
+          "color" : null,
+          "opacity" : null
         }
       }
     } ],
@@ -229,6 +229,10 @@
     "default" : {
       "text" : {
         "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "color_active" : {
           "color" : null,
           "opacity" : null
         }
@@ -331,6 +335,10 @@
         "color" : {
           "color" : null,
           "opacity" : null
+        },
+        "color_active" : {
+          "color" : null,
+          "opacity" : null
         }
       }
     } ],
@@ -343,7 +351,41 @@
         "color" : {
           "color" : null,
           "opacity" : null
+        },
+        "color_active" : {
+          "color" : null,
+          "opacity" : null
         }
+      }
+    }
+  }, {
+    "id" : "f9867b44-76bb-df6b-3c88-63171e72250c",
+    "name" : "image_background",
+    "display_width" : null,
+    "label" : "Image Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1bd82b3e-7cc3-c29f-e583-65e36cc22611",
+      "name" : "image_background_color",
+      "display_width" : null,
+      "label" : "Image Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : "#FFF",
+        "opacity" : 0
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "image_background_color" : {
+        "color" : "#FFF",
+        "opacity" : 0
       }
     }
   } ],
@@ -352,6 +394,18 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
+    "background" : {
+      "color_active" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
+    "border" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
     "title" : {
       "text" : {
         "color" : {
@@ -369,10 +423,6 @@
         "color" : {
           "color" : null,
           "opacity" : null
-        },
-        "color_active" : {
-          "color" : null,
-          "opacity" : null
         }
       }
     },
@@ -386,6 +436,12 @@
           "color" : null,
           "opacity" : null
         }
+      }
+    },
+    "image_background" : {
+      "image_background_color" : {
+        "color" : "#FFF",
+        "opacity" : 0
       }
     }
   }

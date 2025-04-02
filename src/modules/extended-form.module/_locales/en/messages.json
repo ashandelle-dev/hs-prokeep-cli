@@ -1,0 +1,1502 @@
+{
+  "follow_up_type_simple.help_text" : {
+    "message" : "To send a follow-up email, make sure the 'Set contacts created as marketing contacts’ setting is turned on. You can manage this in options. <a href='https://knowledge.hubspot.com/contacts/set-contacts-as-marketing#set-the-default-marketing-status-for-new-contacts'>Learn more</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "follow_up_type_simple.label" : {
+    "message" : "Send a follow-up email",
+    "description" : "",
+    "placeholders" : null
+  },
+  "form.default.message" : {
+    "message" : "Thanks for submitting the form.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "form.label" : {
+    "message" : "Form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "form_follow_ups_workflow_id.label" : {
+    "message" : "Workflow",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "extended-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "notifications_are_overridden.label" : {
+    "message" : "Send form notifications to specified email addresses instead of the form defaults",
+    "description" : "",
+    "placeholders" : null
+  },
+  "notifications_override_email_addresses.label" : {
+    "message" : "Email Addresses",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sfdc_campaign.label" : {
+    "message" : "Salesforce campaign",
+    "description" : "",
+    "placeholders" : null
+  },
+  "simple_email_for_live_id.label" : {
+    "message" : "Email",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_size.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_size.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.default.color" : {
+    "message" : "#da5039",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.bottom.color" : {
+    "message" : "#da5039",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.bottom.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.bottom.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.left.color" : {
+    "message" : "#da5039",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.left.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.left.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.right.color" : {
+    "message" : "#da5039",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.right.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.right.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.top.color" : {
+    "message" : "#da5039",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.top.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.default.top.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border_radius.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border_radius.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border_radius.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border_radius.label" : {
+    "message" : "Number",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_border_radius.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.default.fallback" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.default.font" : {
+    "message" : "arial, helvetica, sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.default.font_set" : {
+    "message" : "DEFAULT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.default.variant" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default.fallback" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default.font" : {
+    "message" : "arial, helvetica, sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default.font_set" : {
+    "message" : "DEFAULT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.default.variant" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_hover_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.choices.100" : {
+    "message" : "Full",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.choices.auto" : {
+    "message" : "Auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.choices.custom" : {
+    "message" : "Custom",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.default" : {
+    "message" : "100",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.button_size.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.custom_button_width.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.custom_button_width.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.custom_button_width.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.custom_button_width.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.custom_button_width.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.font_field.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.font_field.default.fallback" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.font_field.default.font" : {
+    "message" : "arial, helvetica, sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.font_field.default.font_set" : {
+    "message" : "DEFAULT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.font_field.default.variant" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.name" : {
+    "message" : "extended-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.margin.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.padding.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.padding.right.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.default.padding.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.button_styles.spacing_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_background_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_background_color.default.color" : {
+    "message" : "#fff4e3",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_background_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_background_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_background_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.default.bottom.style" : {
+    "message" : "none",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.default.left.style" : {
+    "message" : "none",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.default.right.style" : {
+    "message" : "none",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.default.top.style" : {
+    "message" : "none",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_border.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_error_font.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_error_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_error_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_error_font.label" : {
+    "message" : "Field Font copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_error_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_font.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_font.label" : {
+    "message" : "Font",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_font.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_font.label" : {
+    "message" : "Field Font copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_label_spacing_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_label_spacing_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_label_spacing_copy.label" : {
+    "message" : "Field Label Spacing copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_label_spacing_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_radius.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_radius.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_radius.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_radius.label" : {
+    "message" : "Number",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_radius.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing.label" : {
+    "message" : "Spacing",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_spacing_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_spacing_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_spacing_copy.label" : {
+    "message" : "Field Spacing copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_spacing_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.default.color" : {
+    "message" : "#000000",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.default.fallback" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.default.font" : {
+    "message" : "arial, helvetica, sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.default.font_set" : {
+    "message" : "DEFAULT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.default.variant" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_radius.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_radius.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_radius.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_radius.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_radius.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.margin.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.left.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.right.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.right.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.default.padding.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_text_alignment.default.text_align" : {
+    "message" : "LEFT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_text_alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_text_alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_text_alignment.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.input_styles.field_text_alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.color" : {
+    "message" : "#000000",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.fallback" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.font" : {
+    "message" : "arial, helvetica, sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.font_set" : {
+    "message" : "DEFAULT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.styles.font-style" : {
+    "message" : "normal",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.styles.font-weight" : {
+    "message" : "bold",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.styles.text-decoration" : {
+    "message" : "none",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.default.variant" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.margin.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.left.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.right.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.right.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.default.padding.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_styles.label_styles.field_label_spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment.label" : {
+    "message" : "Text alignment",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.field_text_alignment_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_text_alignment_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_text_alignment_copy.label" : {
+    "message" : "Field Text alignment copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.field_text_alignment_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.form_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_alignment.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_alignment.label" : {
+    "message" : "Alignment",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.default.color" : {
+    "message" : "#131c2f",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.bottom.color" : {
+    "message" : "#FCE5CD",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.bottom.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.bottom.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.left.color" : {
+    "message" : "#FCE5CD",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.left.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.left.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.right.color" : {
+    "message" : "#FCE5CD",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.right.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.right.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.top.color" : {
+    "message" : "#FCE5CD",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.top.style" : {
+    "message" : "solid",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.default.top.width.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_field.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_left.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_left.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_left.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_left.label" : {
+    "message" : "Border Radius Bottom Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_left.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_right.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_right.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_right.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_right.label" : {
+    "message" : "Border Radius Bottom Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_bottom_right.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_top_right.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_top_right.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_top_right.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_top_right.label" : {
+    "message" : "Border Radius Top Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_border_radius_top_right.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.margin.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.padding.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.padding.right.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.default.padding.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.form_spacing_field.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.name" : {
+    "message" : "extended-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.form_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default.fallback" : {
+    "message" : "sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default.font" : {
+    "message" : "Barlow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default.font_set" : {
+    "message" : "GOOGLE",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.default.variant" : {
+    "message" : "regular",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.form_styles.title_font.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.label" : {
+    "message" : "Style",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.name" : {
+    "message" : "extended-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Form Title",
+    "description" : "",
+    "placeholders" : null
+  }
+}

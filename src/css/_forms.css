@@ -33,6 +33,7 @@
         }
     }
   }
+  
   .hs-richtext {
     &.hs-main-font-element {
       @apply text-[#33475b];

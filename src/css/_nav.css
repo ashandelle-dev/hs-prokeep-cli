@@ -13,3 +13,8 @@ body.mobile-open {
     @apply block lg:hidden;
   }
 }
+
+.ai-link {
+  background: url(https://www.prokeep.com/hubfs/ai-spark.svg) no-repeat left center;
+  padding-left: 20px;
+}

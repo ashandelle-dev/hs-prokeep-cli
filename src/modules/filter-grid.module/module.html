@@ -16,7 +16,7 @@
 
   {% set current_id = 0 %}
 
-  {% set filter_query = "" %}
+  {% set filter_query = "" %} 
 
 {% endif %}
 
@@ -25,13 +25,13 @@
 {% set grid_table = hubdb_table_rows(grid_table_context, filter_query) %}
 
 {% macro ct_label(ct_name, ct_color, is_active) %}
-<div class="flex h-[57px] items-center mb-3 rounded-lg " style="background-color: {% if is_active %} {{ct_color}} {% else %} #FFF4E3 {% endif %}">
+<div class="flex md:h-[57px] items-center mb-3 rounded-lg bg-transparent md:bg-[#FFF4E3]" style="background-color: {% if is_active %} {{ct_color}} {% endif %}">
       <div class="flex items-center h-full">
-        <div class="h-full">
-          <div class="w-[15px] h-full rounded-full" style="background-color: {{ ct_color }}"></div>
+        <div class="h-full{%if is_active%} hidden md:block{%endif%}">
+          <div class="w-[15px] h-[15px] md:h-full rounded-full" style="background-color: {{ ct_color }}"></div>
         </div>
       
-        <div class="px-3">
+        <div class="{%if is_active%}px-3{%else%}px-1 md:px-3{%endif%}">
             <p class="m-0 font-bold leading-tight text-[16px]">{{ ct_name }}</p>
         </div>
       </div>
@@ -44,16 +44,16 @@
       <div>
         <p class="font-bold">Filter by {{filter_table_name.label}}</p>
       </div>
-      <a class="text-[#173A53] no-underline block hover:no-underline hover:text-[#173A53]]" href="{{request}}#filter-grid">
-<div class="flex h-[57px] items-center {% if current_id == 0 %} bg-[#57A7B9]  {% else %} bg-[#FFF4E3]{% endif %} mb-3 rounded-lg">
+      <a class="text-[#173A53] no-underline inline-block md:block hover:no-underline hover:text-[#173A53]] mr-1 md:mr-0 all" href="{{request}}#filter-grid">
+<div class="flex md:h-[57px] items-center {% if current_id == 0 %}bg-[#57A7B9]{% else %}bg-transparent md:bg-[#FFF4E3]{% endif %} mb-3 rounded-lg">
           <div class="flex items-center h-full">
-            <div class="h-full">
-              <div class="w-[15px] h-full rounded-full " style="background-color: {{ ct_color }}"></div>
+            <div class="h-full hidden md:block">
+              <div class="w-[15px] h-[15px] md:h-full rounded-full " style="background-color: {{ ct_color }}"></div>
             </div>
           
             <div class="px-3">
                 <p class="m-0 font-bold leading-tight text-[16px] {% if current_id == 0 %} text-white {% endif %}">All</p>
-            </div>
+            </div> 
           </div>
           
         </div>
@@ -62,7 +62,7 @@
       {% for row in filter_table %}
         {% set is_active = row.hs_id == current_id %}
 
-        <a data-category="{{row.hs_id}}" class="text-[#173A53] no-underline block hover:no-underline " href="{{request}}?{{filter_table_name.name}}={{row.hs_id}}#filter-grid">
+        <a data-category="{{row.hs_id}}" class="text-[#173A53] no-underline inline-block md:block hover:no-underline mr-1 md:mr-0" href="{{request}}?{{filter_table_name.name}}={{row.hs_id}}#filter-grid">
           {{ct_label(row.name,row.color, is_active)}}
         </a>
       {% endfor %}

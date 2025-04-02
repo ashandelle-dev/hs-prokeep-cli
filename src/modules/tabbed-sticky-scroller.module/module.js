@@ -76,6 +76,6 @@ window.addEventListener("load", (event) => {
 const players = document.querySelectorAll("lottie-player");
 players.forEach((player) => {
   const svg = player.shadowRoot.querySelector("svg")
-  svg.setAttribute('preserveAspectRatio', 'none');
-  svg.removeAttribute('style');
+  //svg.setAttribute('preserveAspectRatio', 'none');
+  //svg.removeAttribute('style');
 });

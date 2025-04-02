@@ -29,3 +29,14 @@ dnd-section {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.dnd-empty.redesign {
+  background: #fcfdfe;
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .dnd-empty.redesign {
+    padding-top: 40px;
+  }
+}

@@ -221,7 +221,6 @@ stylesheets or you can add your own custom styles.
   form,
   .submitted-message {
     font-family: {{ body_font }};
-    background-color: rgba({{ theme.forms.background_color.color|convert_rgb }}, {{ theme.forms.background_color.opacity * 0.01 }});
     {% if theme.forms.background_color.color && theme.forms.background_color.opacity > 0 %}
     padding: 20px;
     {% endif %}
