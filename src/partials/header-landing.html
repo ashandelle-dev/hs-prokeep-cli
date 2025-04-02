@@ -1,0 +1,39 @@
+<!--
+  templateType: global_partial
+  label: Landing Page Header - No Nav
+-->
+<nav class="bg-white fixed top-0 w-full z-50 shadow-md">
+  <div class="container px-7">
+    <div class="flex items-center py-6 lg:py-0">
+      <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6">
+        <div class="w-full">
+          {% module "header_logo" path="@hubspot/logo", link="https://www.prokeep.com/" label="Header logo", img={src= "https://8787210.fs1.hubspotusercontent-na1.net/hubfs/8787210/Logos/Prokeep%20Logo-2.png", width= 798, override_inherited_src=false, alt="Prokeep Logo" } %}
+        </div>
+      </div>
+      
+      <div class="w-1/2 sm:w-2/3 md:w-3/4 lg:w-5/6">
+        <div class="lg:hidden flex justify-end">
+          <div id="mobile-nav-trigger" class="cursor-pointer pr-4">
+            <div id="mobile-nav-close" class="hidden">
+              <svg class="w-[30px]"  stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" stroke-width="2" d="M3,3 L21,21 M3,21 L21,3"></path></svg>
+            </div>
+
+            <div id="mobile-nav-open">
+              <svg class="w-[30px]" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:flex items-center absolute lg:static right-0 bg-white top-[85px] lg:top-[100px] px-0 lg:px-6 lg:bg-transparent main-nav-menu pb-32 lg:pb-0 overflow-x-hidden lg:overflow-visible h-screen lg:h-full" id="main-nav-menu">
+          <div class="w-full lg:w-3/5 h-[75px] px-6">
+            <div class="hidden">
+              {% module "column_menu" path="./../modules/column-nav", label="Main Menu"  %}
+            </div>
+          </div>
+          <div class="w-full lg:w-2/5 px-6 lg:px-0">
+          {% module "main_menu_btns" path="./../modules/main-nav-btns", label="Main Menu Buttons"  %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
