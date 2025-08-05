@@ -754,3 +754,6 @@ stylesheets or you can add your own custom styles.
     }
   }
   
+  .blog-post__body ul {
+    list-style-position: inside;
+  }

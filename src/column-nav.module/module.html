@@ -1,0 +1,122 @@
+<ul class="flex flex-col lg:flex-row justify-start lg:items-center list-none p-0 lg:pl-0 lg:pl-3 m-0 mb-6 lg:mb-0 gap-0 lg:gap-6 relative lg:static">
+ {% for item in module.menu_item %}
+    
+    
+
+    <li class="group/main bg-white {% if item.dropdown.column|length > 0 %}dropdown-menu{% endif %}">
+      <a class="relative transition-all duration-200 text-lg px-6 lg:px-0 py-6 font-medium no-underline text-[#DA5039] lg:text-[#192B3F] hover:text-[#DA5039] lg:hover:text-[#192B3F] hover:no-underline block peer lg:mb-0 cursor-pointer"><span class="lg:group-hover/main:border-b-2 lg:group-hover/main:border-[#DA5039]">{{ item.title }}</span>
+        {% if item.dropdown.column|length > 0 %} 
+          <div class="lg:hidden sub-menu-caret rotate-180 transition-transform duration-200 absolute right-3 top-[40%]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M10.8576 6.00002H0.999779" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.92871 10.929L0.999779 6.00002L5.92871 1.07109" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {% endif %}
+      </a>
+
+      {% if item.dropdown.column|length > 0 %} 
+      <div class="absolute w-full lg:group-hover/main:flex lg:hidden flex gap-6 lg:gap-0 left-0 z-10 translate-x-full lg:translate-x-0 menu-container lg:drop-shadow-md {% if item.dropdown.callout_location == 'left' %}callout-left{% elif item.dropdown.callout_location == 'right'%}callout-right{% else %}bg-white{% endif %}">
+        <div class="container flex flex-column lg:flex-row flex-wrap lg:flex-nowrap">
+        {% for column in item.dropdown.column %}
+      
+        {% if column.column_type == "callout" %}
+        <div class="group/dropdown mb-3 lg:mb-0 column w-full lg:px-7 lg:py-9 lg:w-auto flex-none lg:flex-1 bg-[#192B3F] callout-column order-last lg:order-none">
+        {% else %}
+         <div class="group/dropdown mb-3 lg:mb-0 column w-full lg:px-7 lg:py-9 lg:w-auto flex-none lg:flex-1 bg-white">
+        {% endif %}
+        {% if column.column_top_cta.title %}
+          <div class="column-cta p-2 bg-[#f2f5f7] rounded mb-2 hidden lg:block group/cta">
+            <a href="{{column.column_top_cta.link.url.href}}" class="no-underline hover:no-underline">
+              <p class="text-[#192B3F] text-lg font-bold block mb-0 cta-title">{{column.column_top_cta.title}}</p>
+              <p class="mb-0 text-base">
+                Learn More
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" class="rotate-180 inline lg:invisible lg:group-hover/cta:visible">
+                  <path d="M10.8576 6.00002H0.999779" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5.92871 10.929L0.999779 6.00002L5.92871 1.07109" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </p>
+            </a>
+            
+          </div>
+          {% endif %}
+          <div class="column-menu">
+
+            <div class="text-[#192b3f]/[0.5] text-sm font-bold uppercase border-b border-[#E5E5E5] relative px-6 lg:px-0 py-2 column-accordion-header">{{column.column_eyebrow}}
+              <div class="lg:hidden sub-menu-caret transition-transform duration-200 absolute right-3 top-3">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="w-4" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
+              </div>
+            </div>
+            <div class="column-accordion-body px-6 lg:px-0 flex flex-wrap">
+              {% if column.column_top_cta.title %}
+              <div class="column-cta mt-6 lg:mt-0 px-2 py-4 bg-[#f2f5f7] rounded mb-6 lg:hidden w-full">
+                <a href="{{column.column_cta_top.link.url.href}}" class="no-underline hover:no-underline">
+                  <span class="text-[#192B3F] text-2xl font-bold block">{{column.column_top_cta.title}}</span>
+                  <p class="mb-0">
+                    Learn More
+                  </p>
+                </a>
+              </div>
+              {% endif %}
+              {%for column_item in column.column_item%}
+                {% if loop.length > 6 %}
+                <div class="mb-4 lg:mb-0 column-item w-full lg:w-1/2">
+                {% else %}
+                <div class="mb-4 lg:mb-0 column-item w-full">
+                {% endif %}
+                
+                  {% if column_item.link_type == 'card' %}
+                    {% set array = [] %}
+                    {% do array.append(column_item.link.url.content_id) %}
+                    {% set item_contents = content_by_ids(array) %}
+                    {% for item_content in item_contents %}
+                    <div class="max-w-sm rounded-2xl overflow-hidden mt-6 group/card">
+                      <a href="{{item_content.absolute_url}}" class="no-underline hover:no-underline">
+                        <img class="w-full" src="{{item_content.featured_image}}" alt="{{item_content.featured_image_alt_text}}">
+                      </a>
+                      <div class="p-6 bg-white">
+                        <a href="{{item_content.absolute_url}}" class="no-underline hover:no-underline text-[#192B3F]">
+                          <div class="">
+                            <p class="text-[#192B3F] font-bold leading-5 mb-4">{{item_content.title}}</p>
+                           <p class="mb-0 font-normal text-[#DA5039]">
+                              Learn More
+
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" class="rotate-180 inline lg:invisible lg:group-hover/card:visible">
+                                <path d="M10.8576 6.00002H0.999779" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.92871 10.929L0.999779 6.00002L5.92871 1.07109" stroke="#DA5039" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  {% elif !column_item.link.url.href %}
+                    <a href="#" class="block p-2 hover:bg-[#ff7e69]/[0.1] no-underline hover:no-underline text-[#192B3F] hover:text-[#192B3F] cursor-default">
+                      <span class="font-bold block text-base leading-[20px] mb-1{% if column_item.ai_label == true %} ai-link{% endif %}">{{column_item.title}}</span>
+                      <p class="mb-0 leading-[18px] text-sm">{{column_item.description}} - <strong>coming soon</strong></p>
+                    </a>
+                  {% else %}
+                    <a href="{{column_item.link.url.href}}" class="block p-2 hover:bg-[#ff7e69]/[0.1] no-underline hover:no-underline text-[#192B3F] hover:text-[#192B3F]">
+                      <span class="font-bold block text-base leading-[20px] mb-1{% if column_item.ai_label == true %} ai-link{% endif %}">{{column_item.title}}</span>
+                      <p class="mb-0 leading-[18px] text-sm">{{column_item.description}}</p>
+                    </a>
+                  {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+          </div>
+          
+          
+          </div>
+        
+        {% endfor %}
+        </div>
+      </div>
+      
+      {% endif %}
+    </li>
+  {% endfor %}
+  
+</ul>

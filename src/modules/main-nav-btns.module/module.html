@@ -13,7 +13,7 @@
 </svg>  
 {% endmacro %}
 
-<div class="flex flex-row items-center justify-between lg:justify-around flex-wrap lg:flex-nowrap -mx-2 lg:mx-0">
+<div class="flex flex-row items-center justify-between lg:justify-end lg:gap-5 flex-wrap lg:flex-nowrap -mx-2 lg:mx-0">
   {% for btn in module.main_nav_buttons %}
     {% set href = btn.link.url.href %}
     {% if btn.link.url.type is equalto "EMAIL_ADDRESS" %}
