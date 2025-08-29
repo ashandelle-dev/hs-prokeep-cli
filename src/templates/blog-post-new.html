@@ -1,0 +1,255 @@
+<!--
+templateType: blog_post
+isAvailableForNewContent: true
+label: Blog Post - New CS-based Layout
+-->
+{% extends '../layouts/base.html' %}
+
+
+{% image "customer_logo" label='Customer Logo', export_to_template_context=True %}
+{% rich_text "customer_intro" label='Customer Intro', export_to_template_context=True %}
+{% image "hero_image" label='Hero Image', export_to_template_context=True %}
+{% choice "right_column_first_cta" label='Show First CTA', choices=[["first-cta-on","On"],["first-cta-off","Off"]], multiple='False', display='radio',export_to_template_context=True %}
+{% choice "right_column_second_cta" label='Show Second CTA', choices=[["second-cta-on","On"],["second-cta-off","Off"]], multiple='False', display='radio',export_to_template_context=True %}
+
+{% block body %}
+
+  {% set socials = [
+    {
+      "title": "Twitter",
+      "share_link": ""
+    }
+  ]
+  
+  %}
+
+<style>
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 100px;
+	}
+	body {
+		background: #fff;
+		overflow: visible;
+	}
+
+	.blog-post__body h2, .blog-post__body h3, .blog-post__body h4 {
+		color: #192B3F;
+	}
+
+	.blog-post__meta {
+		border-top: 1px solid #2A7991;
+		border-bottom: 1px solid #2A7991;
+		margin-bottom: 16px;
+	}
+
+	@media screen and (max-width: 479px) {
+		.blog-post__meta {
+			flex-direction: row;
+		}
+	}
+
+	.blog-post__body h4 {
+		font-family: Barlow;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 24px;
+		padding-left: 24px;
+		position: relative;
+	}
+
+	.blog-post__body h4:before {
+		position: absolute;
+		top: 6px;
+		left: 0;
+		content: '';
+		display: block;
+		border-radius: 50%;
+		background: #FF7E69;
+		width: 12px;
+		height: 12px;
+	}
+
+	.jump-link {
+		text-decoration: none;
+	}
+
+	.jump-link:hover {
+		text-decoration: none;
+	}
+
+	.jump-item::marker {
+		color: #192B3F;
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.jump-item:hover {
+		background: rgba(255, 126, 105, 0.05);
+	}
+	
+
+	.customer-info p {
+		margin-bottom: 16px;
+	}
+
+	.related-stories .related-container div:nth-child(n+5) {
+		display: none;
+	}
+	
+</style>
+<div class="container py-20">
+	<div class="flex flex-col-reverse md:flex-row items-center gap-x-10">
+		<div class="w-full md:w-1/2">
+			<div class="px-3 py-1 bg-amber-300 rounded inline-flex justify-center items-center gap-2.5">
+				<div class="justify-center text-slate-800 text-sm font-bold font-['Barlow'] uppercase leading-normal tracking-tight">{{blog.html_title}}</div>
+			</div>
+			<h1 class="blog-post__title mb-4 md:mb-14">{{ content.name }}</h1>
+				<div class="blog-post__meta">
+			      <div class="author-photo">
+			      <img src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}">
+			      </div>
+			      <div class="flex-col">
+				      <div class="text-sm"><strong>Written by:</strong> {{ content.blog_post_author.display_name }}</div>
+				      <div class="text-sm"><strong>Date:</strong>{{ content.publish_date_local_time.strftime('%b %d, %Y') }}</div>
+				      <div class="text-sm"><strong>Reading Time:</strong> <span id="readingTime">{% set initialPostWords = content.post_body|striptags|wordcount %}
+								{% set calculatedPostWords = (initialPostWords/100) * 100 %}
+								{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+								{% set number = finishedPostWords|round %}
+								{% if number < 1 %}
+								{% else %}
+								{{ finishedPostWords|round }} Minutes
+								{% endif %} </span>
+							</div>
+						</div>
+				</div>
+				<div class="flex items-center gap-x-4 mb-12 border-b border-[#2A7991] pb-4">
+					Share:
+		        <!-- Twitter Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
+		        </a>
+
+		        <!-- Facebook Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
+		        </a>
+
+		        <!-- LinkedIn Share -->
+		        <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
+		          <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
+		        </a>
+		    </div>
+		</div>
+
+		<div class="w-full md:w-1/2">
+			{% if content.widgets.hero_image.body.src %}
+			<div class="post-featured-image">
+		    <img src="{{content.widgets.hero_image.body.src}}" alt="{% if content.widgets.customer_logo.body.alt %}{{content.widgets.customer_logo.body.alt}}{% else %}{{page_meta.name}} featured image{% endif %}">
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="flex flex-col-reverse md:flex-row gap-x-10">
+		<div class="blog-post__body w-full md:w-3/4">
+			{{ content.post_body }}
+			
+			<div class="flex items-center gap-x-4 my-4 border-t border-[#2A7991] pt-4">
+				Share:
+		      <!-- Twitter Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="twitter" target="popup" onclick="window.open('https://twitter.com/home?status={{ page_meta.name }}+{{content.absolute_url}}','Twitter Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter Icon">
+		      </a>
+
+		      <!-- Facebook Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="facebook" target="popup" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={{content.absolute_url}}','Facebook Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook Icon">
+		      </a>
+
+		      <!-- LinkedIn Share -->
+		      <a class="text-center flex items-center bg-[#9bd3d5] w-[32px] h-[32px] rounded-full" href="javascript:;" title="linkedin" target="popup" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url}}','LinkedIn Share','width=600,height=600')">
+		        <img class="mx-auto block" src="{{ get_asset_url('../images/linkedin.svg') }}" alt="Linkedin Icon">
+		      </a>
+		  </div>
+		</div>
+		
+		<div class="blog-post__column w-full md:w-1/4 relative">
+			{% if content.widgets.customer_logo.body.src %}
+			<div class="customer-info">
+				<img src="{{content.widgets.customer_logo.body.src}}">
+				<div class="text-[18px] leading-5 mt-5">{{content.widgets.customer_intro.body.html}}</div>
+			</div>
+			{% endif %}
+			
+			<div class="sticky top-[120px] pb-5 md:pb-0">
+				
+				<div class="p-6 rounded-xl gap-2 jump-menu border border-[#2A7991] mb-[60px]">
+					<ol class="my-0" type="1">
+					</ol>        
+        
+				</div>
+				
+				{% module "module_17545284171191" path="/pk-theme/cli-build/modules/blog-highlights", label="Blog Highlights" %}
+				
+				{% if content.widgets.right_column_first_cta.body.value == 'first-cta-on' %}
+				<div class="col-cta hidden md:block bg-[#DA5039] rounded-xl text-white py-6 px-10 mb-[60px]">
+					<p class="m-0 font-bold text-2xl mb-5">Talk to a Prokeep Expert to Get Started</p>
+					<a href="/demo" class="border-white border rounded text-white py-[5px] px-[18px] !no-underline hover:scale-105 transition-transform duration-200 hover:text-[#DA5039] hover:bg-white">Get a Demo</a>
+				</div>
+				{% endif %}
+				{% if content.widgets.right_column_second_cta.body.value == 'second-cta-on' %}
+				<div class="col-cta hidden md:block bg-[#57A7B9] rounded-xl text-white py-6 px-10">
+					<p class="m-0 font-bold text-2xl mb-5">Talk to a Prokeep Expert to Get Started</p>
+					<a href="/demo" class="border-white border rounded text-white py-[5px] px-[18px] !no-underline hover:scale-105 transition-transform duration-200 hover:text-[#57A7B9] hover:bg-white">Get a Demo</a>
+				</div>
+				{% endif %}
+				<div class="flex flex-wrap gap-3">
+					{% for tag in content.tag_list %}
+					{% set tagName = tag.name %}
+					{% set tagName = tagName|replace('Type - ','')%}
+	         <div class="px-3 py-1 bg-amber-300 rounded inline-flex justify-center items-center"> 
+
+	            <a class="justify-center text-slate-800 text-sm font-bold font-['Barlow'] uppercase leading-normal tracking-tight no-underline inline-block md:block hover:no-underline mr-1 md:mr-0" href="{{ blog_tag_url(group.id, tag.slug) }}#blog-grid">
+	              {{tagName}}
+	            </a>
+	         </div> 
+	        {% endfor %}
+	      </div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<div class="flex items-center bg-[#FFF4E3] py-20">
+	<div class="container">
+		
+		<div class="blog-post__tags related-stories">
+	    <h4>
+	      Read more {{blog.html_title}}
+	    </h4>
+	    {% module "module_17242719514491" path="/pk-theme/cli-build/modules/customer-stories-related", label="customer-stories-related" %}
+		</div>
+		
+	   </div> 
+		
+		
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			const headers = document.querySelectorAll('h2');
+			headers.forEach((header)=>{
+				let headerText = header.textContent;
+				const titleText = headerText.split(/\s|&nbsp;/g);
+				let headerID = titleText[0];
+				headerID = headerID.replace(':','');
+				header.id = headerID;
+				let jumpNav = document.querySelector('.jump-menu ol');
+				jumpNav.insertAdjacentHTML('beforeend','<li class="jump-item py-3 px-4 hover:cursor-pointer"><a href="#'+headerID+'" class="jump-link text-[#192B3F] text-xl font-semibold">'+headerText+'</a></li>');
+			});
+			
+		});
+		
+	</script>
+	
+{% endblock body %}

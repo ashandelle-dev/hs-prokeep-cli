@@ -1,5 +1,5 @@
 @import "_tailwind";
-/* @import "_fonts"; */
+@import "fonts";
 @import "_btn";
 @import "_solutions";
 @import "_sections";

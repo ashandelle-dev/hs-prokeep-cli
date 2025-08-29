@@ -113,16 +113,14 @@
     </div>
     <div>
     
-        {% module_block module "footer_copyright" path="@hubspot/rich_text", label="Copyright text" %}
-          {% module_attribute "html" %}
-          <p class="text-white">
-            © Copyright {{year}} Prokeep, Inc. All rights reserved. &nbsp; <a href="/legal">Legal</a> &nbsp; | &nbsp;
+        
+          <p class="text-white copy-year">
+            © Copyright {{ year }} Prokeep, Inc. All rights reserved. &nbsp; <a href="/legal">Legal</a> &nbsp; | &nbsp;
     
             <a href="/privacy-policy">Privacy Policy</a>
           </p>
 
-          {% end_module_attribute %}
-        {% end_module_block %}
+      
         
       
     </div>

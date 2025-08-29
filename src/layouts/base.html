@@ -53,5 +53,39 @@
         });
       });
     </script>
+    <script>
+      function findExactTextNode(parentElement, searchText) {
+      const treeWalker = document.createTreeWalker(
+        parentElement,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      );
+
+      let currentNode;
+      while ((currentNode = treeWalker.nextNode())) {
+        if (currentNode.textContent.trim() === searchText) {
+          return currentNode; // Return the first matching text node
+        }
+      }
+      return null; // No matching text node found
+    }
+
+    window.addEventListener('load', function() {
+    const targetText = "HEAD";
+    const foundNode = findExactTextNode(document.body, targetText);
+
+    if (foundNode) {
+        console.log(foundNode.parentElement);
+      console.log("Found text node:", foundNode);
+      console.log("Text content:", foundNode.textContent);
+      if(foundNode.parentElement != 'div') {
+        foundNode.textContent = '';
+      }
+    } else {
+      console.log("Text node not found.");
+    }
+    });
+  </script>
   </body>
 </html>

@@ -28,7 +28,7 @@
 /* Barlow Regular */
 /* @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-Regular.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Regular.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-Regular.ttf') format('truetype');} */
 /* Barlow SemiBold */
-/* @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.ttf') format('truetype');} */
+/*@font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBold.ttf') format('truetype');} */
 /* Barlow SemiBoldItalic */
 /* @font-face { font-family: 'Barlow';  src: url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBoldItalic.eot?') format('eot'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBoldItalic.woff') format('woff'), url('https://info.prokeep.com/hubfs/Barlow/Barlow-SemiBoldItalic.ttf') format('truetype');} */
 /* Barlow Thin */
@@ -74,6 +74,14 @@
     font-style: normal;
     font-weight: 400;
     src: url('https://www.prokeep.com/hubfs/Fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+/* Barlow Semi-bold */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://www.prokeep.com/hubfs/Fonts/Barlow-SemiBold.ttf) format('truetype');
 }
 
 /* Barlow Bold */
