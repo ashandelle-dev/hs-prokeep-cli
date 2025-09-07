@@ -1,0 +1,652 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    dataQueryPath: ../data-queries/blogPost_1
+-->
+
+{% set t = {
+    "hero": {
+        "title": "The Prokeep Blog",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "latest_blogs": {
+        "title": "Our latest posts",
+        "button": {
+            "text": "See all latest articles",
+            "url": "/blog"
+        }
+    },
+    "blogs": {
+        "customer_experience": {
+            "id": "116950105959",
+            "postCount": blog_total_post_count("116950105959"),
+            "title": "Customer Experience",
+            "button": {
+                "text": "See more news",
+                "url": "/blog"
+            },
+            "posts": blog_recent_posts("116950105959", 200)
+        },
+        "data_optimization": {
+            "id": "175341178658",
+            "postCount": blog_total_post_count("175341178658"),
+            "title": "Data Optimization",
+            "button": {
+                "text": "See more solutions",
+                "url": "/blog"
+            },
+            "posts": blog_recent_posts("175341178658", 200)
+        },
+        "proactive_sales_marketing": {
+            "id": "47938890582",
+            "postCount": blog_total_post_count("47938890582") ,
+            "title": "Proactive Sales & Marketing",
+            "button": {
+                "text": "See more user tips",
+                "url": "/blog"
+            },
+            "posts": blog_recent_posts("47938890582", 200)
+        },
+        "change_management": {
+            "id": "181903930738",
+            "postCount": blog_total_post_count("181903930738") ,
+            "title": "Change Management",
+            "button": {
+                "text": "See more updates",
+                "url": "/blog"
+            },
+            "posts": blog_recent_posts("181903930738", 200)
+        }
+    }
+} %}
+
+{% macro read_time(post) %}
+    {% set str = post.post_body %}
+    {% set img_count = str|split('<img')|length %}
+    {% set img_minutes = ((img_count * 12) / 60)|round(0, 'common') %}
+    {% set read_time = (str|striptags|wordcount / 275)|round(0, 'common') + img_minutes %}
+    {{ read_time }} min read
+{% endmacro %}
+
+{% macro blog_post_small(post) %}
+    <a href="{{ post.absolute_url }}" class="flex gap-4 p-3 rounded-lg no-underline hover:no-underline">
+        <div class="flex-shrink-0 w-24">
+            <div class="aspect-w-16 aspect-h-9">
+                <img src="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                     alt="{{ post.title }}"
+                     class="w-full h-16 object-cover rounded">
+            </div>
+        </div>
+        <div class="flex-1 min-w-0">
+            <h4 class="text-base font-bold text-gray-900 mb-2 leading-tight">
+                {{ post.title }}
+            </h4>
+            <div class="flex items-center text-sm text-gray-500">
+                <span>{{ read_time(post) }} </span>
+                <div class="w-1 h-1 bg-orange-500 rounded-full mx-2"></div>
+                <span>{{ post.publish_date | format_date('MMM d, yyyy') }}</span>
+            </div>
+        </div>
+    </a>
+{% endmacro %}
+
+{% macro blog_section(title, button_text, button_url, featured_post, small_posts) %}
+    <div class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">{{ title }}</h2>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Featured Post (Left Column) -->
+                <div>
+                    <a href="{{ featured_post.absolute_url }}" class="block rounded-lg overflow-hidden relative no-underline hover:no-underline">
+                        <!-- Featured Badge -->
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                                Featured
+                            </span>
+                        </div>
+
+                        <!-- Featured Post Image -->
+                        <div class="relative">
+                            <img src="{{ featured_post.featured_image or 'https://placehold.co/440x209' }}"
+                                 alt="{{ featured_post.title }}"
+                                 class="w-full h-52 object-cover rounded-lg">
+                        </div>
+
+                        <!-- Featured Post Content -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                                {{ featured_post.title }}
+                            </h3>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>{{ read_time(featured_post) }} </span>
+                                <div class="w-1 h-1 bg-orange-500 rounded-full mx-2"></div>
+                                <span>{{ featured_post.publish_date | format_date('MMM d, yyyy') }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Smaller Posts (Right Column) -->
+                <div class="space-y-6">
+                    {% for post in small_posts %}
+                        {{ blog_post_small(post) }}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- See All Articles Link -->
+            <div class="flex justify-end mt-8">
+                <a href="{{ button_url }}"
+                   class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
+                    {{ button_text }}
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% set p =
+t.blogs.customer_experience.posts +
+t.blogs.data_optimization.posts +
+t.blogs.proactive_sales_marketing.posts +
+t.blogs.change_management.posts
+%}
+{% set all_posts = p|sort(true, false, 'publish_date') %}
+
+{% set rendered_posts = [] %}
+
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+    <div id="latest-blogs" class="pt-20 mt-20">
+        {% set featured_post = all_posts|first %}
+        {% set small_posts = all_posts[1:4] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.latest_blogs.title,
+            t.latest_blogs.button.text,
+            t.latest_blogs.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="customer-experience">
+        {% set featured_post = t.blogs.customer_experience.posts|first %}
+        {% set small_posts = t.blogs.customer_experience.posts[1:3] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.blogs.customer_experience.title,
+            t.blogs.customer_experience.button.text,
+            t.blogs.customer_experience.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="data-optimization">
+        {% set featured_post = t.blogs.data_optimization.posts|first %}
+        {% set small_posts = t.blogs.data_optimization.posts[1:3] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.blogs.data_optimization.title,
+            t.blogs.data_optimization.button.text,
+            t.blogs.data_optimization.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="proactive-sales-marketing">
+        {% set featured_post = t.blogs.proactive_sales_marketing.posts|first %}
+        {% set small_posts = t.blogs.proactive_sales_marketing.posts[1:3] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.blogs.proactive_sales_marketing.title,
+            t.blogs.proactive_sales_marketing.button.text,
+            t.blogs.proactive_sales_marketing.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="change-management">
+        {% set featured_post = t.blogs.change_management.posts|first %}
+        {% set small_posts = t.blogs.change_management.posts[1:3] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.blogs.change_management.title,
+            t.blogs.change_management.button.text,
+            t.blogs.change_management.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="all-blogs" class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 lg:mb-0">All Blogs</h2>
+
+                <!-- Search and Filters -->
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    <!-- Search Bar -->
+                    <div class="relative flex-1 min-w-0">
+                        <input type="text"
+                               id="search-input"
+                               placeholder="Search text here"
+                               class="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex gap-2">
+                        <div class="relative">
+                            <button id="roles-filter" class="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+                                Roles
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- Roles Dropdown -->
+                            <div id="roles-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                                <div class="p-2">
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="marketing" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Marketing</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="sales" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Sales</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="parts-team" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Parts Team</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="manager" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Manager</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <button id="topics-filter" class="flex items-center gap-2 px-4 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition-colors">
+                                Topics
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- Topics Dropdown -->
+                            <div id="topics-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                                <div class="p-2">
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="customer-experience" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Customer Experience</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="data-optimization" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Data Optimization</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="proactive-sales-marketing" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Proactive Sales & Marketing</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                        <input type="checkbox" value="change-management" class="text-orange-500 rounded focus:ring-orange-500">
+                                        <span class="text-sm">Change Management</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Count and Clear All -->
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                        <span id="results-count">SHOWING 12 OF 12</span>
+                        <div class="w-1 h-1 bg-orange-500 rounded-full"></div>
+                        <button id="clear-filters" class="text-orange-500 underline hover:text-orange-600">Clear All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {% set available_posts = [] %}
+                {% for post in all_posts %}
+                    {% if post.id not in rendered_posts %}
+                        {% do available_posts.append(post) %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for post in available_posts[:12] %}
+                <a href="{{ post.absolute_url }}" class="blog-card block bg-white rounded-lg shadow-sm no-underline hover:no-underline"
+                     data-title="{{ post.title|lower }}"
+                     data-category="{{ post.topic_slug|default('') }}"
+                     data-role="{{ post.role|default('') }}">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                             alt="{{ post.title }}"
+                             class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                            {{ post.title }}
+                        </h3>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>{{ read_time(post) }} </span>
+                            <div class="w-1 h-1 bg-orange-500 rounded-full mx-2"></div>
+                            <span>{{ post.topic_name|default('Prokeep News') }}</span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Hidden posts for JavaScript filtering -->
+            <div id="hidden-posts" style="display: none;">
+                {% for post in available_posts[12:] %}
+                <div class="blog-card-data"
+                     data-title="{{ post.title|lower }}"
+                     data-category="{{ post.topic_slug|default('') }}"
+                     data-role="{{ post.role|default('') }}"
+                     data-url="{{ post.absolute_url }}"
+                     data-image="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                     data-read-time="{{ read_time(post) }}"
+                     data-topic="{{ post.topic_name|default('Prokeep News') }}">
+                    {{ post.title }}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Template for blog card -->
+            <template id="blog-card-template">
+                <a href="" class="blog-card block bg-white rounded-lg shadow-sm no-underline hover:no-underline">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="" alt="" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                        </h3>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="read-time"></span>
+                            <div class="w-1 h-1 bg-orange-500 rounded-full mx-2"></div>
+                            <span class="topic"></span>
+                        </div>
+                    </div>
+                </a>
+            </template>
+
+            <!-- Pagination -->
+            <div id="pagination" class="flex justify-center items-center gap-2">
+                <button id="prev-page" class="px-3 py-2 text-gray-600 hover:text-orange-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                    < Prev
+                </button>
+                <div id="page-numbers" class="flex gap-1">
+                    <!-- Page numbers will be generated by JavaScript -->
+                </div>
+                <button id="next-page" class="px-3 py-2 text-gray-600 hover:text-orange-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next >
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Blog filtering and pagination functionality
+        class BlogFilter {
+            constructor() {
+                this.visiblePosts = document.querySelectorAll('.blog-card');
+                this.hiddenPostsData = document.querySelectorAll('.blog-card-data');
+                this.searchInput = document.getElementById('search-input');
+                this.rolesFilter = document.getElementById('roles-filter');
+                this.topicsFilter = document.getElementById('topics-filter');
+                this.rolesDropdown = document.getElementById('roles-dropdown');
+                this.topicsDropdown = document.getElementById('topics-dropdown');
+                this.clearFilters = document.getElementById('clear-filters');
+                this.resultsCount = document.getElementById('results-count');
+                this.blogGrid = document.getElementById('blog-grid');
+                this.pagination = document.getElementById('pagination');
+                this.pageNumbers = document.getElementById('page-numbers');
+                this.prevPage = document.getElementById('prev-page');
+                this.nextPage = document.getElementById('next-page');
+
+                this.currentPage = 1;
+                this.postsPerPage = 12;
+                this.allPostsData = this.buildAllPostsData();
+                this.filteredPosts = [...this.allPostsData];
+
+                this.init();
+            }
+
+            buildAllPostsData() {
+                const visibleData = Array.from(this.visiblePosts).map(post => ({
+                    element: post,
+                    title: post.dataset.title,
+                    category: post.dataset.category,
+                    role: post.dataset.role,
+                    url: post.href,
+                    image: post.querySelector('img').src,
+                    readTime: post.querySelector('.text-sm span').textContent,
+                    topic: post.querySelector('.text-sm span:last-child').textContent,
+                    titleText: post.querySelector('h3').textContent.trim()
+                }));
+
+                const hiddenData = Array.from(this.hiddenPostsData).map(post => ({
+                    element: null,
+                    title: post.dataset.title,
+                    category: post.dataset.category,
+                    role: post.dataset.role,
+                    url: post.dataset.url,
+                    image: post.dataset.image,
+                    readTime: post.dataset.readTime,
+                    topic: post.dataset.topic,
+                    titleText: post.textContent.trim()
+                }));
+
+                return [...visibleData, ...hiddenData];
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.renderPosts(); // Render initial posts with pagination
+                this.renderPagination();
+                this.updateResultsCount();
+            }
+
+            setupEventListeners() {
+                // Search input
+                this.searchInput.addEventListener('input', () => this.applyFilters());
+
+                // Filter dropdowns
+                this.rolesFilter.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggleDropdown(this.rolesDropdown);
+                });
+
+                this.topicsFilter.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggleDropdown(this.topicsDropdown);
+                });
+
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', () => {
+                    this.rolesDropdown.classList.add('hidden');
+                    this.topicsDropdown.classList.add('hidden');
+                });
+
+                // Filter checkboxes
+                this.rolesDropdown.addEventListener('change', () => this.applyFilters());
+                this.topicsDropdown.addEventListener('change', () => this.applyFilters());
+
+                // Clear filters
+                this.clearFilters.addEventListener('click', () => this.clearAllFilters());
+
+                // Pagination
+                this.prevPage.addEventListener('click', () => this.goToPage(this.currentPage - 1));
+                this.nextPage.addEventListener('click', () => this.goToPage(this.currentPage + 1));
+            }
+
+            toggleDropdown(dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                this.rolesDropdown.classList.add('hidden');
+                this.topicsDropdown.classList.add('hidden');
+                if (isHidden) {
+                    dropdown.classList.remove('hidden');
+                }
+            }
+
+            applyFilters() {
+                const searchTerm = this.searchInput.value.toLowerCase();
+                const selectedRoles = Array.from(this.rolesDropdown.querySelectorAll('input:checked')).map(cb => cb.value);
+                const selectedTopics = Array.from(this.topicsDropdown.querySelectorAll('input:checked')).map(cb => cb.value);
+
+                this.filteredPosts = this.allPostsData.filter(post => {
+                    const matchesSearch = post.title.includes(searchTerm);
+                    const matchesRoles = selectedRoles.length === 0 || selectedRoles.some(role => post.role.includes(role));
+                    const matchesTopics = selectedTopics.length === 0 || selectedTopics.some(topic => post.category.includes(topic));
+
+                    return matchesSearch && matchesRoles && matchesTopics;
+                });
+
+                this.currentPage = 1;
+                this.renderPosts();
+                this.renderPagination();
+                this.updateResultsCount();
+            }
+
+            clearAllFilters() {
+                this.searchInput.value = '';
+                this.rolesDropdown.querySelectorAll('input').forEach(cb => cb.checked = false);
+                this.topicsDropdown.querySelectorAll('input').forEach(cb => cb.checked = false);
+                this.applyFilters();
+            }
+
+            renderPosts() {
+                const startIndex = (this.currentPage - 1) * this.postsPerPage;
+                const endIndex = startIndex + this.postsPerPage;
+                const postsToShow = this.filteredPosts.slice(startIndex, endIndex);
+
+                // Clear the grid
+                this.blogGrid.innerHTML = '';
+
+                // Create and append posts
+                postsToShow.forEach(postData => {
+                    const postElement = this.createPostElement(postData);
+                    this.blogGrid.appendChild(postElement);
+                });
+            }
+
+            createPostElement(postData) {
+                const template = document.getElementById('blog-card-template');
+                const postElement = template.content.cloneNode(true);
+
+                // Set attributes
+                const link = postElement.querySelector('a');
+                link.href = postData.url;
+                link.setAttribute('data-title', postData.title);
+                link.setAttribute('data-category', postData.category);
+                link.setAttribute('data-role', postData.role);
+
+                // Set content
+                const img = postElement.querySelector('img');
+                img.src = postData.image;
+                img.alt = postData.titleText;
+
+                const title = postElement.querySelector('h3');
+                title.textContent = postData.titleText;
+
+                const readTime = postElement.querySelector('.read-time');
+                readTime.textContent = postData.readTime;
+
+                const topic = postElement.querySelector('.topic');
+                topic.textContent = postData.topic;
+
+                return postElement;
+            }
+
+            renderPagination() {
+                const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
+                this.pageNumbers.innerHTML = '';
+
+                // Previous button
+                this.prevPage.disabled = this.currentPage === 1;
+
+                // Calculate which 5 pages to show
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+                // Adjust start page if we're near the end
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+
+                // Page numbers
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.textContent = i;
+                    pageBtn.className = `px-3 py-2 text-sm border rounded ${
+                        i === this.currentPage
+                            ? 'bg-orange-500 text-white border-orange-500'
+                            : 'text-gray-600 border-gray-300 hover:bg-gray-50'
+                    }`;
+                    pageBtn.addEventListener('click', () => this.goToPage(i));
+                    this.pageNumbers.appendChild(pageBtn);
+                }
+
+                // Next button
+                this.nextPage.disabled = this.currentPage === totalPages;
+            }
+
+            goToPage(page) {
+                const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
+                if (page >= 1 && page <= totalPages) {
+                    this.currentPage = page;
+                    this.renderPosts();
+                    this.renderPagination();
+                }
+            }
+
+            updateResultsCount() {
+                const showing = Math.min(this.postsPerPage, this.filteredPosts.length - (this.currentPage - 1) * this.postsPerPage);
+                const total = this.filteredPosts.length;
+                this.resultsCount.textContent = `SHOWING ${showing} OF ${total}`;
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new BlogFilter();
+        });
+    </script>
+{% endblock body %}
