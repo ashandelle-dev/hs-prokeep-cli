@@ -13,3 +13,21 @@
 }
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .pk-button-primary-outline {
+        @apply border border-[#DA5039] hover:scale-105 transition-transform duration-200 px-4 lg:px-6 py-2 whitespace-nowrap rounded no-underline hover:no-underline text-center text-[#DA5039] hover:bg-[#DA5039] hover:text-white
+    }
+    .border-1-blue {
+        @apply border-[#57A7B9];
+    }
+    .border-1-yellow {
+        @apply border-[#F4B74E];
+    }
+    .border-1-green {
+        @apply border-[#469C6C];
+    }
+    .border-1-orange {
+        @apply border-[#DA5039];
+    }
+}

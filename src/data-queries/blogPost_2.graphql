@@ -1,0 +1,76 @@
+query GetBlogPosts {
+  BLOG {
+    customer_experience: post_collection(
+      limit: 75
+      offset: 75
+      orderBy: created__asc
+      filter: {content_group_id__eq: "116950105959"}
+    ) {
+      total
+      hasMore
+      items {
+        id
+        name
+        slug
+        publish_date
+        featured_image
+        tag_ids
+        url
+      }
+    }
+    data_optimization: post_collection(
+      limit: 75
+      offset: 75
+      orderBy: created__asc
+      filter: {content_group_id__eq: "175341178658"}
+    ) {
+      total
+      hasMore
+      items {
+        id
+        name
+        slug
+        publish_date
+        featured_image
+        tag_ids
+        url
+      }
+    }
+    proactive_sales_marketing: post_collection(
+      limit: 75
+      offset: 75
+      orderBy: created__asc
+      filter: {content_group_id__eq: "47938890582"}
+    ) {
+      total
+      hasMore
+      items {
+        id
+        name
+        slug
+        publish_date
+        featured_image
+        tag_ids
+        url
+      }
+    }
+    change_management: post_collection(
+      limit: 75
+      offset: 75
+      orderBy: created__asc
+      filter: {content_group_id__eq: "181903930738"}
+    ) {
+      total
+      hasMore
+      items {
+        id
+        name
+        slug
+        publish_date
+        featured_image
+        tag_ids
+        url
+      }
+    }
+  }
+}

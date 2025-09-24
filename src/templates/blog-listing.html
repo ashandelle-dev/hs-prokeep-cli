@@ -12,7 +12,7 @@ label: Blog Listing
         <div class="h-full{%if is_active%} hidden md:block{%endif%}">
           <div class="w-[15px] h-[15px] md:h-full rounded-full {% if !is_active %} category-{{tag_class}} {% endif %}"></div>
         </div>
-      
+
         <div class="{%if is_active%}px-3{%else%}px-1 md:px-3{%endif%}">
             <p class="m-0 font-bold leading-tight text-[16px]">{{ ct_name }}</p>
         </div>
@@ -68,15 +68,15 @@ label: Blog Listing
     </div>
     {% set featured_posts = blog_recent_tag_posts(group.id,'Featured', 1) %}
     {% for feature_post in featured_posts %}
-  
+
     <div class="flex items-stretch flex-wrap rounded-xl overflow-hidden justify-center relative z-10">
-      
+
       <div class="w-full lg:w-3/5">
         <a href="{{ feature_post.absolute_url}}"  title="">
           <img class="w-full h-full object-cover" src="{{ feature_post.featured_image }}" alt="{{ feature_post.name }} graphic" />
         </a>
       </div>
-        
+
       <div class="w-full lg:w-2/5 bg-[#a2d2d5]">
         <div class="p-6">
         <div class="flex items-center mb-6">
@@ -90,9 +90,9 @@ label: Blog Listing
         </div>
         <h1 class="text-[46px] leading-[50px] mb-6"><a class="no-underline text-[#132c41] hover:text-[#132c41] hover:no-underline leading-none" href="{{ feature_post.absolute_url}}">{{ feature_post.name }}</a></h1>
         <div class="border-t border-black py-3">
-        
+
             <div class="">
-             
+
               {% set taglist = feature_post.tag_list %}
 
               {% for tag in taglist %}
@@ -101,7 +101,7 @@ label: Blog Listing
                 <span class=" font-bold text-[#173A53] text-[18px]">{{tag}}</span>
               {% endif %}
               {% endfor %}
-              
+
             </div>
           <div class="types">
             {% set taglist = feature_post.tag_list %}
@@ -116,7 +116,7 @@ label: Blog Listing
           </div>
         </div>
       </div>
-    
+
   {% endfor %}
       </div>
     </div>
@@ -128,7 +128,7 @@ label: Blog Listing
     <div class="flex flex-wrap -mx-3">
       <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
         <div class="mb-4">
-          
+
           <p class="font-bold m-0">Filter by Topic:</p>
         </div>
         <a class="text-[#173A53] no-underline inline-block md:block hover:no-underline hover:text-[#173A53]] mr-1 md:mr-0" href="{{ group.absolute_url }}#blog-grid">
@@ -137,12 +137,12 @@ label: Blog Listing
               <div class="h-full hidden md:block">
                 <div class="w-[15px] h-[15px] md:h-full rounded-full " style="background-color: {{ ct_color }}"></div>
               </div>
-            
+
               <div class="px-3">
                   <p class="m-0 font-bold leading-tight text-[16px] {% if !tag %} text-white {% endif %}">All</p>
               </div>
             </div>
-            
+
           </div>
         </a>
         {% for item in blog_tags %}
@@ -156,7 +156,7 @@ label: Blog Listing
       </div>
       <div class="w-full md:w-3/4 px-3">
         <div class="flex flex-wrap justify-center md:justify-start items-stretch -mx-3">
-        {% for content in contents %}   
+        {% for content in contents %}
           <div class="w-full sm:w-1/2 lg:w-1/3 mb-6 px-3">
             <div class="rounded-xl overflow-hidden h-full bg-white shadow-lg relative group blog-card">
               <a class="absolute w-full h-full inset-0 z-10 cursor-pointer" href=" {{ content.absolute_url }}"></a>
@@ -167,7 +167,7 @@ label: Blog Listing
                 <div class="w-full h-full bg-slate-100"></div>
                 {% endif %}
               </div>
-              
+
               <div class="px-6 pt-[80px] pb-[50px] relative">
                 <div class="absolute w-full left-0 right-0 -top-[40px] text-center">
                   <div class="rounded-full w-[60px] h-[60px] mx-auto border-[5px] border-white block">
@@ -179,33 +179,33 @@ label: Blog Listing
                 <div class="mb-12">
                   <p class="m-0 cursor-pointer text-[#173A53] no-underline font-bold block leading-snug text-[24px] max-lines max-lines-3">{{content.name}}</p>
                 </div>
-             
+
               </div>
 
               {% set taglist = content.tag_list %}
               {% set tag_wrapper_class = content.tag_list[0]|replace(" ","-") %}
 
              {% if tag_wrapper_class %}
-              
+
               <div class="absolute w-full bottom-0 left-0 right-0 px-6 category-wrapper category-wrapper-{{tag_wrapper_class}}">
-               
+
                 <div class="text-[14px] border-t border-black py-1 group-hover:border-transparent">
                   {% for tag in taglist %}
                   {% if (tag != 'Featured') && (tag != 'Type - Whitepaper') && (tag != 'Type - Video') && (tag != 'Type - Infographic') %}
                   {% set tag_class = tag|replace(" ","-") %}
                   <div class="categories flex items-center">
-                    
+
                     <div class="w-[16px] h-[16px] border rounded-full border-[#FFF4E3] category-{{tag_class}} ">
 
                     </div>
                     <span class="px-3 font-bold text-[#173A53] text-[16px]">{{tag}}</span>
-              
+
                   </div>
                   {% endif %}
                   {% endfor %}
                   <!-- <div class="types hidden">
                   {% set taglist = content.tag_list %}
-      
+
                     {% for tag in taglist %}
                     {% if !(tag == 'Featured') && (tag == 'Type - Whitepaper') || (tag == 'Type - Video') || (tag == 'Type - Infographic') %}
                     {% set tag_class = tag|replace('Type - ','') %}
@@ -215,10 +215,10 @@ label: Blog Listing
                     {% endfor %}
                   </div> -->
                 </div>
-              
+
               </div>
               {% endif %}
-            
+
             </div>
           </div>
           {% endfor %}
@@ -247,13 +247,13 @@ label: Blog Listing
             {% icon name="chevron-right" style="SOLID", width="13", no_wrapper=True %}
           </a>
         </div>
-        
+
         {% endif %}
-        
+
       </div>
     </div>
   </div>
 </section>
-  
+
 
 {% endblock body %}

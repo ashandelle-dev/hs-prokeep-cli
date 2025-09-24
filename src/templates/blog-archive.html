@@ -1,0 +1,613 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: true
+label: Blog Archive
+-->
+
+{% set t = {
+    "hero": {
+        "subtitle": "The Prokeep Blog",
+        "title": group.header || group.html_title,
+        "description": group.description
+    },
+    "latest_blogs": {
+        "title": "Top {{group.html_title}} Posts"
+    },
+    "blogs": {
+        "posts": {
+            "id": group.id,
+            "postCount": blog_total_post_count(group.id),
+            "title": "Top {{group.html_title}} Posts",
+            "accent_color": "border-1-blue",
+            "button": {
+                "text": "See more posts",
+                "url": group.absolute_url
+            },
+            "posts": contents
+        }
+    }
+} %}
+
+{% macro read_time(post) %}
+    {% set str = post.post_body %}
+    {% set img_count = str|split('<img')|length %}
+    {% set img_minutes = ((img_count * 12) / 60)|round(0, 'common') %}
+    {% set read_time = (str|striptags|wordcount / 275)|round(0, 'common') + img_minutes %}
+    {{ read_time }} min read
+{% endmacro %}
+
+{% macro blog_post_small(post, blog_name) %}
+    <a href="{{ post.absolute_url }}" class="block sm:flex items-center gap-12 rounded-lg no-underline hover:no-underline">
+        <div class="flex-shrink-0 sm:{% if small_posts|length == 2 %}w-[223px]{% else %}w-[175px]{% endif %}">
+            <div class="aspect-w-16 aspect-h-9 h-[209px] sm:h-[111px] w-full">
+                <img src="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                     alt="{{ post.title }}"
+                     class="w-full h-full object-cover object-left rounded-lg">
+            </div>
+        </div>
+        <div class="flex-1 min-w-0 pt-4 sm:pt-0">
+            <h4 class="text-2xl font-bold text-pk-blue mb-2 leading-tight">
+                {{ post.title }}
+            </h4>
+            <div class="flex items-center text-pk-blue text-base">
+                <span class="text-base leading-tight">{{ read_time(post) }} </span>
+                <div class="w-3 h-3 bg-pk-orange100 rounded-full mx-2"></div>
+                {% if blog_name %}
+                <span class="leading-tight">{{ blog_name|title|replace("-", " ") }}</span>
+                {% else %}
+                <span class="leading-tight">{{ post.publish_date | format_date('MMM d, yyyy') }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </a>
+{% endmacro %}
+
+{% macro blog_section(title, button_text, button_url, featured_post, small_posts, blog_name, accent_color) %}
+    <div class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <h2 class="text-heading-l text-black mb-6 {% if accent_color %}border-l-4 {{ accent_color }} pl-4{% endif %}">{{ title }}</h2>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 {% if small_posts|length == 2 %}lg:grid-cols-blog-2-posts{% else %}lg:grid-cols-2{% endif %} gap-16">
+                <!-- Featured Post (Left Column) -->
+                <div>
+                    <a href="{{ featured_post.absolute_url }}" class="block rounded-lg overflow-hidden relative no-underline hover:no-underline">
+                        <!-- Featured Badge -->
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                                Featured
+                            </span>
+                        </div>
+
+                        <!-- Featured Post Image -->
+                        <div class="relative {% if small_posts|length == 2 %}h-[209px]{% else %}h-[336px]{% endif %} w-full" >
+                            <img src="{{ featured_post.featured_image or 'https://placehold.co/440x209' }}"
+                                 alt="{{ featured_post.title }}"
+                                 class="w-full h-full object-cover rounded-lg">
+                        </div>
+
+                        <!-- Featured Post Content -->
+                        <div class="pt-4">
+                            <h3 class="text-heading-sm text-pk-blue mb-3 leading-tight">
+                                {{ featured_post.title }}
+                            </h3>
+                            <div class="flex items-center text-gray-500">
+                                <span class="text-base leading-tight">{{ read_time(featured_post) }} </span>
+                                <div class="w-3 h-3 bg-pk-orange100 rounded-full mx-2"></div>
+                                {% if blog_name %}
+                                <span class="leading-tight">{{ blog_name|title|replace("-", " ") }}</span>
+                                {% else %}
+                                <span class="leading-tight">{{ featured_post.publish_date | format_date('MMM d, yyyy') }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Smaller Posts (Right Column) -->
+                <div class="space-y-6 sm:space-y-6 lg:space-y-6">
+                    {% for post in small_posts %}
+                        {{ blog_post_small(post, blog_name) }}
+                    {% endfor %}
+
+                    <!-- See All Articles Link -->
+                    {% if button_text and button_url %}
+                    <div class="flex mt-20 pt-5">
+                        <a href="{{ button_url }}"
+                        class="inline-flex no-underline items-center font-semibold gap-4 text-pk-orange">
+                            <span>
+                            {{ button_text }}
+                            </span>
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.7071 8.70711C17.0976 8.31658 17.0976 7.68342 16.7071 7.29289L10.3431 0.928932C9.95262 0.538408 9.31946 0.538408 8.92893 0.928932C8.53841 1.31946 8.53841 1.95262 8.92893 2.34315L14.5858 8L8.92893 13.6569C8.53841 14.0474 8.53841 14.6805 8.92893 15.0711C9.31946 15.4616 9.95262 15.4616 10.3431 15.0711L16.7071 8.70711ZM0 8V9H16V8V7H0V8Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% set p =
+  t.blogs.posts.posts
+%}
+{% set all_posts = p|sort(true, false, 'publish_date') %}
+
+{% set rendered_posts = [] %}
+
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="bg-white">
+    <style>
+    {# HubSpot form styles #}
+    .hsforms-embed .hs-form {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hsforms-embed .hs-form .hs-form-field {
+        margin: 0;
+    }
+    .hsforms-embed .hs_email {
+        min-width: 68%;
+    }
+    .hsforms-embed .hs-form .hs-form-field .input input {
+        background: white;
+        border: 1px solid #9CD4D6;
+        min-height: 50px;
+        min-width: 68%;
+        max-width: 100%;
+    }
+    .hsforms-embed .hs_submit.hs-submit {
+        flex: 1;
+    }
+    @media (max-width: 768px) {
+        .hsforms-embed .hs-form {
+            flex-direction: column;
+        }
+        .hsforms-embed .hs_email {
+            width: 100%;
+        }
+        .hsforms-embed .hs_submit.hs-submit {
+            flex: 1;
+        }
+    }
+    </style>
+    <div id="blog-overview" class="pt-20 lg:mt-20 bg-[#F2F5F7]">
+        <div class="max-w-4xl mx-auto text-center pt-10 pb-6">
+            <p class="text-base text-black font-semibold mb-0">{{t.hero.subtitle}}</p>
+            <h1 class="text-heading-xl text-gray-900 mb-6">{{t.hero.title}}</h1>
+            <p class="text-2xl mb-0">{{t.hero.description}}</p>
+        </div>
+    </div>
+
+    <div id="latest-blogs" class="bg-[#F2F5F7]">
+        {% set featured_post = all_posts|first %}
+        {% set small_posts = all_posts[1:4] %}
+        {% do rendered_posts.append(featured_post.id) %}
+        {% for post in small_posts %}
+            {% do rendered_posts.append(post.id) %}
+        {% endfor %}
+        {{ blog_section(
+            t.latest_blogs.title,
+            t.latest_blogs.button.text,
+            t.latest_blogs.button.url,
+            featured_post,
+            small_posts
+        ) }}
+    </div>
+
+    <div id="wave">
+        <svg class="w-screen" width="100vw" height="123" viewBox="0 0 1440 123" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M234.163 35.9999C644.018 -38.0913 1029.8 152.793 1440 94.0197V-6.10352e-05H0.00012207V94.0197C72.9901 66.9785 153.062 50.6616 234.163 35.9999Z" fill="#F2F5F7"/>
+        </svg>
+    </div>
+
+    <div id="all-blogs" class="py-28 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <h2 class="text-heading-l font-bold text-black mb-10">All Blogs</h2>
+            <div class="mb-12">
+                <!-- Search and Filters -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between ">
+
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+                        <!-- Search Bar -->
+                        <div class="relative flex-1 lg:w-[400px]">
+                            <input type="text"
+                                id="search-input"
+                                placeholder="Search text here"
+                                class="bg-pk-grey w-full pl-4 pr-10 py-2.5 border border-black rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-pk-orange">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Filter Buttons -->
+                        <div class="flex gap-10 ">
+                            <div class="relative">
+                                <button id="roles-filter" class="pk-button-primary-outline flex items-center gap-2 font-semibold">
+                                    Roles
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <!-- Roles Dropdown -->
+                                <div id="roles-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                                    <div class="p-2">
+                                        <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                            <input type="checkbox" value="marketing" class="text-orange-500 rounded focus:ring-orange-500">
+                                            <span class="text-sm">Marketing</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                            <input type="checkbox" value="sales" class="text-orange-500 rounded focus:ring-orange-500">
+                                            <span class="text-sm">Sales</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                            <input type="checkbox" value="parts-team" class="text-orange-500 rounded focus:ring-orange-500">
+                                            <span class="text-sm">Parts Team</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                                            <input type="checkbox" value="manager" class="text-orange-500 rounded focus:ring-orange-500">
+                                            <span class="text-sm">Manager</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Results Count and Clear All -->
+                    <div class="flex items-center gap-2 text-gray-600 mt-4 lg:mt-0">
+                        <span id="results-count" class="text-sm">SHOWING 3 OF 12</span>
+                        <div class="w-3 h-3 bg-pk-orange100 rounded-full"></div>
+                        <button id="clear-filters" class="text-orange-500 underline hover:text-orange-600">Clear All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
+                {% set available_posts = [] %}
+                {% for post in all_posts %}
+                    {% if post.id not in rendered_posts %}
+                        {% do available_posts.append(post) %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for post in available_posts[:12] %}
+                <a href="{{ post.absolute_url }}" class="blog-card block rounded-xl no-underline hover:no-underline"
+                     data-title="{{ post.title|lower }}"
+                     data-role="{{ post.role|default('') }}">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                             alt="{{ post.title }}"
+                             class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div >
+                        <h3 class="text-2xl font-bold text-gray-900 my-2">
+                            {{ post.title }}
+                        </h3>
+                        <div class="flex items-center text-gray-500 text-base">
+                            <span class="text-base leading-tight">{{ read_time(post) }} </span>
+                            <div class="w-3 h-3 bg-pk-orange100 rounded-full mx-2"></div>
+                            <span class="leading-tight">{{ post.publish_date | format_date('MMM d, yyyy') }}</span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Hidden posts for JavaScript filtering -->
+            <div id="hidden-posts" style="display: none;">
+                {% for post in available_posts[12:] %}
+                <div class="blog-card-data"
+                     data-title="{{ post.title|lower }}"
+                     data-category="{{ post.topic_slug|default('') }}"
+                     data-role="{{ post.role|default('') }}"
+                     data-url="{{ post.absolute_url }}"
+                     data-image="{{ post.featured_image or 'https://placehold.co/440x209' }}"
+                     data-read-time="{{ read_time(post) }}"
+                     data-topic="{{ post.publish_date | format_date('MMM d, yyyy') }}">
+                    {{ post.title }}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Template for blog card -->
+            <template id="blog-card-template">
+                <a href="" class="blog-card blockounded-lg no-underline hover:no-underline">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="" alt="" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl my-2 font-bold text-pk-blue mb-2">
+                        </h3>
+                        <div class="flex items-center text-black text-base">
+                            <span class="read-time"></span>
+                            <div class="w-3 h-3 bg-pk-orange100 rounded-full mx-2"></div>
+                            <span class="topic"></span>
+                        </div>
+                    </div>
+                </a>
+            </template>
+
+            <!-- Pagination -->
+            <div id="pagination" class="flex text-sm justify-center items-center gap-2">
+                <button id="prev-page" class="px-3 py-2 text-black hover:text-pk-orange disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 2L4.5 7.9996L10.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>
+                        Prev
+                    </span>
+                </button>
+                <div id="page-numbers" class="flex gap-1">
+                    <!-- Page numbers will be generated by JavaScript -->
+                </div>
+                <button id="next-page" class="px-3 py-2 text-black hover:text-pk-orange disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                    <span>
+                        Next
+                    </span>
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 2L12.5 7.9996L6.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="subscribe" class="pb-24 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-7xl mx-auto">
+              <div class="bg-[#FFF4E3] border border-[#F4B74E] rounded-lg p-8">
+                  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                      <!-- Left Section - Text Content -->
+                      <div class="flex-1">
+                          <h2 class="text-heading-sm text-black mb-2">
+                              Join our mailing list for news, insights & updates.
+                          </h2>
+                          <p class="text-black mb-0">
+                              Join our mailing list for new insights & updates.
+                          </p>
+                      </div>
+
+                      <!-- Right Section - Form (HubSpot will be embedded here) -->
+                      <div class="hsforms-embed flex-1 lg:max-w-md">
+                          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                          <script>
+                          hbspt.forms.create({
+                              portalId: "8787210",
+                              formId: "e7b64b77-83fa-4067-a086-6969747eb925",
+                              region: "na1"
+                          });
+                          </script>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+    <script>
+        // Blog filtering and pagination functionality
+        class BlogFilter {
+            constructor() {
+                this.visiblePosts = document.querySelectorAll('.blog-card');
+                this.hiddenPostsData = document.querySelectorAll('.blog-card-data');
+                this.searchInput = document.getElementById('search-input');
+                this.rolesFilter = document.getElementById('roles-filter');
+                this.rolesDropdown = document.getElementById('roles-dropdown');
+                this.clearFilters = document.getElementById('clear-filters');
+                this.resultsCount = document.getElementById('results-count');
+                this.blogGrid = document.getElementById('blog-grid');
+                this.pagination = document.getElementById('pagination');
+                this.pageNumbers = document.getElementById('page-numbers');
+                this.prevPage = document.getElementById('prev-page');
+                this.nextPage = document.getElementById('next-page');
+
+                this.currentPage = 1;
+                this.postsPerPage = 12;
+                this.allPostsData = this.buildAllPostsData();
+                this.filteredPosts = [...this.allPostsData];
+
+                this.init();
+            }
+
+            buildAllPostsData() {
+                const visibleData = Array.from(this.visiblePosts).map(post => ({
+                    element: post,
+                    title: post.dataset.title,
+                    role: post.dataset.role,
+                    url: post.href,
+                    image: post.querySelector('img').src,
+                    readTime: post.querySelector('.text-base span').textContent,
+                    topic: post.querySelector('.text-base span:last-child').textContent,
+                    titleText: post.querySelector('h3').textContent.trim()
+                }));
+
+                const hiddenData = Array.from(this.hiddenPostsData).map(post => ({
+                    element: null,
+                    title: post.dataset.title,
+                    role: post.dataset.role,
+                    url: post.dataset.url,
+                    image: post.dataset.image,
+                    readTime: post.dataset.readTime,
+                    topic: post.dataset.topic,
+                    titleText: post.textContent.trim()
+                }));
+
+                return [...visibleData, ...hiddenData];
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.renderPosts(); // Render initial posts with pagination
+                this.renderPagination();
+                this.updateResultsCount();
+            }
+
+            setupEventListeners() {
+                // Search input
+                this.searchInput.addEventListener('input', () => this.applyFilters());
+
+                // Filter dropdowns
+                this.rolesFilter.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggleDropdown(this.rolesDropdown);
+                });
+
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', () => {
+                    this.rolesDropdown.classList.add('hidden');
+                });
+
+                // Filter checkboxes
+                this.rolesDropdown.addEventListener('change', () => this.applyFilters());
+
+                // Clear filters
+                this.clearFilters.addEventListener('click', () => this.clearAllFilters());
+
+                // Pagination
+                this.prevPage.addEventListener('click', () => this.goToPage(this.currentPage - 1));
+                this.nextPage.addEventListener('click', () => this.goToPage(this.currentPage + 1));
+            }
+
+            toggleDropdown(dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                this.rolesDropdown.classList.add('hidden');
+                if (isHidden) {
+                    dropdown.classList.remove('hidden');
+                }
+            }
+
+            applyFilters() {
+                const searchTerm = this.searchInput.value.toLowerCase();
+                const selectedRoles = Array.from(this.rolesDropdown.querySelectorAll('input:checked')).map(cb => cb.value);
+
+                this.filteredPosts = this.allPostsData.filter(post => {
+                    const matchesSearch = post.title.includes(searchTerm);
+                    const matchesRoles = selectedRoles.length === 0 || selectedRoles.some(role => post.role.includes(role));
+
+                    return matchesSearch && matchesRoles;
+                });
+
+                this.currentPage = 1;
+                this.renderPosts();
+                this.renderPagination();
+                this.updateResultsCount();
+            }
+
+            clearAllFilters() {
+                this.searchInput.value = '';
+                this.rolesDropdown.querySelectorAll('input').forEach(cb => cb.checked = false);
+                this.applyFilters();
+            }
+
+            renderPosts() {
+                const startIndex = (this.currentPage - 1) * this.postsPerPage;
+                const endIndex = startIndex + this.postsPerPage;
+                const postsToShow = this.filteredPosts.slice(startIndex, endIndex);
+
+                // Clear the grid
+                this.blogGrid.innerHTML = '';
+
+                // Create and append posts
+                postsToShow.forEach(postData => {
+                    const postElement = this.createPostElement(postData);
+                    this.blogGrid.appendChild(postElement);
+                });
+            }
+
+            createPostElement(postData) {
+                const template = document.getElementById('blog-card-template');
+                const postElement = template.content.cloneNode(true);
+
+                // Set attributes
+                const link = postElement.querySelector('a');
+                link.href = postData.url;
+                link.setAttribute('data-title', postData.title);
+                link.setAttribute('data-role', postData.role);
+
+                // Set content
+                const img = postElement.querySelector('img');
+                img.src = postData.image;
+                img.alt = postData.titleText;
+
+                const title = postElement.querySelector('h3');
+                title.textContent = postData.titleText;
+
+                const readTime = postElement.querySelector('.read-time');
+                readTime.textContent = postData.readTime;
+
+                const topic = postElement.querySelector('.topic');
+                topic.textContent = postData.topic;
+
+                return postElement;
+            }
+
+            renderPagination() {
+                const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
+                this.pageNumbers.innerHTML = '';
+
+                // Previous button
+                this.prevPage.disabled = this.currentPage === 1;
+
+                // Calculate which 5 pages to show
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+                // Adjust start page if we're near the end
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+
+                // Page numbers
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.textContent = i;
+                    pageBtn.className = `h-7 w-6 border rounded font-semibold ${
+                        i === this.currentPage
+                            ? 'bg-white text-black border-pk-orange'
+                            : 'text-black border-transparent text-sm'
+                    }`;
+                    pageBtn.addEventListener('click', () => this.goToPage(i));
+                    this.pageNumbers.appendChild(pageBtn);
+                }
+
+                // Next button
+                this.nextPage.disabled = this.currentPage === totalPages;
+            }
+
+            goToPage(page) {
+                const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
+                if (page >= 1 && page <= totalPages) {
+                    this.currentPage = page;
+                    this.renderPosts();
+                    this.renderPagination();
+                }
+            }
+
+            updateResultsCount() {
+                const showing = Math.min(this.postsPerPage, this.filteredPosts.length - (this.currentPage - 1) * this.postsPerPage);
+                const total = this.filteredPosts.length;
+                this.resultsCount.textContent = `SHOWING ${showing} OF ${total}`;
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new BlogFilter();
+        });
+    </script>
+{% endblock body %}
