@@ -17,48 +17,48 @@
     },
     "blogs": {
         "customer_experience": {
-            "id": "116950105959",
-            "postCount": blog_total_post_count("116950105959"),
+            "id": "195958293085",
+            "postCount": blog_total_post_count("195958293085"),
             "title": "Customer Experience",
             "accent_color": "border-1-blue",
             "button": {
                 "text": "See more news",
                 "url": "/blog"
             },
-            "posts": blog_recent_posts("116950105959", 100)
+            "posts": blog_recent_posts("195958293085", 100)
         },
         "data_optimization": {
-            "id": "175341178658",
-            "postCount": blog_total_post_count("175341178658"),
+            "id": "195959484081",
+            "postCount": blog_total_post_count("195959484081"),
             "title": "Data Optimization",
             "accent_color": "border-1-green",
             "button": {
                 "text": "See more solutions",
                 "url": "/blog"
             },
-            "posts": blog_recent_posts("175341178658", 100)
+            "posts": blog_recent_posts("195959484081", 100)
         },
         "proactive_sales_marketing": {
-            "id": "47938890582",
-            "postCount": blog_total_post_count("47938890582") ,
+            "id": "195972435526",
+            "postCount": blog_total_post_count("195972435526") ,
             "title": "Proactive Sales & Marketing",
             "accent_color": "border-1-orange",
             "button": {
                 "text": "See more user tips",
                 "url": "/blog"
             },
-            "posts": blog_recent_posts("47938890582", 100)
+            "posts": blog_recent_posts("195972435526", 100)
         },
         "change_management": {
-            "id": "181903930738",
-            "postCount": blog_total_post_count("181903930738") ,
+            "id": "195958293089",
+            "postCount": blog_total_post_count("195958293089") ,
             "title": "Change Management",
             "accent_color": "border-1-yellow",
             "button": {
                 "text": "See more updates",
                 "url": "/blog"
             },
-            "posts": blog_recent_posts("181903930738", 100)
+            "posts": blog_recent_posts("195958293089", 100)
         }
     }
 } %}
@@ -482,7 +482,7 @@ t.blogs.change_management.posts
                 {% for post in available_posts[:12] %}
                 <a href="{{ post.absolute_url }}" class="blog-card block rounded-xl no-underline hover:no-underline"
                      data-title="{{ post.title|lower }}"
-                     data-category="{{ post.topic_slug|default('') }}"
+                     data-category="{{ post.slug|replace('blog/', ' ')|split('/')|first  }}"
                      data-role="{{ post.role|default('') }}">
                     <div class="aspect-w-16 aspect-h-9">
                         <img src="{{ post.featured_image or 'https://placehold.co/440x209' }}"
@@ -496,7 +496,7 @@ t.blogs.change_management.posts
                         <div class="flex items-center text-gray-500 text-base">
                             <span class="text-base leading-tight">{{ read_time(post) }} </span>
                             <div class="w-3 h-3 bg-pk-orange100 rounded-full mx-2"></div>
-                            <span class="leading-tight">{{ post.topic_name|default('Prokeep News') }}</span>
+                            <span class="leading-tight">{{ post.slug|replace('blog/', ' ')|split('/')|first|replace('-', ' ')|title  }}</span>
                         </div>
                     </div>
                 </a>
@@ -513,7 +513,7 @@ t.blogs.change_management.posts
                      data-url="{{ post.absolute_url }}"
                      data-image="{{ post.featured_image or 'https://placehold.co/440x209' }}"
                      data-read-time="{{ read_time(post) }}"
-                     data-topic="{{ post.topic_name|default('Prokeep News') }}">
+                     data-topic="{{ post.slug|replace('blog/', ' ')|split('/')|first|replace('-', ' ')|title  }}">
                     {{ post.title }}
                 </div>
                 {% endfor %}
