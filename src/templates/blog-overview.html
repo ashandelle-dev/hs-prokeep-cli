@@ -6,13 +6,13 @@
 {% set t = {
     "hero": {
         "title": "The Prokeep Blog",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "description": ""
     },
     "latest_blogs": {
         "title": "Our latest posts",
         "button": {
             "text": "See all latest articles",
-            "url": "/blog"
+            "url": "#all"
         }
     },
     "blogs": {
@@ -23,7 +23,7 @@
             "accent_color": "border-1-blue",
             "button": {
                 "text": "See more news",
-                "url": "/blog"
+                "url": "/blog/customer-experience"
             },
             "posts": blog_recent_posts("195958293085", 100)
         },
@@ -34,7 +34,7 @@
             "accent_color": "border-1-green",
             "button": {
                 "text": "See more solutions",
-                "url": "/blog"
+                "url": "/data-optimization"
             },
             "posts": blog_recent_posts("195959484081", 100)
         },
@@ -45,7 +45,7 @@
             "accent_color": "border-1-orange",
             "button": {
                 "text": "See more user tips",
-                "url": "/blog"
+                "url": "/proactive-sales-marketing"
             },
             "posts": blog_recent_posts("195972435526", 100)
         },
@@ -56,7 +56,7 @@
             "accent_color": "border-1-yellow",
             "button": {
                 "text": "See more updates",
-                "url": "/blog"
+                "url": "/change-management"
             },
             "posts": blog_recent_posts("195958293089", 100)
         }
@@ -374,7 +374,7 @@ t.blogs.change_management.posts
         ) }}
     </div>
 
-    <div id="all-blogs" class="py-28 px-4 sm:px-6 lg:px-8 bg-pk-grey">
+    <div id="all" class="py-28 px-4 sm:px-6 lg:px-8 bg-pk-grey">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
             <h2 class="text-heading-l font-bold text-black mb-10">All Blogs</h2>
@@ -398,7 +398,7 @@ t.blogs.change_management.posts
 
                         <!-- Filter Buttons -->
                         <div class="flex gap-10 ">
-                            <div class="relative">
+                            <div class="relative hidden">
                                 <button id="roles-filter" class="pk-button-primary-outline flex items-center gap-2 font-semibold">
                                     Roles
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
